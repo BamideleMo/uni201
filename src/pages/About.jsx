@@ -39,10 +39,9 @@ function About() {
                     entrepreneurship before graduation.
                   </p>
                   <p>
-                    <b>Because</b>, one of the ways to solve the problems of
-                    unemployment and unemployability bedeviling too many
-                    university graduates is for Nigerian university students to
-                    embrace student entrepreneurship.
+                    <b>Because</b>, one of the ways to avoid unemployment and
+                    unemployability bedeviling too many university graduates in
+                    Nigeria is to embrace student entrepreneurship.
                   </p>
                   <p>So...</p>
                   <p>
