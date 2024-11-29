@@ -46,18 +46,18 @@ function About() {
                   </p>
                   <p>So...</p>
                   <p>
-                    <b>Every Friday</b> evening I post educative, and
-                    impactful ideas and tips that will help you embrace student
+                    <b>Every Friday evening</b>, I post educative and impactful
+                    ideas & tips that will help you embrace student
                     entrepreneurship, learn how to become a successful student
                     entrepreneur, become employable and invariably avoid
                     unemployment after you graduate.
                   </p>
                   <p>
                     <b>And this isn’t just about theory</b>—it's about real-life
-                    experiences & case studies of students who took the
-                    leap. No fluff, & no jargon—just relatable experiences with
-                    lessons you can use to start your own journey and empower
-                    your future.
+                    experiences & case studies of students who took the leap. No
+                    fluff, & no jargon—just relatable experiences with lessons
+                    you can use to start your own journey and empower your
+                    future.
                   </p>
                 </div>
               </div>
