@@ -175,7 +175,7 @@ function LoginForm(props) {
                 fallback={
                   <button
                     type="submit"
-                    class="bg-red-600 rounded-lg w-full p-3 text-center hover:opacity-60"
+                    class="bg-cyan-600 rounded-lg w-full p-4 text-center hover:opacity-60"
                   >
                     Proceed
                   </button>
@@ -183,7 +183,7 @@ function LoginForm(props) {
               >
                 <button
                   disabled
-                  class="bg-gray-600 rounded-lg cursor-none w-full p-3 text-center animate-pulse"
+                  class="bg-gray-600 rounded-lg cursor-none w-full p-4 text-center animate-pulse"
                 >
                   Processing.. .
                 </button>
