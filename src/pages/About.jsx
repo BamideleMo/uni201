@@ -22,49 +22,42 @@ function About() {
                 <h2 class="text-lg md:text-xl border-b-2 border-black pb-2">
                   <span class="bg-violet-300 p-1">About</span>
                 </h2>
-                <h2 class="my-2 text-xl md:text-2xl leading-tight font-bold">
+                <h2 class="mt-8 text-xl md:text-2xl leading-tight font-bold">
                   Empower Your Future!
                 </h2>
-                <div class="space-y-6 text-base">
+                <div class="my-4 space-y-6 text-base">
                   <p>
-                    <b>UNI201</b> (
-                    <A href="https://uni201.com.ng">www.uni201.com.ng</A>) is a
-                    weekly post focused on helping Nigerian students in Nigerian
-                    Universities embrace and pursue entrepreneurship before
-                    graduation.
+                    Hey, welcome to UNI201 (
+                    <A href="https://uni201.com.ng">www.uni201.com.ng</A>). If
+                    you're a Nigerian university student, you're in the right
+                    place.
+                  </p>
+
+                  <p>
+                    <b>UNI201</b> is a weekly post focused on helping Nigerian
+                    students in Nigerian Universities embrace and pursue
+                    entrepreneurship before graduation.
                   </p>
                   <p>
-                    <b>We Believe</b>: that one of the ways to solve the
-                    problems associated with unemployment and unemployability
-                    bedeviling too many university graduates is for Nigerian
-                    University students to embrace student entrepreneurship.
+                    One of the ways to solve the problems of unemployment and
+                    unemployability bedeviling too many university graduates is
+                    for Nigerian university students to embrace student
+                    entrepreneurship.
                   </p>
                   <p>So...</p>
                   <p>
-                    <b>Every Friday</b> evening we post very educative, and
+                    <b>Every Friday</b> evening I post very educative, and
                     impactful ideas and tips that will help you embrace student
                     entrepreneurship, learn how to become a successful student
-                    entrepreneur, become employable and invariably avoid unemployment after graduation.
+                    entrepreneur, become employable and invariably avoid
+                    unemployment after graduation.
                   </p>
                   <p>
-                    Join our WhatsApp Channel for weekly reminders to always
-                    checkout each new post so you never get to miss anything:{" "}
-                    <a href="https://whatsapp.com/channel/0029VaEVLBHBfxoG5GZxz72v">
-                      UNI201 WhatsApp Channel
-                    </a>
-                    .
-                  </p>
-                  <p>
-                    Follow us on X:{" "}
-                    <a href="https://x.com/UNI201_NG">@UNI201_NG</a> and on
-                    Facebook:{" "}
-                    <a href="https://facebook.com/UNI201_NG">@UNI201_NG</a>
-                  </p>
-                  <p>
-                    <b>To contact us </b> send an email to{" "}
-                    <a href="mailto:contactuni201@gmail.com">
-                      contactUNI201@gmail.com
-                    </a>
+                    <b>And this isn’t just about theory</b>—it's about real-life
+                    experiences. I share case studies of students who took the
+                    leap. No fluff, & no jargon—just relatable experiences with
+                    lessons you can use to start your own journey and empower
+                    your future.
                   </p>
                 </div>
               </div>
