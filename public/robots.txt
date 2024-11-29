@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /a/login
+Disallow: /a/post
+Disallow: /a/post-image
+Allow: /
+Allow: /post
+Allow: /issue
+Allow: /about
+Allow: /advertise

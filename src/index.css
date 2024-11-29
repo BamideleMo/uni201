@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.name, .content p a, .content p a span, .content li a span{
+  color: #ff3300 !important;
+}
+
+.content .green{
+  background-color: #86efac !important;
+}
+.content .purple{
+  background-color: #d8b4fe !important;
+}
+.content .yellow{
+  background-color: #fde047 !important;
+}
+.content .cyan{
+  background-color: #67e8f9 !important;
+}
+.content .pink{
+  background-color: #f472b5 !important;
+}
+.content .fuchsia{
+  background-color: #f0abfc !important;
+}
+.content img{
+  border-radius: 10px;
+  margin: 0 auto !important;
+}
+.content ul{
+  list-style-type: disc;
+  padding: 0 20px;
+}
+
+.content ul li{
+  margin: 22px 0;
+}
+.backgound-color{
+  background-color: #F2F2F2;
+}
+.custom-width{
+  width: 300px;
+}
+.cke_inner{
+  height: 500px !important;
+  background-color: red !important;
+}
+.cke_contents{
+  height: 396px !important;
+}
+
+.ck-editor__main,.ck-content{
+  height: 396px !important;
+}
