@@ -49,7 +49,7 @@ function Cta() {
         <div class="w-11/12 mx-auto drop-shadow-lg">
           <div class="text-2xl leading-snug lg:text-4xl lg:leading-10 text-center">
             Empower your Future!{" "}
-            <span class="text-white">Embrace Student Entrepreneurship.</span>{" "}
+            <span class="text-white">Through Student Entrepreneurship.</span>{" "}
             <br />
             Start now—it’s free!
           </div>
