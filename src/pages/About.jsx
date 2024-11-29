@@ -47,9 +47,9 @@ function About() {
                   <p>
                     <b>Every Friday evening</b>, I post educative and impactful
                     ideas & tips that will help you embrace student
-                    entrepreneurship, learn how to become a successful student
-                    entrepreneur, become employable and invariably avoid
-                    unemployment after you graduate.
+                    entrepreneurship, learn to become a successful student
+                    entrepreneur, become employable and avoid unemployment after
+                    you graduate.
                   </p>
                   <p>
                     <b>And this isn’t just about theory</b>—it's about real-life
