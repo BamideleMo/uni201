@@ -27,7 +27,7 @@ function About() {
                 </h2>
                 <div class="my-4 space-y-6 text-base">
                   <p>
-                    Hey, welcome to UNI201 (
+                    Welcome to UNI201 (
                     <A href="https://uni201.com.ng">www.uni201.com.ng</A>). If
                     you're a Nigerian university student, you're in the right
                     place.
@@ -35,26 +35,26 @@ function About() {
 
                   <p>
                     <b>UNI201</b> is a weekly post focused on helping Nigerian
-                    students in Nigerian Universities embrace and pursue
+                    students in Nigerian universities embrace and pursue
                     entrepreneurship before graduation.
                   </p>
                   <p>
-                    One of the ways to solve the problems of unemployment and
-                    unemployability bedeviling too many university graduates is
-                    for Nigerian university students to embrace student
-                    entrepreneurship.
+                    <b>Because</b>, one of the ways to solve the problems of
+                    unemployment and unemployability bedeviling too many
+                    university graduates is for Nigerian university students to
+                    embrace student entrepreneurship.
                   </p>
                   <p>So...</p>
                   <p>
-                    <b>Every Friday</b> evening I post very educative, and
+                    <b>Every Friday</b> evening I post educative, and
                     impactful ideas and tips that will help you embrace student
                     entrepreneurship, learn how to become a successful student
                     entrepreneur, become employable and invariably avoid
-                    unemployment after graduation.
+                    unemployment after you graduate.
                   </p>
                   <p>
                     <b>And this isn’t just about theory</b>—it's about real-life
-                    experiences. I share case studies of students who took the
+                    experiences & case studies of students who took the
                     leap. No fluff, & no jargon—just relatable experiences with
                     lessons you can use to start your own journey and empower
                     your future.
