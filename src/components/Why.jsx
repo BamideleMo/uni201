@@ -2,10 +2,10 @@ function Why() {
   return (
     <div class="bg-gray-50 border-y py-20 text-lg">
       <div class="w-11/12 2xl:w-9/12 mx-auto">
-        <h2 class="font-bold text-cyan-600 text-4xl text-center">
+        <h2 class="font-bold text-cyan-600 text-3xl md:text-4xl text-center">
           Why UNI201?
         </h2>
-        <div class="mt-12 w-full md:w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div class="mt-6 md:mt-12 w-full md:w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
             <h3 class="text-2xl md:text-3xl">
               <b>#1</b>:<br /> Weekly Actionable Tips

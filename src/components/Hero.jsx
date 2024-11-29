@@ -10,6 +10,7 @@ import user3 from "../assets/user3.png";
 import user4 from "../assets/user4.png";
 import user5 from "../assets/user5.png";
 import screen from "../assets/techINJos-mobile-screen.png";
+import hero from "../assets/hero.webp";
 
 const VITE_API_URL = import.meta.env["VITE_API_URL"];
 
@@ -132,7 +133,7 @@ function Hero() {
             </div>
           </div>
           <div class="overflow-hidden h-72 md:h-96">
-            <div class="bg-white overflow-hidden w-72 mx-auto md:w-96 h-72 md:h-96 border-b border-cyan-600 px-2 lg:float-right">
+            <div class="bg-white overflow-hidden w-72 mx-auto md:w-96 h-72 md:h-96 px-2 lg:float-right">
               <img
                 src={screen}
                 alt="tech in Jos mobile display"
