@@ -45,11 +45,12 @@ function Cta() {
       <Show when={popup()}>
         <Popup whichForm={whichForm()} whichIssue={whichIssue()} />
       </Show>
-      <div class="w-full mx-auto bg-cyan-600 p-4 lg:p-20 text-white">
+      <div class="w-full mx-auto bg-cyan-600 p-4 lg:p-20 text-yellow-200">
         <div class="w-11/12 mx-auto drop-shadow-lg">
           <div class="text-2xl leading-snug lg:text-4xl lg:leading-10 text-center">
-            Take another step towards building your campus business. Start with
-            our lastest post now—it’s free!
+            Empower your Future!{" "}
+            <span class="text-white">Embrace Student Entrepreneurship.</span>{" "}<br/>
+            Start now—it’s free!
           </div>
           <div class="text-center mt-4 lg:mt-10 text-lg md:text-2xl w-fit mx-auto">
             <Show
