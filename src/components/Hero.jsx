@@ -70,8 +70,8 @@ function Hero() {
               Become a Student Entrepreneur.
             </h1>
             <div class="my-6 md:px-8 lg:px-0 text-lg md:text-xl">
-              Get weekly tips + insights needed to build a business on campus!
-              Don't be left behind 🚀
+              Every Friday, I post tips + insights to build a business on
+              campus! Don't be left behind 🚀
             </div>
             <div class="my-4 space-x-3">
               <Show
