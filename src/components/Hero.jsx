@@ -67,11 +67,10 @@ function Hero() {
               class="text-3xl md:text-4xl lg:text-4xl xl:text-6xl 
                drop-shadow-lg font-bold"
             >
-              Become a <br class="md:hidden" />
-              Successful Student Entrepreneur.
+              Become a Student Entrepreneur.
             </h1>
             <div class="my-6 md:px-8 lg:px-0 text-lg md:text-xl">
-              Get Weekly Tips + Insights you Need to Build your Campus Business!
+              Get weekly tips + insights needed to build a business on campus!
               Don't be left behind 🚀
             </div>
             <div class="my-4 space-x-3">
@@ -86,7 +85,8 @@ function Hero() {
                     }}
                     class="mx-auto lg:mx-0 w-fit cursor-pointer bg-cyan-600 text-white h-12 border border-cyan-600 text-center items-center flex px-4 rounded hover:bg-white hover:text-cyan-600"
                   >
-                    Read Latest Post
+                    {/* Read Latest Post */}
+                    See This Week's Post
                   </span>
                 }
               >

@@ -49,7 +49,8 @@ function Cta() {
         <div class="w-11/12 mx-auto drop-shadow-lg">
           <div class="text-2xl leading-snug lg:text-4xl lg:leading-10 text-center">
             Empower your Future!{" "}
-            <span class="text-white">Embrace Student Entrepreneurship.</span>{" "}<br/>
+            <span class="text-white">Embrace Student Entrepreneurship.</span>{" "}
+            <br />
             Start now—it’s free!
           </div>
           <div class="text-center mt-4 lg:mt-10 text-lg md:text-2xl w-fit mx-auto">
@@ -64,7 +65,7 @@ function Cta() {
                   }}
                   class="mx-auto flex lg:mx-0 w-fit cursor-pointer bg-black text-white border border-black text-center p-2 md:p-4 rounded hover:bg-white hover:text-cyan-600"
                 >
-                  Read Latest Post
+                  See This Week's Post
                 </span>
               }
             >

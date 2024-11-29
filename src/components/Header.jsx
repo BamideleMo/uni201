@@ -54,7 +54,7 @@ function Header() {
       <div class="fixed z-40 w-full bg-white">
         <div class="w-full md:w-11/12 2xl:w-9/12 mx-auto px-2 md:px-0 py-1 lg:py-4 flex justify-between border-b border-black">
           <Logo />
-          <div class="flex space-x-8 md:space-x-10 xl:space-x-10 pt-3.5 md:pt-3">
+          <div class="flex space-x-3 md:space-x-10 xl:space-x-10 pt-3.5 md:pt-3">
             <div class="text-base lg:text-sm">
               <Show
                 when={fetching()}
@@ -67,7 +67,7 @@ function Header() {
                     }}
                     class="text-cyan-600 cursor-pointer hover:opacity-60"
                   >
-                    Read Latest Post
+                    See This Week's Post
                   </span>
                 }
               >
