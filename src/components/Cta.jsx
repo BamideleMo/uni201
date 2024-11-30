@@ -48,10 +48,11 @@ function Cta() {
       <div class="w-full mx-auto bg-cyan-600 p-4 lg:p-20 text-yellow-200">
         <div class="w-11/12 mx-auto drop-shadow-lg">
           <div class="text-2xl leading-snug lg:text-4xl lg:leading-10 text-center">
-            Empower your Future!{" "}
-            <span class="text-white">Through Student Entrepreneurship.</span>{" "}
-            <br />
-            Start now—it’s free!
+            Avoid Unemployment After Graduation!{" "}
+            <span class="text-white block">
+              Embrace Student Entrepreneurship.
+            </span>{" "}
+            Start now—it’s free:
           </div>
           <div class="text-center mt-4 lg:mt-10 text-lg md:text-2xl w-fit mx-auto">
             <Show

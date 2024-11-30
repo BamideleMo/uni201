@@ -52,10 +52,10 @@ function Header() {
         <Popup whichForm={whichForm()} whichIssue={whichIssue()} />
       </Show>
       <div class="fixed z-40 w-full bg-white">
-        <div class="w-full md:w-11/12 2xl:w-9/12 mx-auto px-2 md:px-0 py-1 lg:py-4 flex justify-between border-b border-black">
+        <div class="w-full md:w-11/12 2xl:w-9/12 mx-auto px-2 md:px-0 py-1 lg:py-4 flex justify-between">
           <Logo />
-          <div class="flex space-x-4 md:space-x-10 xl:space-x-10 pt-3.5 md:pt-3">
-            <div class="text-base lg:text-sm">
+          <div class="flex space-x-4 md:space-x-10 xl:space-x-12 pt-3.5 md:pt-2 text-base lg:text-lg">
+            <div class="">
               <Show
                 when={fetching()}
                 fallback={
@@ -79,33 +79,11 @@ function Header() {
                 </span>
               </Show>
             </div>
-            <div class="text-base lg:text-sm">
+            <div class="">
               <A href="/about" class="hover:opacity-60">
                 About
               </A>
             </div>
-            {/* <div class="hidden lg:flex space-x-6">
-              <Menu />
-            </div> */}
-            {/* <div class="lg:hidden">
-              <svg
-                onClick={() => {
-                  setMenu(true);
-                }}
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="size-12 cursor-pointer hover:opacity-60 -mr-1.5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"
-                />
-              </svg>
-            </div> */}
           </div>
         </div>
       </div>
