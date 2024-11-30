@@ -35,7 +35,7 @@ function Popup(props) {
           Enter Email to continue {props.close}
         </h2>
         <p class="text-center text-sm w-64 lg:w-72 mx-auto py-2 leading-tight">
-          UNI201 is free, but you must sign in to continue reading.
+          UNI201 is free, but you must sign in or sign up for full access.
         </p>
         <Show when={theForm() === "sign in"}>
           <LoginForm whichIssue={props.whichIssue} />
