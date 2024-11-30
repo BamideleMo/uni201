@@ -66,7 +66,7 @@ function Cta() {
                   }}
                   class="mx-auto flex lg:mx-0 w-fit cursor-pointer bg-black text-white border border-black text-center p-2 md:p-4 rounded hover:bg-white hover:text-cyan-600"
                 >
-                  See This Week's Post
+                  Sign Up/Sign In Now
                 </span>
               }
             >

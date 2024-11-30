@@ -115,7 +115,7 @@ function Hero() {
                     }}
                     class="mx-auto lg:mx-0 w-fit cursor-pointer bg-cyan-600 text-white h-14 border border-cyan-600 text-center items-center flex px-4 rounded hover:bg-white hover:text-cyan-600"
                   >
-                    See This Week's Post
+                    Sign Up/Sign In Now
                   </span>
                 }
               >

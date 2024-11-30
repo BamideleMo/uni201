@@ -67,7 +67,7 @@ function Header() {
                     }}
                     class="text-cyan-600 cursor-pointer hover:opacity-60"
                   >
-                    This Week's Post
+                    Sign Up/Sign In
                   </span>
                 }
               >
