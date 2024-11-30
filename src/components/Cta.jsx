@@ -48,9 +48,9 @@ function Cta() {
       <div class="w-full mx-auto bg-cyan-600 py-10 px-3 lg:p-20 text-yellow-200">
         <div class="w-full mx-auto drop-shadow-lg">
           <div class="text-xl leading-snug lg:text-4xl lg:leading-10 text-left md:text-center">
-            Avoid Unemployment After You Graduate!{" "}
-            <span class="text-white block">
-              Start now: Embrace Student Entrepreneurship.
+            <b class="text-white">Start Now:</b> Avoid Unemployment After You Graduate!{" "}
+            <span class="text-white">
+              Embrace Student Entrepreneurship.
             </span>{" "}
             Learn how in each post—for free:
           </div>
