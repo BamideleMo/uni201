@@ -99,7 +99,7 @@ function Hero() {
               </div>
               <div class="mt-1 md:mt-2">Join 1,003+ Students</div>
             </div>
-            <div class="my-4 md:px-8 lg:px-0 text-lg md:text-xl">
+            <div class="my-4 px-3 md:px-8 lg:px-0 text-lg md:text-xl">
               Get one post every week with tips & insights to build a business
               on campus! <b>Don't be left behind</b> 🚀
             </div>
