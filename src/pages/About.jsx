@@ -28,7 +28,7 @@ function About() {
                 <div class="my-4 space-y-6 text-base">
                   <p>
                     Welcome to UNI201 (
-                    <A href="https://uni201.com.ng">www.uni201.com.ng</A>). If
+                    <a href="https://uni201.com.ng">www.uni201.com.ng</a>). If
                     you're a Nigerian university student, you're in the right
                     place.
                   </p>

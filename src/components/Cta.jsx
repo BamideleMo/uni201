@@ -45,16 +45,16 @@ function Cta() {
       <Show when={popup()}>
         <Popup whichForm={whichForm()} whichIssue={whichIssue()} />
       </Show>
-      <div class="w-full mx-auto bg-cyan-600 p-4 lg:p-20 text-yellow-200">
-        <div class="w-11/12 mx-auto drop-shadow-lg">
-          <div class="text-2xl leading-snug lg:text-4xl lg:leading-10 text-center">
+      <div class="w-full mx-auto bg-cyan-600 p-3 lg:p-20 text-yellow-200">
+        <div class="w-full mx-auto drop-shadow-lg">
+          <div class="text-2xl leading-snug lg:text-4xl lg:leading-10 text-left md:text-center">
             Avoid Unemployment After Graduation!{" "}
             <span class="text-white block">
               Embrace Student Entrepreneurship.
             </span>{" "}
-            Start now—it’s free:
+            Learn how in each post—for free:
           </div>
-          <div class="text-center mt-4 lg:mt-10 text-lg md:text-2xl w-fit mx-auto">
+          <div class="mt-4 lg:mt-10 text-lg md:text-2xl w-fit md:mx-auto">
             <Show
               when={fetching()}
               fallback={
