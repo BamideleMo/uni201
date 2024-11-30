@@ -54,7 +54,7 @@ function Header() {
       <div class="fixed z-40 w-full bg-white">
         <div class="w-full md:w-11/12 2xl:w-9/12 mx-auto px-2 md:px-0 py-1 lg:py-4 flex justify-between">
           <Logo />
-          <div class="flex space-x-4 md:space-x-10 xl:space-x-12 pt-3.5 md:pt-2 text-base lg:text-lg">
+          <div class="uppercase flex space-x-6 md:space-x-10 xl:space-x-12 pt-3.5 md:pt-2 text-base lg:text-lg">
             <div class="">
               <Show
                 when={fetching()}

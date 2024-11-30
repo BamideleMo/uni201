@@ -54,7 +54,7 @@ function Cta() {
             </span>{" "}
             Learn how in each post—for free:
           </div>
-          <div class="mt-4 lg:mt-10 text-lg md:text-2xl w-fit md:mx-auto">
+          <div class="uppercase mt-4 lg:mt-10 text-lg md:text-2xl w-fit md:mx-auto">
             <Show
               when={fetching()}
               fallback={
