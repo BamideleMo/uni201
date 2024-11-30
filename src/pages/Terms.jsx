@@ -24,7 +24,7 @@ function Terms() {
                 </h2>
                 <div class="space-y-6 text-base">
                   <p>
-                    By accessing or using our website (
+                    By accessing or using this website (
                     <a href="https://uni201.com.ng">www.uni201.com.ng</a>), you
                     agree to comply with these Terms of Use. Please read them
                     carefully.

@@ -2,13 +2,14 @@ function Why() {
   return (
     <div class="bg-gray-100 border-y py-12 md:py-20 text-lg">
       <div class="w-11/12 2xl:w-9/12 mx-auto">
-        <h2 class="font-normal text-cyan-600 text-2xl md:text-4xl text-left">
+        <h2 class="font-normal text-cyan-600 text-base md:text-4xl text-left">
           Why UNI201?
         </h2>
         <div class="mt-4 md:mt-6 w-full md:w-full mx-auto grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 md:gap-x-12">
           <div>
             <h3 class="text-xl md:text-3xl">
-              <b>#1</b><br /> Weekly Actionable Tips:
+              <b>#1</b>
+              <br /> Weekly Actionable Tips:
             </h3>
             <div class="my-2 space-y-4 text-gray-700">
               <p>
@@ -24,7 +25,8 @@ function Why() {
           </div>
           <div>
             <h3 class="text-xl md:text-3xl">
-              <b>#2</b><br /> Real-Life Experiences:
+              <b>#2</b>
+              <br /> Real-Life Experiences:
             </h3>
             <div class="my-2 space-y-4 text-gray-700">
               <p>
@@ -40,7 +42,8 @@ function Why() {
           </div>
           <div>
             <h3 class="text-xl md:text-3xl">
-              <b>#3</b><br /> Tailored For Nigeria:
+              <b>#3</b>
+              <br /> Tailored For Nigeria:
             </h3>
             <div class="my-2 space-y-4 text-gray-700">
               <p>
@@ -55,7 +58,8 @@ function Why() {
           </div>
           <div>
             <h3 class="text-xl md:text-3xl">
-              <b>#4</b><br /> For Your Future:
+              <b>#4</b>
+              <br /> For Your Future:
             </h3>
             <div class="my-2 space-y-4 text-gray-700">
               <p>
