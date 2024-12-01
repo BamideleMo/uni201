@@ -35,14 +35,9 @@ function ConfirmEmail() {
 
   return (
     <MetaProvider>
-      <Title>
-        Confirm your email on UNI201 | www.uni201.com.ng
-      </Title>
+      <Title>Confirm your email for UNI201 | www.uni201.com.ng</Title>
       <Link rel="canonical" href="https://uni201.com.ng/" />
-      <Meta
-        name="description"
-        content="Confirm your email"
-      />
+      <Meta name="description" content="Confirm your email" />
       <div>
         <Header />
         <Show when={emailSent()}>
@@ -83,15 +78,22 @@ function ConfirmEmail() {
                   <p>Thanks for your interest to join UNI201.</p>
                   <p>
                     Because this is the first time you're using your email{" "}
-                    <a href={"mailto:" + searchParams.e}>{searchParams.e}</a> on
-                    this website, we need to confirm it is yours. Enter the
-                    confirmation code sent to the email in the box below:
+                    <a class="!text-cyan-600" href={"mailto:" + searchParams.e}>
+                      {searchParams.e}
+                    </a>{" "}
+                    on this website, we need to confirm it is yours.
+                  </p>
+                  <p>
+                    Enter the confirmation code sent to the email in the box
+                    below:
                   </p>
                   <CodeVerificationForm whichIssue={searchParams.i} />
-                  <p>
-                    <span class="text-xs block">
-                      Didn't get the email with a confirmation code? Check your
-                      SPAM folder or click link below to resend:
+                  <p class="bg-cyan-50 p-6 rounded-lg border border-cyan-600">
+                    <span class="block">
+                      Didn't get the email with a confirmation code?
+                      <br />
+                      <b>Check your SPAM folder</b> or click link below to
+                      resend:
                     </span>
                     <span
                       onClick={() => {

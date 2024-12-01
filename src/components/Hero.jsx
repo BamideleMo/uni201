@@ -4,13 +4,8 @@ import { createSignal } from "solid-js";
 import Logo from "./Logo";
 import { useNavigate } from "@solidjs/router";
 import Popup from "./Popup";
-import user1 from "../assets/user1.png";
-import user2 from "../assets/user2.png";
-import user3 from "../assets/user3.png";
-import user4 from "../assets/user4.png";
-import user5 from "../assets/user5.png";
 import screen from "../assets/techINJos-mobile-screen.png";
-import hero from "../assets/hero.webp";
+import Faces from "./Faces";
 
 const VITE_API_URL = import.meta.env["VITE_API_URL"];
 
@@ -62,46 +57,17 @@ function Hero() {
           lg:grid-cols-2 lg:py-0"
         >
           <div class="text-center md:text-center lg:text-left lg:pt-0">
-            <h1 class="uppercase text-xl">Empower Your Future:</h1>
             <h1
               class="text-3xl md:text-4xl lg:text-4xl xl:text-6xl 
-               drop-shadow-lg font-bold"
+               drop-shadow-lg font-semibold"
             >
-              Become a Student Entrepreneur.
+              Avoid Unemployment After Graduation:
             </h1>
-            <div class="text-left my-6 w-fit mx-auto lg:mx-0 flex space-x-1">
-              <div class="flex -space-x-2">
-                <img
-                  src={user1}
-                  alt="subscribers"
-                  class="w-8 h-8 md:w-10 md:h-10 lg:w-10 lg:h-10 rounded-full border-2 border-red-600"
-                />
-                <img
-                  src={user2}
-                  alt="subscribers"
-                  class="w-8 h-8 md:w-10 md:h-10 lg:w-10 lg:h-10 rounded-full border-2 border-red-600"
-                />
-                <img
-                  src={user3}
-                  alt="subscribers"
-                  class="w-8 h-8 md:w-10 md:h-10 lg:w-10 lg:h-10 rounded-full border-2 border-red-600"
-                />
-                <img
-                  src={user4}
-                  alt="subscribers"
-                  class="w-8 h-8 md:w-10 md:h-10 lg:w-10 lg:h-10 rounded-full border-2 border-red-600"
-                />
-                <img
-                  src={user5}
-                  alt="subscribers"
-                  class="w-8 h-8 md:w-10 md:h-10 lg:w-10 lg:h-10 rounded-full border-2 border-red-600"
-                />
-              </div>
-              <div class="mt-1 md:mt-2">Join 1,003+ Students</div>
-            </div>
-            <div class="my-4 px-1 md:px-8 lg:px-0 text-lg md:text-xl">
-              Get one post every week with tips & insights to build a business
-              on campus! <b>Don't be left behind</b> 🚀
+            <h1 class="my-0 capitalize text-lg md:text-3xl text-gray-600">
+              Through Student Entrepreneurship.
+            </h1>
+            <div class="my-2 px-1 md:px-8 lg:px-0 text-lg md:text-xl">
+              <b>Learn how every Friday—for free:</b>
             </div>
             <div class="my-4 space-x-3">
               <Show
@@ -127,9 +93,10 @@ function Hero() {
                 </span>
               </Show>
             </div>
+            <Faces />
           </div>
-          <div class="mt-6 md:mt-0 overflow-hidden h-72 md:h-96">
-            <div class="bg-white overflow-hidden w-72 mx-auto md:w-96 h-72 md:h-96 px-2 lg:float-right">
+          <div class="mt-8 md:mt-4 overflow-hidden h-72 md:h-96">
+            <div class="overflow-hidden w-72 mx-auto md:w-96 h-72 md:h-96 px-2 lg:float-right">
               <img
                 src={screen}
                 alt="tech in Jos mobile display"

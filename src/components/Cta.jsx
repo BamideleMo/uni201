@@ -48,8 +48,8 @@ function Cta() {
       <div class="w-full mx-auto bg-cyan-600 py-10 px-3 lg:p-20 text-yellow-200">
         <div class="w-full mx-auto drop-shadow-lg">
           <div class="text-xl leading-snug lg:text-4xl lg:leading-10 text-left md:text-center">
-            <b class="text-white">Start Now:</b> Avoid Unemployment After You
-            Graduate!{" "}
+            <b class="text-white">Start Now:</b> Avoid Unemployment After
+            Graduation!{" "}
             <span class="text-white md:block">
               Embrace Student Entrepreneurship.
             </span>{" "}

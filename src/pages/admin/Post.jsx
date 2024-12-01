@@ -74,7 +74,7 @@ function Post() {
           mode: "cors",
           headers: {
             Authorization: `Bearer ${
-              JSON.parse(localStorage.getItem("techINJosUser")).token
+              JSON.parse(localStorage.getItem("UNI201User")).token
             }`,
             "Content-Type": "application/json",
             Accept: "application/json",
@@ -84,7 +84,7 @@ function Post() {
         });
         const result = await response.json();
         if (result.response === "Expired token") {
-          localStorage.removeItem("techINJosUser");
+          localStorage.removeItem("UNI201User");
           navigate("/", { replace: true });
         } else if (result.success) {
           setShowSuccess(true);
@@ -101,18 +101,18 @@ function Post() {
 
   const checkUser = async () => {
     if (
-      JSON.parse(localStorage.getItem("techINJosUser")) &&
-      JSON.parse(localStorage.getItem("techINJosUser")).user_role === "admin"
+      JSON.parse(localStorage.getItem("UNI201User")) &&
+      JSON.parse(localStorage.getItem("UNI201User")).user_role === "admin"
     ) {
       const response = await fetch(
         VITE_API_URL +
           "/api/user/" +
-          JSON.parse(localStorage.getItem("techINJosUser")).custom_id,
+          JSON.parse(localStorage.getItem("UNI201User")).custom_id,
         {
           mode: "cors",
           headers: {
             Authorization: `Bearer ${
-              JSON.parse(localStorage.getItem("techINJosUser")).token
+              JSON.parse(localStorage.getItem("UNI201User")).token
             }`,
             "Content-Type": "application/json",
             Accept: "application/json",
@@ -122,7 +122,7 @@ function Post() {
       );
       const result = await response.json();
       if (result.response === "Expired token") {
-        localStorage.removeItem("techINJosUser");
+        localStorage.removeItem("UNI201User");
         navigate("/", { replace: true });
       } else {
         ClassicEditor.create(document.querySelector("#editor"), {
@@ -180,10 +180,10 @@ function Post() {
   });
   return (
     <MetaProvider>
-      <Title>Post - www.techinjos.com.ng</Title>
+      <Title>Post - www.uni201.com.ng</Title>
       <Meta
         name="description"
-        content="Post to techINJos, the #1 Weekly and Quick Brief for Jos' Tech Ecosystem!"
+        content="Post to UNI201"
       />
       <div>
         <Header />
@@ -268,7 +268,7 @@ function Post() {
                     </div>
                     <div>
                       <div>
-                        <label class="">Content Text:</label>
+                        <label class="font-bold">Content Text:</label>
                         <b class="text-red-600">*</b>
                       </div>
                       <div>

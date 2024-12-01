@@ -9,7 +9,7 @@ import Sponsorship from "./pages/Sponsorship";
 import Login from "./pages/admin/Login";
 import Post from "./pages/admin/Post";
 import Issue from "./pages/Issue";
-import ReadPost from "./pages/Post";
+// import ReadPost from "./pages/Post";
 import PostMetaImage from "./pages/admin/PostMetaImage";
 import NotFound from "./pages/NotFound";
 import Archive from "./pages/Archive";

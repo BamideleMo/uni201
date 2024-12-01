@@ -33,18 +33,18 @@ function CodeVerificationForm(props) {
 
     if (
       formData().code ===
-      JSON.parse(localStorage.getItem("techINJosUser")).custom_id
+      JSON.parse(localStorage.getItem("UNI201User")).custom_id
     ) {
       try {
         const response = await fetch(
           VITE_API_URL +
             "/api/edit-user/" +
-            JSON.parse(localStorage.getItem("techINJosUser")).custom_id,
+            JSON.parse(localStorage.getItem("UNI201User")).custom_id,
           {
             mode: "cors",
             headers: {
               Authorization: `Bearer ${
-                JSON.parse(localStorage.getItem("techINJosUser")).token
+                JSON.parse(localStorage.getItem("UNI201User")).token
               }`,
               "Content-Type": "application/json",
               Accept: "application/json",
@@ -68,11 +68,11 @@ function CodeVerificationForm(props) {
           const result = await response.json();
           if (result.success) {
             window.location.replace(
-              "/newsletter/" + result.response[0].issue_number
+              "/post/" + result.response[0].issue_number
             );
           }
         } else {
-          window.location.replace("/newsletter/" + props.whichIssue, {
+          window.location.replace("/post/" + props.whichIssue, {
             replace: true,
           });
         }

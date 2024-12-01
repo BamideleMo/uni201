@@ -28,9 +28,6 @@ function Header() {
       });
       const result = await response.json();
       if (result.success) {
-        // window.location.replace(
-        //   "/newsletter/" + result.response[0].issue_number
-        // );
         setFetching(false);
         navigate("/newsletter/" + result.response[0].issue_number, {
           replace: true,
@@ -59,16 +56,28 @@ function Header() {
               <Show
                 when={fetching()}
                 fallback={
-                  <span
-                    onClick={() => {
-                      JSON.parse(localStorage.getItem("UNI201User"))
-                        ? latestIssue()
-                        : doPopup();
-                    }}
-                    class="text-cyan-600 cursor-pointer hover:opacity-60"
+                  <Show
+                    when={JSON.parse(localStorage.getItem("UNI201User"))}
+                    fallback={
+                      <span
+                        onClick={() => {
+                          JSON.parse(localStorage.getItem("UNI201User"))
+                            ? latestIssue()
+                            : doPopup();
+                        }}
+                        class="text-cyan-600 cursor-pointer hover:opacity-60"
+                      >
+                        Sign Up/Sign In
+                      </span>
+                    }
                   >
-                    Sign Up/Sign In
-                  </span>
+                    <A
+                      href="/"
+                      class="text-cyan-600 cursor-pointer hover:opacity-60"
+                    >
+                      Latest Post
+                    </A>
+                  </Show>
                 }
               >
                 <span class="flex text-cyan-600 space-x-1 opacity-60 cursor-wait">

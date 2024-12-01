@@ -1,6 +1,6 @@
 import { A, useNavigate } from "@solidjs/router";
 import { MetaProvider, Title, Meta, Link } from "@solidjs/meta";
-import { createSignal } from "solid-js";
+import { createSignal, createEffect } from "solid-js";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import screen from "./assets/techINJos-mobile-screen.png";
@@ -11,6 +11,13 @@ import Cta from "./components/Cta";
 const VITE_API_URL = import.meta.env["VITE_API_URL"];
 
 function App() {
+  const navigate = useNavigate();
+
+  // createEffect(() => {
+  //   if (JSON.parse(localStorage.getItem("UNI201User"))) {
+  //     navigate("/post", { replace: true });
+  //   }
+  // });
   return (
     <MetaProvider>
       <Title>UNI201 - Empower Your Future | www.uni201.com.ng</Title>
