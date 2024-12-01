@@ -11,7 +11,7 @@ function Why() {
               <b>#1</b>
               <br /> Weekly Actionable Tips:
             </h3>
-            <div class="my-2 space-y-4 text-gray-700">
+            <div class="my-2 space-y-4 text-gray-500">
               <p>
                 Every Friday evening, you'll get simple, no-nonsense advice that
                 you can apply right away.
@@ -28,7 +28,7 @@ function Why() {
               <b>#2</b>
               <br /> Real-Life Experiences:
             </h3>
-            <div class="my-2 space-y-4 text-gray-700">
+            <div class="my-2 space-y-4 text-gray-500">
               <p>
                 This is not just about theories—but real-life experiences of
                 people who embraced student entrepreneurship & the outcome they
@@ -45,7 +45,7 @@ function Why() {
               <b>#3</b>
               <br /> Tailored For Nigeria:
             </h3>
-            <div class="my-2 space-y-4 text-gray-700">
+            <div class="my-2 space-y-4 text-gray-500">
               <p>
                 Everyone knows that Nigeria has it's unique challenges & to
                 succeed, you must learn to tackle these challenges.
@@ -61,7 +61,7 @@ function Why() {
               <b>#4</b>
               <br /> For Your Future:
             </h3>
-            <div class="my-2 space-y-4 text-gray-700">
+            <div class="my-2 space-y-4 text-gray-500">
               <p>
                 UNI201 isn’t just about campus business tips; it’s about
                 preparing you for the future.

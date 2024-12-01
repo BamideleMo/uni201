@@ -1,4 +1,3 @@
-
 import { createSignal } from "solid-js";
 import { useNavigate } from "@solidjs/router";
 import Popup from "./Popup";
@@ -60,13 +59,13 @@ function Hero() {
             >
               Avoid Unemployment After Graduation:
             </h1>
-            <h1 class="mt-3 capitalize text-lg md:text-3xl text-red-600">
+            <h1 class="md:mt-3 capitalize text-xl md:text-3xl text-red-600">
               Through Student Entrepreneurship.
             </h1>
             <div class="my-2 px-1 md:px-8 lg:px-0 text-lg md:text-xl">
               <b>Learn how every Friday—for free:</b>
             </div>
-            <div class="mt-4 mb-2 space-x-3">
+            <div class="md:mt-4 mb-2 space-x-3">
               <Show
                 when={fetching()}
                 fallback={
@@ -76,13 +75,13 @@ function Hero() {
                         ? latestIssue()
                         : doPopup();
                     }}
-                    class="mx-auto uppercase lg:mx-0 w-fit cursor-pointer bg-cyan-600 text-white h-14 border border-cyan-600 text-center items-center flex px-4 rounded hover:bg-white hover:text-cyan-600"
+                    class="mx-auto uppercase lg:mx-0 w-fit cursor-pointer bg-cyan-600 text-white p-2 md:p-4 border border-cyan-600 text-center items-center flex px-4 rounded hover:bg-white hover:text-cyan-600"
                   >
                     Sign Up/Sign In Now
                   </span>
                 }
               >
-                <span class="mx-auto lg:mx-0 w-fit space-x-6 cursor-wait border border-cyan-600 bg-cyan-600 opacity-60 text-white h-14 items-center flex px-4 rounded">
+                <span class="mx-auto lg:mx-0 w-fit space-x-6 cursor-wait border border-cyan-600 bg-cyan-600 opacity-60 text-white p-2 md:p-4 items-center flex px-4 rounded">
                   <span>Fetching Post.. .</span>
                   <span class="animate-spin mx-auto w-4 h-4 bg-transparent border-2 border-red-600 rounded">
                     &nbsp;
