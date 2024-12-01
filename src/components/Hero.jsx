@@ -59,7 +59,7 @@ function Hero() {
             >
               Avoid Unemployment After Graduation:
             </h1>
-            <h1 class="md:mt-3 capitalize text-lg md:text-3xl text-red-600 font-bold">
+            <h1 class="md:mt-3 capitalize text-2xl md:text-3xl text-red-600 font-bold">
               Through Student Entrepreneurship.
             </h1>
             <div class="my-2 px-1 md:px-8 lg:px-0 text-lg md:text-xl">
