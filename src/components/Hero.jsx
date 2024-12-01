@@ -1,16 +1,13 @@
-import Menu from "./Menu";
-import { A } from "@solidjs/router";
+
 import { createSignal } from "solid-js";
-import Logo from "./Logo";
 import { useNavigate } from "@solidjs/router";
 import Popup from "./Popup";
-import screen from "../assets/techINJos-mobile-screen.png";
+import screen from "../assets/uni201-mobile-screen.png";
 import Faces from "./Faces";
 
 const VITE_API_URL = import.meta.env["VITE_API_URL"];
 
 function Hero() {
-  const [menu, setMenu] = createSignal(false);
   const navigate = useNavigate();
   const [popup, setPopup] = createSignal(false);
   const [whichForm, setWhichForm] = createSignal("");
@@ -59,17 +56,17 @@ function Hero() {
           <div class="text-center md:text-center lg:text-left lg:pt-0">
             <h1
               class="text-3xl md:text-4xl lg:text-4xl xl:text-6xl 
-               drop-shadow-lg font-semibold"
+               drop-shadow-lg font-bold"
             >
               Avoid Unemployment After Graduation:
             </h1>
-            <h1 class="my-0 capitalize text-lg md:text-3xl text-gray-600">
+            <h1 class="mt-3 capitalize text-lg md:text-3xl text-red-600">
               Through Student Entrepreneurship.
             </h1>
             <div class="my-2 px-1 md:px-8 lg:px-0 text-lg md:text-xl">
               <b>Learn how every Friday—for free:</b>
             </div>
-            <div class="my-4 space-x-3">
+            <div class="mt-4 mb-2 space-x-3">
               <Show
                 when={fetching()}
                 fallback={

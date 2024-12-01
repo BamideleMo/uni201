@@ -29,7 +29,7 @@ function Header() {
       const result = await response.json();
       if (result.success) {
         setFetching(false);
-        navigate("/newsletter/" + result.response[0].issue_number, {
+        navigate("/post/" + result.response[0].issue_number, {
           replace: true,
         });
       }
@@ -51,7 +51,7 @@ function Header() {
       <div class="fixed z-40 w-full bg-white">
         <div class="w-full md:w-11/12 2xl:w-9/12 mx-auto px-2 md:px-0 py-1 lg:py-4 flex justify-between">
           <Logo />
-          <div class="uppercase flex space-x-6 md:space-x-10 xl:space-x-12 pt-3.5 md:pt-2 text-base lg:text-lg">
+          <div class="uppercase flex space-x-6 md:space-x-10 xl:space-x-12 pt-3.5 lg:pt-2 text-base lg:text-lg">
             <div class="">
               <Show
                 when={fetching()}
@@ -61,9 +61,7 @@ function Header() {
                     fallback={
                       <span
                         onClick={() => {
-                          JSON.parse(localStorage.getItem("UNI201User"))
-                            ? latestIssue()
-                            : doPopup();
+                          doPopup();
                         }}
                         class="text-cyan-600 cursor-pointer hover:opacity-60"
                       >
@@ -71,12 +69,14 @@ function Header() {
                       </span>
                     }
                   >
-                    <A
-                      href="/"
+                    <span
+                      onClick={() => {
+                        latestIssue();
+                      }}
                       class="text-cyan-600 cursor-pointer hover:opacity-60"
                     >
                       Latest Post
-                    </A>
+                    </span>
                   </Show>
                 }
               >

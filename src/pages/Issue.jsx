@@ -25,9 +25,9 @@ function Issue() {
   const issueDetails = async () => {
     if (JSON.parse(localStorage.getItem("UNI201User"))) {
       setPopup(false);
-    }
 
-    await getUser();
+      await getUser();
+    }
 
     const response = await fetch(
       VITE_API_URL + "/open/view-posts/" + params.issueNumber,
@@ -139,7 +139,7 @@ function Issue() {
         <Header />
 
         <div class="pt-20 md:pt-24">
-          <div class="w-full md:w-11/12 2xl:w-9/12 mx-auto backgound-color pt-0 md:p-12 lg:p-12">
+          <div class="w-full md:w-11/12 2xl:w-9/12 mx-auto pt-0 md:px-12 lg:px-12">
             <div class="content md:w-10/12 lg:w-7/12 2xl:w-6/12 mx-auto">
               <Show
                 when={resource.loading}
@@ -148,7 +148,7 @@ function Issue() {
                     <For each={resource().issue}>
                       {(post, i) => (
                         <>
-                          <div class=" bg-white p-2 md:p-6">
+                          <div class="bg-white px-2 md:px-6">
                             <h2 class="text-base md:text-xl border-b-2 border-black pb-2">
                               <span class={post.post_bg + " " + "p-1"}>
                                 {post.post_highlight}
