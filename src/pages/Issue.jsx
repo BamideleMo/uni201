@@ -353,8 +353,8 @@ function Issue() {
                   <A href="https://uni201.com.ng" class="name">
                     UNI201
                   </A>{" "}
-                  is a weekly post focused on helping Nigerian students in
-                  Nigerian Universities embrace and pursue entrepreneurship
+                  is focused on helping Nigerian students in
+                  Nigerian universities embrace and pursue entrepreneurship
                   before graduation.
                 </div>
               </div>
