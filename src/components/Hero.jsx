@@ -54,7 +54,7 @@ function Hero() {
         >
           <div class="text-center md:text-center lg:text-left lg:pt-0">
             <h1
-              class="text-3xl md:text-4xl lg:text-4xl xl:text-6xl 
+              class="text-4xl md:text-4xl lg:text-4xl xl:text-6xl 
                drop-shadow-lg font-bold"
             >
               Avoid Unemployment After Graduation:
