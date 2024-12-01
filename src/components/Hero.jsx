@@ -91,7 +91,7 @@ function Hero() {
             </div>
             <Faces />
           </div>
-          <div class="mt-8 md:mt-4 overflow-hidden h-72 md:h-96">
+          <div class="mt-8 md:mt-6 overflow-hidden h-72 md:h-96">
             <div class="overflow-hidden w-72 mx-auto md:w-96 h-72 md:h-96 px-2 lg:float-right">
               <img
                 src={screen}

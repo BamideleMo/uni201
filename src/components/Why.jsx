@@ -2,7 +2,7 @@ function Why() {
   return (
     <div class="bg-gray-100 border-y py-12 md:py-20 text-lg">
       <div class="w-11/12 2xl:w-9/12 mx-auto">
-        <h2 class="font-normal text-cyan-600 text-2xl md:text-4xl text-left">
+        <h2 class="font-bold text-cyan-600 text-2xl md:text-4xl text-center md:text-left">
           Why UNI201?
         </h2>
         <div class="mt-4 md:mt-6 w-full md:w-full mx-auto grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 md:gap-x-12">
@@ -13,13 +13,13 @@ function Why() {
             </h3>
             <div class="my-2 space-y-4 text-gray-500">
               <p>
-                Every Friday evening, you'll get simple, no-nonsense advice that
-                you can apply right away.
+                Every Friday evening, you'll get a simple, no-nonsense post with
+                advice that you can apply right away.
               </p>
               <p>
                 Whether you’re looking to start a small side hustle or scale a
-                campus business, each post is designed to help you take action
-                and see results.
+                campus business, each post will help you take action and see
+                results.
               </p>
             </div>
           </div>
@@ -43,7 +43,7 @@ function Why() {
           <div>
             <h3 class="text-xl md:text-3xl">
               <b>#3</b>
-              <br /> Tailored For Nigeria:
+              <br /> Contextualized For Nigeria:
             </h3>
             <div class="my-2 space-y-4 text-gray-500">
               <p>

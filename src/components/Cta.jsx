@@ -53,7 +53,7 @@ function Cta() {
             <span class="text-white md:block">
               Embrace Student Entrepreneurship.
             </span>{" "}
-            Learn how in each post—for free:
+            Learn how every Friday—for FREE:
           </div>
           <div class="uppercase mt-4 lg:mt-10 text-lg md:text-2xl w-fit md:mx-auto">
             <Show
