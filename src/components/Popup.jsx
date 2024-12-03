@@ -42,8 +42,7 @@ function Popup(props) {
             Create an Account
           </h2>
           <p class="text-center text-sm w-full mx-auto py-2 leading-tight">
-            UNI201 is free, but you must enter your email to create an account
-            for FREE access.
+            UNI201 is free, but you must create an account to proceed.
           </p>
         </Show>
         <LoginForm />
