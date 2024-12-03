@@ -48,7 +48,7 @@ function Header() {
       <Show when={popup()}>
         <Popup whichForm={whichForm()} whichIssue={whichIssue()} />
       </Show>
-      <div class="fixed z-40 w-full bg-white border-b">
+      <div class="fixed z-40 w-full bg-white shadow-lg">
         <div class="w-full md:w-11/12 2xl:w-9/12 mx-auto px-2 md:px-0 py-3 lg:py-4 flex justify-between">
           <Logo />
           <div class="pt-1 lg:pt-1.5 text-lg lg:text-lg">
