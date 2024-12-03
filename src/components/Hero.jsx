@@ -62,7 +62,7 @@ function Hero() {
             <h1 class="md:mt-3 capitalize text-xl md:text-3xl text-red-600">
               Embrace Student Entrepreneurship.
             </h1>
-            <div class="mx-2 md:mx-0 bg-cyan-50 border border-cyan-100 rounded-lg p-4 mt-4">
+            <div class="mx-2 md:mx-0 bg-cyan-100 border border-cyan-200 rounded-lg p-4 mt-4">
               <div class="mt-0 mb-0 px-1 md:px-8 lg:px-0 text-lg md:text-xl leading-tight">
                 Join 1,003+ other students to learn how every Friday—for FREE:
               </div>
