@@ -61,7 +61,7 @@ function Cta() {
                 onClick={() => {
                   doPopup("sign in");
                 }}
-                class="bg-cyan-700 border border-white p-4 rounded-md text-white cursor-pointer hover:opacity-60"
+                class="bg-cyan-700 border border-white p-3 rounded-md text-white cursor-pointer hover:opacity-60"
               >
                 Sign In
               </span>
@@ -69,7 +69,7 @@ function Cta() {
                 onClick={() => {
                   doPopup("create an account");
                 }}
-                class="bg-red-600 border border-white p-4 rounded-md text-white cursor-pointer hover:opacity-60"
+                class="bg-red-600 border border-white p-3 rounded-md text-white cursor-pointer hover:opacity-60"
               >
                 Create an Account
               </span>
