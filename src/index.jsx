@@ -15,6 +15,7 @@ import NotFound from "./pages/NotFound";
 import Archive from "./pages/Archive";
 import ConfirmEmail from "./pages/ConfirmEmail";
 import Terms from "./pages/Terms";
+import Welcome from "./pages/Welcome";
 
 const root = document.getElementById("root");
 
@@ -29,7 +30,7 @@ render(
     <Router>
       <Route path="/" component={App} />
       <Route path="/about" component={About} />
-      <Route path="/sponsorship" component={Sponsorship} />
+      <Route path="/welcome" component={Welcome} />
       <Route path="/archive" component={Archive} />
       <Route path="/terms" component={Terms} />
       <Route path="/post/:issueNumber" component={Issue} />
