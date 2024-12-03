@@ -9,7 +9,7 @@ function Footer() {
   };
   return (
     <div class="bg-white border-t py-10 mt-0 lg:p-20 xl:py-28 text-slate-950 text-sm text-center space-y-6">
-      <div class="space-x-4 text-center text-gray-400 text-base">
+      <div class="space-x-2 md:space-x-4 text-center text-gray-400 text-base">
         <A href="/about">About</A>
         <b>.</b>
         <A href="/terms">Terms of use</A>
@@ -21,12 +21,12 @@ function Footer() {
         <div class="text-gray-400 -mt-1">www.uni201.com.ng</div>
       </div>
       <Show when={JSON.parse(localStorage.getItem("UNI201User"))}>
-        <div class="py-3 text-center">
+        <div class="py-0 text-center">
           <span
             onClick={() => {
               logOut();
             }}
-            class="cursor-pointer"
+            class="cursor-pointer text-yellow-500 hover:opacity-60"
           >
             Sign Out
           </span>

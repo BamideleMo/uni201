@@ -59,6 +59,11 @@ function Welcome() {
                     entrepreneurship to shape their futures.
                   </p>
                   <p>
+                    Your time in Uni is the perfect opportunity to lay the
+                    foundation for a brighter, independent future. By taking
+                    small steps now, you’ll be miles ahead after graduation!
+                  </p>
+                  <p>
                     <b>Here’s what you will get:</b>
                   </p>
                   <ul class="mx-4 space-y-4">
@@ -100,15 +105,6 @@ function Welcome() {
                       .
                     </li>
                   </ul>
-                  <p>
-                    <b>Know this:</b>
-                  </p>
-                  <p>
-                    Your time in Uni is the perfect opportunity to lay the
-                    foundation for a brighter, independent future. By taking
-                    small steps now, you’ll be miles ahead after graduation!
-                  </p>
-                  <p>Welcome aboard! 🚀</p>
                 </div>
               </div>
             </div>
