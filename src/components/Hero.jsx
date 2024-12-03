@@ -64,7 +64,7 @@ function Hero() {
             </h1>
             <div class="mx-2 md:mx-0 bg-cyan-100 border border-cyan-200 rounded-lg p-2 mt-4">
               <div class="mt-0 mb-0 px-1 md:px-8 lg:px-0 text-lg md:text-xl leading-tight">
-                Get 1 Post Every Friday to Learn How—for FREE:
+                Get 1 Post Every Friday To Learn How To Do It—For FREE:
               </div>
               <div class="md:mt-6">
                 <div class="space-x-4 mt-6 mb-4">
@@ -72,7 +72,7 @@ function Hero() {
                     onClick={() => {
                       doPopup("sign in");
                     }}
-                    class="bg-cyan-600 p-4 rounded-md text-white cursor-pointer hover:opacity-60"
+                    class="bg-cyan-600 p-3 rounded-md text-white cursor-pointer hover:opacity-60"
                   >
                     Sign In
                   </span>
@@ -80,7 +80,7 @@ function Hero() {
                     onClick={() => {
                       doPopup("create an account");
                     }}
-                    class="bg-red-600 p-4 rounded-md text-white cursor-pointer hover:opacity-60"
+                    class="bg-red-600 p-3 rounded-md text-white cursor-pointer hover:opacity-60"
                   >
                     Create an Account
                   </span>

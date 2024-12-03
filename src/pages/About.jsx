@@ -33,9 +33,9 @@ function About() {
                   </p>
 
                   <p>
-                    <b>UNI201</b> is a weekly post focused on helping Nigerian
-                    students in Nigerian universities embrace and pursue
-                    entrepreneurship before graduation.
+                    <b>UNI201</b> is a weekly post focused on helping students
+                    in Nigerian universities embrace and pursue entrepreneurship
+                    before graduation.
                   </p>
                   <p>
                     <b>Because</b>, one of the ways to avoid unemployment and

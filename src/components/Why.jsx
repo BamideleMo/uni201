@@ -1,6 +1,6 @@
 function Why() {
   return (
-    <div class="bg-gray-100 border-y py-12 md:py-20 text-lg">
+    <div class="bg-gray-100 border-y py-12 md:py-20 text-base md:text-lg">
       <div class="w-11/12 2xl:w-9/12 mx-auto">
         <h2 class="font-bold text-cyan-600 text-2xl md:text-4xl text-center md:text-left">
           Why UNI201?
