@@ -163,11 +163,11 @@ function Issue() {
                             ></div>
                           </div>
                           <div
-                            class="mb-12 border-t border-gray-200 bg-white 
-                          px-2 md:px-6 py-4 text-xs flex justify-between"
+                            class="mb-12 border-2 border-dashed rounded-xl border-blue-400 bg-white 
+                          px-2 md:px-6 py-4 text-xs mx-2 md:mx-6 flex justify-between"
                           >
-                            <div></div>
-                            <div class="shares flex space-x-4">
+                            <div class="grow hidden md:block">&nbsp;</div>
+                            <div class="shares w-full md:w-fit mx-auto flex justify-between md:space-x-2">
                               <a
                                 target="_blank"
                                 href={
@@ -187,7 +187,7 @@ function Issue() {
                                     class="w-8 py-1.5"
                                   />
                                 </div>
-                                <div class="">Share on X</div>
+                                <div class="">Share Post on X</div>
                               </a>
                               <a
                                 target="_blank"
@@ -215,35 +215,9 @@ function Issue() {
                         </>
                       )}
                     </For>
-
-                    <div class="mb-12 bg-white p-2 md:p-6">
-                      <div class="rounded-lg border-2 border-dashed border-blue-600 p-4 space-y-6">
-                        <p>
-                          <span
-                            class="text-base md:text-xl 
-                          text-blue-700 bg-white p-1"
-                          >
-                            👋🏾 Are you on WhatsApp?
-                          </span>
-                        </p>
-                        <p class="">
-                          <b>Join our WhatsApp Channel</b> & never get to miss
-                          any Post.
-                        </p>
-                        <p class="pb-3">
-                          <a
-                            href="https://whatsapp.com/channel/0029VaEVLBHBfxoG5GZxz72v"
-                            target="_blank"
-                            class="bg-blue-700 text-xs p-3 rounded hover:opacity-60"
-                          >
-                            <b class="text-white">Join now</b>
-                          </a>
-                        </p>
-                      </div>
-                    </div>
                     <div class="mb-12 bg-white p-2 md:p-6">
                       <h2 class="text-base md:text-xl border-b-2 border-black pb-2">
-                        <span class="bg-orange-300 p-1">Share UNI201</span>
+                        <span class="bg-green-300 p-1">Share UNI201</span>
                       </h2>
                       <h1 class="my-2 text-xl md:text-2xl leading-tight font-bold">
                         💪🏾 <b>Help us grow</b>.
@@ -260,33 +234,9 @@ function Issue() {
                               )
                             }
                           >
-                            send him/her a WhatsApp chat
+                            send him or her a WhatsApp chat
                           </a>
                           .
-                        </p>
-                        <p>
-                          <a
-                            target="_blank"
-                            href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Funi201.com.ng%2F&amp;src=sdkpreparse"
-                            class="fb-xfbml-parse-ignore"
-                          >
-                            Share UNI201
-                          </a>{" "}
-                          on Facebook.
-                        </p>
-                        <p>
-                          <a
-                            target="_blank"
-                            href={
-                              "https://twitter.com/intent/tweet?text=" +
-                              encodeURI(
-                                "Check out UNI201 @UNI201_NG for tips and ideas on student entrepreneurship focused on Nigerian Uni students. 🤖 https://uni201.com.ng"
-                              )
-                            }
-                          >
-                            Share UNI201
-                          </a>{" "}
-                          on X (formerly Twitter).
                         </p>
                       </div>
                     </div>
@@ -312,7 +262,7 @@ function Issue() {
                         <p>
                           <b>Remember:</b>
                           <br /> We'll post another idea or tip{" "}
-                          <b>next Saturday morning</b>. See you then!
+                          <i>next Friday evening</i>. See you then!
                         </p>
                       </div>
                     </div>
@@ -353,9 +303,9 @@ function Issue() {
                   <A href="https://uni201.com.ng" class="name">
                     UNI201
                   </A>{" "}
-                  is focused on helping Nigerian students in
-                  Nigerian universities embrace and pursue entrepreneurship
-                  before graduation.
+                  is a weekly post focused on helping students in Nigerian
+                  universities embrace and pursue entrepreneurship before
+                  graduation.
                 </div>
               </div>
             </div>

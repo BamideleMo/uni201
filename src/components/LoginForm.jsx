@@ -63,31 +63,23 @@ function LoginForm(props) {
         localStorage.setItem("UNI201User", JSON.stringify(data()));
         if (result.response.status === "unconfirmed") {
           window.location.replace(
-            "/confirm-email?e=" + uname + "&i=" + props.whichIssue,
+            "/confirm-email?e=" + uname + "&i=" + "qwertymnbvcxa1234560987asdfg",
             {
               replace: true,
             }
           );
         } else {
-          if (props.whichIssue === "latest") {
-            const response = await fetch(VITE_API_URL + "/open/latest-post", {
-              mode: "cors",
-              headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json",
-              },
-              method: "GET",
-            });
-            const result = await response.json();
-            if (result.success) {
-              window.location.replace(
-                "/post/" + result.response[0].issue_number
-              );
-            }
-          } else {
-            window.location.replace("/post/" + props.whichIssue, {
-              replace: true,
-            });
+          const response = await fetch(VITE_API_URL + "/open/latest-post", {
+            mode: "cors",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            method: "GET",
+          });
+          const result = await response.json();
+          if (result.success) {
+            window.location.replace("/post/" + result.response[0].issue_number);
           }
         }
       }

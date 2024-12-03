@@ -10,33 +10,33 @@ function Cta() {
   const [whichForm, setWhichForm] = createSignal("");
   const [whichIssue, setWhichIssue] = createSignal("");
 
-  const [fetching, setFetching] = createSignal(false);
+  // const [fetching, setFetching] = createSignal(false);
 
-  const latestIssue = async () => {
-    setFetching(true);
-    try {
-      const response = await fetch(VITE_API_URL + "/open/latest-post", {
-        mode: "cors",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        method: "GET",
-      });
-      const result = await response.json();
-      if (result.success) {
-        navigate("/newsletter/" + result.response[0].issue_number, {
-          replace: true,
-        });
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  // const latestIssue = async () => {
+  //   setFetching(true);
+  //   try {
+  //     const response = await fetch(VITE_API_URL + "/open/latest-post", {
+  //       mode: "cors",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         Accept: "application/json",
+  //       },
+  //       method: "GET",
+  //     });
+  //     const result = await response.json();
+  //     if (result.success) {
+  //       navigate("/newsletter/" + result.response[0].issue_number, {
+  //         replace: true,
+  //       });
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
-  const doPopup = () => {
+  const doPopup = (which) => {
     setPopup(true);
-    setWhichForm("sign in");
+    setWhichForm(which);
     setWhichIssue("latest");
   };
 
@@ -55,29 +55,25 @@ function Cta() {
             </span>{" "}
             Learn how every Friday—for FREE:
           </div>
-          <div class="uppercase mt-4 lg:mt-10 text-lg md:text-2xl w-fit md:mx-auto">
-            <Show
-              when={fetching()}
-              fallback={
-                <span
-                  onClick={() => {
-                    JSON.parse(localStorage.getItem("UNI201User"))
-                      ? latestIssue()
-                      : doPopup();
-                  }}
-                  class="mx-auto flex lg:mx-0 w-fit cursor-pointer bg-black text-white border border-black text-center p-2 md:p-4 rounded hover:bg-white hover:text-cyan-600"
-                >
-                  Sign Up/Sign In Now
-                </span>
-              }
-            >
-              <span class="mx-auto lg:mx-0 w-fit space-x-6 cursor-wait border border-cyan-600 bg-slate-600 opacity-60 text-white items-center flex p-2 md:p-4 rounded">
-                <span>Fetching Post.. .</span>
-                <span class="animate-spin mx-auto w-3 h-3 bg-transparent border-2 border-white rounded">
-                  &nbsp;
-                </span>
+          <div class="mt-4 lg:mt-10 text-lg md:text-2xl w-fit md:mx-auto">
+            <div class="space-x-4 mt-6 mb-4">
+              <span
+                onClick={() => {
+                  doPopup("sign in");
+                }}
+                class="bg-cyan-700 border border-white p-4 rounded-md text-white cursor-pointer hover:opacity-60"
+              >
+                Sign In
               </span>
-            </Show>
+              <span
+                onClick={() => {
+                  doPopup("create an account");
+                }}
+                class="bg-red-600 border border-white p-4 rounded-md text-white cursor-pointer hover:opacity-60"
+              >
+                Create an Account
+              </span>
+            </div>
           </div>
         </div>
       </div>

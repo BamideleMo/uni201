@@ -56,32 +56,28 @@ function CodeVerificationForm(props) {
           }
         );
         const result = await response.json();
-        if (props.whichIssue === "latest") {
-          const response = await fetch(VITE_API_URL + "/open/latest-post", {
-            mode: "cors",
-            headers: {
-              "Content-Type": "application/json",
-              Accept: "application/json",
-            },
-            method: "GET",
-          });
-          const result = await response.json();
-          if (result.success) {
-            window.location.replace(
-              "/post/" + result.response[0].issue_number
-            );
-          }
-        } else {
-          window.location.replace("/post/" + props.whichIssue, {
-            replace: true,
-          });
-        }
+        getLatest();
       } catch (error) {
         console.error(error);
       }
     } else {
       setInvalidCode(true);
       setIsProcessing(false);
+    }
+  };
+
+  const getLatest = async () => {
+    const response = await fetch(VITE_API_URL + "/open/latest-post", {
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      method: "GET",
+    });
+    const result = await response.json();
+    if (result.success) {
+      window.location.replace("/post/" + result.response[0].issue_number);
     }
   };
   return (

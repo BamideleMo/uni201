@@ -2,7 +2,6 @@ import { A } from "@solidjs/router";
 import { MetaProvider, Title, Link, Meta } from "@solidjs/meta";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import techINJos from "../assets/about-techINJos.png";
 
 function Terms() {
   return (

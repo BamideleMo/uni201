@@ -31,15 +31,22 @@ function Popup(props) {
   return (
     <div class="z-50 bg-black w-screen h-screen bg-opacity-95 fixed flex items-center top-0 bottom-0 left-0 right-0">
       <div class="rounded w-11/12 md:w-96 mx-auto text-sm bg-white p-4 border-b-8 border-cyan-600">
-        <h2 class="text-lg text-center text-slate-800 font-bold">
-          Enter Email to continue {props.close}
-        </h2>
-        <p class="text-center text-sm w-64 lg:w-72 mx-auto py-2 leading-tight">
-          UNI201 is free, but you must sign in or sign up for full access.
-        </p>
         <Show when={theForm() === "sign in"}>
-          <LoginForm whichIssue={props.whichIssue} />
+          <h2 class="text-lg text-center text-slate-800 font-bold">Sign in</h2>
+          <p class="text-center text-sm w-full mx-auto py-2 leading-tight">
+            Please enter your email to sign in & proceed.
+          </p>
         </Show>
+        <Show when={theForm() === "create an account"}>
+          <h2 class="text-lg text-center text-slate-800 font-bold">
+            Create an Account
+          </h2>
+          <p class="text-center text-sm w-full mx-auto py-2 leading-tight">
+            UNI201 is free, but you must enter your email to create an account
+            for FREE access.
+          </p>
+        </Show>
+        <LoginForm />
       </div>
     </div>
   );

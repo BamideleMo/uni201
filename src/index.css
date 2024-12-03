@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: regularPoppins;
+  src: url(assets/font/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: regularPoppins;
+  src: url(assets/font/Poppins-Bold.ttf);
+  font-weight: bold;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -9,58 +20,63 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", serif;
+  font-family: regularPoppins;
   font-weight: 400;
   font-style: normal;
 }
-.name, .content p a, .content p a span, .content li a span{
+
+.name,
+.content p a,
+.content p a span,
+.content li a span {
   color: #ff3300 !important;
 }
 
-.content .green{
+.content .green {
   background-color: #86efac !important;
 }
-.content .purple{
+.content .purple {
   background-color: #d8b4fe !important;
 }
-.content .yellow{
+.content .yellow {
   background-color: #fde047 !important;
 }
-.content .cyan{
+.content .cyan {
   background-color: #67e8f9 !important;
 }
-.content .pink{
+.content .pink {
   background-color: #f472b5 !important;
 }
-.content .fuchsia{
+.content .fuchsia {
   background-color: #f0abfc !important;
 }
-.content img{
+.content img {
   border-radius: 10px;
   margin: 0 auto !important;
 }
-.content ul{
+.content ul {
   list-style-type: disc;
   padding: 0 20px;
 }
 
-.content ul li{
+.content ul li {
   margin: 22px 0;
 }
-.backgound-color{
-  background-color: #F2F2F2;
+.backgound-color {
+  background-color: #f2f2f2;
 }
-.custom-width{
+.custom-width {
   width: 300px;
 }
-.cke_inner{
+.cke_inner {
   height: 500px !important;
   background-color: red !important;
 }
-.cke_contents{
+.cke_contents {
   height: 396px !important;
 }
 
-.ck-editor__main,.ck-content{
+.ck-editor__main,
+.ck-content {
   height: 396px !important;
 }

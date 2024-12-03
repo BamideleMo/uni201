@@ -14,100 +14,62 @@ function Header() {
   const [whichForm, setWhichForm] = createSignal("");
   const [whichIssue, setWhichIssue] = createSignal("");
 
-  const [fetching, setFetching] = createSignal(false);
-  const latestIssue = async () => {
-    setFetching(true);
-    try {
-      const response = await fetch(VITE_API_URL + "/open/latest-post", {
-        mode: "cors",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        method: "GET",
-      });
-      const result = await response.json();
-      if (result.success) {
-        setFetching(false);
-        navigate("/post/" + result.response[0].issue_number, {
-          replace: true,
-        });
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  // const [fetching, setFetching] = createSignal(false);
+  // const latestIssue = async () => {
+  //   setFetching(true);
+  //   try {
+  //     const response = await fetch(VITE_API_URL + "/open/latest-post", {
+  //       mode: "cors",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         Accept: "application/json",
+  //       },
+  //       method: "GET",
+  //     });
+  //     const result = await response.json();
+  //     if (result.success) {
+  //       setFetching(false);
+  //       navigate("/post/" + result.response[0].issue_number, {
+  //         replace: true,
+  //       });
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
-  const doPopup = () => {
-    setPopup(true);
-    setWhichForm("sign in");
-    setWhichIssue("latest");
-  };
+  // const doPopup = () => {
+  //   setPopup(true);
+  //   setWhichForm("sign in");
+  //   setWhichIssue("latest");
+  // };
   return (
     <>
       <Show when={popup()}>
         <Popup whichForm={whichForm()} whichIssue={whichIssue()} />
       </Show>
-      <div class="fixed z-40 w-full bg-white">
-        <div class="w-full md:w-11/12 2xl:w-9/12 mx-auto px-2 md:px-0 py-1 lg:py-4 flex justify-between">
+      <div class="fixed z-40 w-full bg-white border-b">
+        <div class="w-full md:w-11/12 2xl:w-9/12 mx-auto px-2 md:px-0 py-3 lg:py-4 flex justify-between">
           <Logo />
-          <div class="uppercase flex space-x-6 md:space-x-10 xl:space-x-12 pt-3.5 lg:pt-2 text-base lg:text-lg">
-            <div class="">
-              <Show
-                when={fetching()}
-                fallback={
-                  <Show
-                    when={JSON.parse(localStorage.getItem("UNI201User"))}
-                    fallback={
-                      <span
-                        onClick={() => {
-                          doPopup();
-                        }}
-                        class="text-cyan-600 cursor-pointer hover:opacity-60"
-                      >
-                        Sign Up/Sign In
-                      </span>
-                    }
-                  >
-                    <span
-                      onClick={() => {
-                        latestIssue();
-                      }}
-                      class="text-cyan-600 cursor-pointer hover:opacity-60"
-                    >
-                      Latest Post
-                    </span>
-                  </Show>
-                }
-              >
-                <span class="flex text-cyan-600 space-x-1 opacity-60 cursor-wait">
-                  <span>Fetching.. .</span>
-                  <span class="mt-1.5 lg:mt-1 animate-spin mx-auto w-3 h-3 bg-transparent border-2 border-cyan-600 rounded">
-                    &nbsp;
-                  </span>
-                </span>
-              </Show>
-            </div>
-            <div class="">
-              <A href="/about" class="hover:opacity-60">
-                About
-              </A>
-            </div>
+          <div class="pt-1 lg:pt-1.5 text-lg lg:text-lg">
+            <A href="/about" class="bg-gray-100 border p-1 md:p-2 rounded-md hover:opacity-60">
+              About
+            </A>
           </div>
         </div>
       </div>
       <Show when={!navigator.onLine}>
-        <div class="fixed w-full mx-auto z-50">
+        <div class="fixed flex mx-auto z-50 bg-black bg-opacity-95 top-0 bottom-0 left-0 right-0 items-center h-screen w-screen">
           <div
-            class="w-60 mx-auto bg-yellow-100 border border-yellow-300 p-3 
-          mt-6 space-x-1 rounded-md text-xs flex"
+            class="w-80 mx-auto bg-white p-6 
+          space-x-1 rounded-md"
           >
             <div class="pt-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                class="size-6 text-cyan-600"
+                class="size-20 text-cyan-600 mx-auto"
               >
                 <path
                   fill-rule="evenodd"
@@ -116,8 +78,8 @@ function Header() {
                 />
               </svg>
             </div>
-            <div>
-              <b>Please check your internet connection & refresh this page.</b>
+            <div class="text-center">
+              Please check your internet connection & refresh this page.
             </div>
           </div>
         </div>
