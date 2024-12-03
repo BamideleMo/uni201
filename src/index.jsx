@@ -16,6 +16,7 @@ import Archive from "./pages/Archive";
 import ConfirmEmail from "./pages/ConfirmEmail";
 import Terms from "./pages/Terms";
 import Welcome from "./pages/Welcome";
+import Privacy from "./pages/Privacy";
 
 const root = document.getElementById("root");
 
@@ -33,6 +34,7 @@ render(
       <Route path="/welcome" component={Welcome} />
       <Route path="/archive" component={Archive} />
       <Route path="/terms" component={Terms} />
+      <Route path="/privacy" component={Privacy} />
       <Route path="/post/:issueNumber" component={Issue} />
       <Route path="/confirm-email" component={ConfirmEmail} />
       {/* <Route path="/post/:slug" component={ReadPost} /> */}

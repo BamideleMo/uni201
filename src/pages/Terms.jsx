@@ -50,7 +50,7 @@ function Terms() {
                     You agree to use UNI201 responsibly and not engage in
                     activities that:
                   </p>
-                  <ul class="list-disc mx-10">
+                  <ul class="list-disc mx-4 md:mx-6">
                     <li>Violate any laws or regulations.</li>
                     <li>Infringe on the rights of others.</li>
                     <li>Disrupt or harm the website’s functionality.</li>

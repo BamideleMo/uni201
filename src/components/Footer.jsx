@@ -13,8 +13,15 @@ function Footer() {
         <A href="/about">About</A>
         <b>.</b>
         <A href="/terms">Terms of use</A>
-        <Show when={JSON.parse(localStorage.getItem("UNI201User"))}>
-          <b>.</b>
+        <b>.</b>
+        <A href="/privacy">Privacy Policy</A>
+      </div>
+      <div>
+        <Logo />
+        <div class="text-gray-400 -mt-1">www.uni201.com.ng</div>
+      </div>
+      <Show when={JSON.parse(localStorage.getItem("UNI201User"))}>
+        <div class="py-3 text-center">
           <span
             onClick={() => {
               logOut();
@@ -23,12 +30,8 @@ function Footer() {
           >
             Sign Out
           </span>
-        </Show>
-      </div>
-      <div>
-        <Logo />
-        <div class="text-gray-400 -mt-1">www.uni201.com.ng</div>
-      </div>
+        </div>
+      </Show>
       <div>
         &copy; UNI201 Media - 2024. <br class="md:hidden" />
         All rights reserved.
