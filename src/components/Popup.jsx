@@ -39,7 +39,7 @@ function Popup(props) {
         </Show>
         <Show when={theForm() === "create an account"}>
           <h2 class="text-lg text-center text-slate-800 font-bold">
-            Create an Account
+            Create Account—For FREE
           </h2>
           <p class="text-center text-sm w-full mx-auto py-2 leading-tight">
             UNI201 is free, but you must create an account to proceed.
