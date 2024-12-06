@@ -22,6 +22,7 @@ import {
   Link,
   List,
   Heading,
+  BlockQuote,
 } from "ckeditor5";
 import "ckeditor5/ckeditor5.css";
 
@@ -139,6 +140,7 @@ function Post() {
             List,
             PasteFromOffice,
             Heading,
+            BlockQuote,
           ],
           toolbar: {
             items: [
@@ -156,6 +158,8 @@ function Post() {
               "|",
               "bulletedList",
               "numberedList",
+              "|",
+              "blockQuote",
             ],
           },
           link: {

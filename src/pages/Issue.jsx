@@ -2,10 +2,11 @@ import { A, useParams, useNavigate } from "@solidjs/router";
 import { MetaProvider, Title, Meta } from "@solidjs/meta";
 import { createSignal, createResource } from "solid-js";
 import { createStore } from "solid-js/store";
-import facebook from "../../src/assets/facebook.png";
-import twitter from "../../src/assets/twitterx.png";
-import whatsappShare from "../../src/assets/whatsapp.png";
-import twitterShare from "../../src/assets/x.png";
+import facebook from "../assets/facebook.png";
+import twitter from "../assets/twitterx.png";
+import whatsappShare from "../assets/whatsapp.png";
+import twitterShare from "../assets/x.png";
+import whatsappChannel from "../assets/whatsapp-green.png";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Skeleton from "../components/Skeleton";
@@ -138,7 +139,7 @@ function Issue() {
         </Show>
         <Header />
 
-        <div class="pt-20 md:pt-24">
+        <div class="pt-24 md:pt-28">
           <div class="w-full md:w-11/12 2xl:w-9/12 mx-auto pt-0 md:px-12 lg:px-12">
             <div class="content md:w-10/12 lg:w-7/12 2xl:w-6/12 mx-auto">
               <Show
@@ -148,7 +149,7 @@ function Issue() {
                     <For each={resource().issue}>
                       {(post, i) => (
                         <>
-                          <div class="bg-white px-2 md:px-6">
+                          <div class="bg-white p-2 md:p-6">
                             <h2 class="text-base md:text-xl border-b-2 border-black pb-2">
                               <span class={post.post_bg + " " + "p-1"}>
                                 {post.post_highlight}
@@ -163,11 +164,10 @@ function Issue() {
                             ></div>
                           </div>
                           <div
-                            class="mb-12 border-2 border-dashed rounded-xl border-blue-400 bg-white 
-                          px-2 md:px-6 py-4 text-xs mx-2 md:mx-6 flex justify-between"
+                            class="mb-12 o-bg rounded-md 
+                          px-2 md:px-6 py-4 text-xs md:text-base lg:text-lg mx-4"
                           >
-                            <div class="grow hidden md:block">&nbsp;</div>
-                            <div class="shares w-full md:w-fit mx-auto flex justify-between md:space-x-2">
+                            <div class="shares w-full md:w-full mx-auto flex justify-between md:space-x-4 lg:space-x-12">
                               <a
                                 target="_blank"
                                 href={
@@ -178,7 +178,7 @@ function Issue() {
                                       post.slug
                                   )
                                 }
-                                class="flex items-center space-x-1 bg-gray-100 border border-gray-400 hover:opacity-60 text-black px-2 rounded"
+                                class="flex md:flex-1 justify-between items-center space-x-1 bg-gray-100 border border-gray-400 hover:opacity-60 text-black px-2 rounded"
                               >
                                 <div class="-ml-1">
                                   <img
@@ -199,7 +199,7 @@ function Issue() {
                                       post.slug
                                   )
                                 }
-                                class="flex items-center space-x-1 bg-gray-100 border border-gray-400 hover:opacity-60 text-black px-2 rounded"
+                                class="flex md:flex-1 justify-between items-center space-x-1 bg-gray-100 border border-gray-400 hover:opacity-60 text-black px-2 rounded"
                               >
                                 <div class="">
                                   <img
@@ -220,7 +220,7 @@ function Issue() {
                         <span class="bg-green-300 p-1">Share UNI201</span>
                       </h2>
                       <h1 class="my-2 text-xl md:text-2xl leading-tight font-bold">
-                        💪🏾 <b>Help us grow</b>.
+                        <b>Help us grow</b>.
                       </h1>
                       <div class="space-y-6 text-base">
                         <p>
@@ -262,108 +262,99 @@ function Issue() {
                         <p>
                           <b>Remember:</b>
                           <br /> We'll post another idea or tip{" "}
-                          <i>next Friday evening</i>. See you then!
+                          <b>next Friday evening</b>. See you then!
                         </p>
                       </div>
+                    </div>
+
+                    <div class="w-11/12 mx-auto my-10 py-4 flex justify-between border-t border-black">
+                      <Show when={prevIssue()} fallback={<div>.</div>}>
+                        <span
+                          onClick={() => {
+                            window.location.replace(
+                              "/post/" + (parseInt(params.issueNumber) - 1)
+                            );
+                          }}
+                          class="flex space-x-1 cursor-pointer hover:text-red-600"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={1.5}
+                            stroke="currentColor"
+                            className="size-6"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                            />
+                          </svg>
+                          <span>PREVIOUS</span>
+                        </span>
+                      </Show>
+                      <Show when={nextIssue()} fallback={<div>.</div>}>
+                        <span
+                          onClick={() => {
+                            window.location.replace(
+                              "/post/" + (parseInt(params.issueNumber) + 1)
+                            );
+                          }}
+                          class="flex space-x-1 cursor-pointer hover:text-red-600"
+                        >
+                          <span>NEXT</span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={1.5}
+                            stroke="currentColor"
+                            className="size-6"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                            />
+                          </svg>
+                        </span>
+                      </Show>
                     </div>
                   </>
                 }
               >
                 {/* loading */}
-                <Skeleton />
+                <div class="p-2 md:p-6">
+                  <Skeleton />
+                </div>
                 {/* loading */}
               </Show>
               {/* fetched ends here */}
               <div class="py-16 md:py-20 md:px-14 lg:px-10 md:pb-10 text-center space-y-4">
                 <div class="flex justify-center space-x-6">
                   <a
-                    href="https://www.facebook.com/UNI201_NG"
+                    href="https://whatsapp.com/channel/0029Vaygmz06hENx0xLBxS2m"
                     class="hover:opacity-60"
                     target="_blank"
                   >
                     <img
-                      src={facebook}
-                      alt="UNI201 Facebook page"
-                      class="rounded-full h-10"
-                    />
-                  </a>
-                  <a
-                    href="https://www.x.com/UNI201_NG"
-                    class="hover:opacity-60"
-                    target="_blank"
-                  >
-                    <img
-                      src={twitter}
-                      alt="UNI201 X page"
-                      class="rounded-full h-10"
+                      src={whatsappChannel}
+                      alt="UNI201 WhatsApp Channel"
+                      class="rounded-full w-14"
                     />
                   </a>
                 </div>
-                <div class="p-4 text-base">
+                <div class="p-0 text-base">
                   <A href="https://uni201.com.ng" class="name">
                     UNI201
                   </A>{" "}
-                  is a weekly post focused on helping students in Nigerian
-                  universities embrace and pursue entrepreneurship before
-                  graduation.
+                  is a weekly post focused on helping university students in
+                  Nigeria embrace and pursue student entrepreneurship.
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="w-11/12 mx-auto my-10 py-4 flex justify-between border-t border-black">
-          <Show when={prevIssue()} fallback={<div>.</div>}>
-            <span
-              onClick={() => {
-                window.location.replace(
-                  "/post/" + (parseInt(params.issueNumber) - 1)
-                );
-              }}
-              class="flex space-x-1 cursor-pointer hover:text-red-600"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="size-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                />
-              </svg>
-              <span>PREVIOUS</span>
-            </span>
-          </Show>
-          <Show when={nextIssue()} fallback={<div>.</div>}>
-            <span
-              onClick={() => {
-                window.location.replace(
-                  "/post/" + (parseInt(params.issueNumber) + 1)
-                );
-              }}
-              class="flex space-x-1 cursor-pointer hover:text-red-600"
-            >
-              <span>NEXT</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="size-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                />
-              </svg>
-            </span>
-          </Show>
         </div>
       </div>
       <Footer />

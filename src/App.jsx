@@ -65,7 +65,9 @@ function App() {
           <div class="w-full md:w-11/12 2xl:w-9/12 mx-auto pt-0 md:px-12 lg:px-12">
             <div class="content md:w-10/12 lg:w-7/12 2xl:w-6/12 mx-auto">
               {/* loading */}
-              <Skeleton />
+              <div class="p-2 md:p-6">
+                <Skeleton />
+              </div>
               {/* loading */}
             </div>
           </div>

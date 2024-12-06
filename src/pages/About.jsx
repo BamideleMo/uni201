@@ -2,6 +2,8 @@ import { A } from "@solidjs/router";
 import { MetaProvider, Title, Link, Meta } from "@solidjs/meta";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import whatsappShare from "../../src/assets/whatsapp.png";
+import twitterShare from "../../src/assets/x.png";
 
 function About() {
   return (
@@ -27,11 +29,12 @@ function About() {
                 <div class="my-4 space-y-6 text-base">
                   <p>
                     Welcome to UNI201 (
-                    <a href="https://uni201.com.ng">www.uni201.com.ng</a>). If
-                    you're a Nigerian university student, you're in the right
+                    <a href="https://uni201.com.ng">www.uni201.com.ng</a>).
+                  </p>
+                  <p>
+                    If you're a Nigerian university student, you're in the right
                     place.
                   </p>
-
                   <p>
                     <b>UNI201</b> is a weekly post focused on helping students
                     in Nigerian universities embrace and pursue entrepreneurship
@@ -57,6 +60,53 @@ function About() {
                     you can use to start your own journey and empower your
                     future.
                   </p>
+                </div>
+                <div
+                  class="mb-12 o-bg rounded-md 
+                          px-2 md:px-6 py-4 text-xs md:text-base lg:text-lg mx-0"
+                >
+                  <div class="shares w-full md:w-full mx-auto flex justify-between md:space-x-4 lg:space-x-12">
+                    <a
+                      target="_blank"
+                      href={
+                        "https://twitter.com/intent/tweet?text=" +
+                        encodeURI(
+                          "Avoid unemployment after graduation: Embrace student entrepreneurship! Learn how:" +
+                            " 🤖 https://uni201.com.ng/about"
+                        )
+                      }
+                      class="flex md:flex-1 justify-between items-center space-x-1 bg-gray-100 border border-gray-400 hover:opacity-60 text-black px-2 rounded"
+                    >
+                      <div class="-ml-1">
+                        <img
+                          src={twitterShare}
+                          alt="share on twitter"
+                          class="w-8 py-1.5"
+                        />
+                      </div>
+                      <div class="">Share on X</div>
+                    </a>
+                    <a
+                      target="_blank"
+                      href={
+                        "https://wa.me/?text=" +
+                        encodeURI(
+                          "Avoid unemployment after graduation: Embrace student entrepreneurship! Learn how:" +
+                            " 🤖 https://uni201.com.ng/about"
+                        )
+                      }
+                      class="flex md:flex-1 justify-between items-center space-x-1 bg-gray-100 border border-gray-400 hover:opacity-60 text-black px-2 rounded"
+                    >
+                      <div class="">
+                        <img
+                          src={whatsappShare}
+                          alt="share on WhatsApp"
+                          class="w-6 py-1.5"
+                        />
+                      </div>
+                      <div class="">Share on WhatsApp</div>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

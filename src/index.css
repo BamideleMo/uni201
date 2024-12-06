@@ -25,6 +25,16 @@ body {
   font-style: normal;
 }
 
+.o-bg {
+  background-color: #fef5e6;
+}
+
+blockquote {
+  background-color: #defae8 !important;
+  padding: 15px;
+  border-radius: 10px;
+}
+
 .name,
 .content p a,
 .content p a span,
