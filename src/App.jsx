@@ -27,9 +27,15 @@ function App() {
       });
       const result = await response.json();
       if (result.success) {
-        navigate("/post/" + result.response[0].issue_number, {
-          replace: true,
-        });
+        navigate(
+          "/post/" +
+            result.response[0].issue_number +
+            "/" +
+            result.response[0].slug,
+          {
+            replace: true,
+          }
+        );
       }
     } catch (error) {
       console.error(error);

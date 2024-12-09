@@ -22,6 +22,7 @@ function Issue() {
   const params = useParams();
   const [issue, setIssue] = createStore([]);
   const [metaDesc, setMetaDesc] = createSignal("Loading...");
+  const [topic, setTopic] = createSignal("");
 
   const issueDetails = async () => {
     if (JSON.parse(localStorage.getItem("UNI201User"))) {
@@ -45,6 +46,7 @@ function Issue() {
     if (result.success) {
       await getPrevIssue();
       await getNextIssue();
+      setTopic(result.response[0].post_topic);
       setIssue(result.response);
       setMetaDesc(result.response[0].shareable);
     }
@@ -124,10 +126,13 @@ function Issue() {
   return (
     <MetaProvider>
       <Title>
-        UNI201 Post{" "}
-        {params.issueNumber
-          ? "#" + params.issueNumber + " - www.uni201.com.ng"
-          : "Loading... "}
+        {params.issueNumber && topic() !== ""
+          ? "Post #" +
+            params.issueNumber +
+            " - " +
+            topic() +
+            " : www.uni201.com.ng"
+          : "Loading.. . "}
       </Title>
       <Meta
         name="description"

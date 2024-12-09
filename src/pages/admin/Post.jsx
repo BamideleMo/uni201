@@ -31,6 +31,7 @@ const schema = z.object({
   post_highlight: z.string().min(1, "*Invalid"),
   post_bg: z.string().min(1, "*Invalid"),
   post_topic: z.string().min(1, "*Invalid"),
+  slug: z.string().min(1, "*Invalid"),
   shareable: z.string().min(1, "*Invalid"),
 });
 
@@ -61,7 +62,7 @@ function Post() {
       post_topic: formData().post_topic,
       shareable: formData().shareable,
       slug: formData()
-        .shareable.toLowerCase()
+        .slug.toLowerCase()
         .trim()
         .replace(/[^\w\s-]/g, "")
         .replace(/[\s_-]+/g, "-")
@@ -185,10 +186,7 @@ function Post() {
   return (
     <MetaProvider>
       <Title>Post - www.uni201.com.ng</Title>
-      <Meta
-        name="description"
-        content="Post to UNI201"
-      />
+      <Meta name="description" content="Post to UNI201" />
       <div>
         <Header />
 
@@ -256,6 +254,15 @@ function Post() {
                       <TextInput
                         label="Post Topic:"
                         name="post_topic"
+                        required={true}
+                        type="text"
+                        formHandler={formHandler}
+                      />
+                    </div>
+                    <div>
+                      <TextInput
+                        label="SEO Slug:"
+                        name="slug"
                         required={true}
                         type="text"
                         formHandler={formHandler}

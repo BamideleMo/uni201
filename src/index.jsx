@@ -35,7 +35,7 @@ render(
       <Route path="/archive" component={Archive} />
       <Route path="/terms" component={Terms} />
       <Route path="/privacy" component={Privacy} />
-      <Route path="/post/:issueNumber" component={Issue} />
+      <Route path="/post/:issueNumber/:slug" component={Issue} />
       <Route path="/confirm-email" component={ConfirmEmail} />
       {/* <Route path="/post/:slug" component={ReadPost} /> */}
       <Route path="/a/login" component={Login} />
