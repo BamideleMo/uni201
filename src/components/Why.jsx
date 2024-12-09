@@ -7,7 +7,7 @@ function Why() {
         </h2>
         <div class="mt-4 md:mt-6 w-full md:w-full mx-auto grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 md:gap-x-12">
           <div>
-            <h3 class="text-xl md:text-3xl">
+            <h3 class="text-lg md:text-xl">
               <b>#1</b>
               <br /> Weekly Actionable Tips:
             </h3>
@@ -24,7 +24,7 @@ function Why() {
             </div>
           </div>
           <div>
-            <h3 class="text-xl md:text-3xl">
+            <h3 class="text-lg md:text-xl">
               <b>#2</b>
               <br /> Real-Life Experiences:
             </h3>
@@ -41,7 +41,7 @@ function Why() {
             </div>
           </div>
           <div>
-            <h3 class="text-xl md:text-3xl">
+            <h3 class="text-lg md:text-xl">
               <b>#3</b>
               <br /> Contextualized For Nigeria:
             </h3>
@@ -57,7 +57,7 @@ function Why() {
             </div>
           </div>
           <div>
-            <h3 class="text-xl md:text-3xl">
+            <h3 class="text-lg md:text-xl">
               <b>#4</b>
               <br /> For Your Future:
             </h3>
