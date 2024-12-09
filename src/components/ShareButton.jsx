@@ -25,20 +25,10 @@ function ShareButton(props) {
             setPopup(true);
           }}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="size-8 cursor-pointer hover:opacity-60"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z"
-            />
-          </svg>
+          <span class="text-red-600 hover:opacity-6 cursor-pointer0">
+            Click here to share
+          </span>
+          .
         </div>
 
         <Show when={popup()}>
@@ -64,16 +54,14 @@ function ShareButton(props) {
                   />
                 </svg>
               </h2>
-              <p class="my-4">
-                Help us grow: Let others know about techINJos. 🙏🏾
-              </p>
+              <p class="my-4">Let others know about UNI201. 🙏🏾</p>
               <div class="text-black space-y-6">
                 <a
                   target="_blank"
                   href={
                     "https://twitter.com/intent/tweet?text=" +
                     encodeURI(
-                      "I like reading UNI201, and I think you'd also like it. It's a weekly post focused on helping university students in Nigeria avoid unemployment after graduation by embracing entrepreneurship."
+                      "I just joinded UNI201, and I think you should check it too. It's a weekly post focused on helping university students in Nigeria avoid unemployment after graduation by embracing entrepreneurship."
                     ) +
                     "&url=https%3A%2F%2Funi201.com.ng"
                   }
@@ -89,12 +77,12 @@ function ShareButton(props) {
                   href={
                     "https://wa.me/?text=" +
                     encodeURI(
-                      "I like reading UNI201, and I think you'd also like it. It's a weekly post focused on helping university students in Nigeria avoid unemployment after graduation by embracing entrepreneurship. Check it out: https://uni201.com.ng"
+                      "I just joinded UNI201, and I think you should check it too. It's a weekly post focused on helping university students in Nigeria avoid unemployment after graduation by embracing entrepreneurship. Check it out: https://uni201.com.ng"
                     )
                   }
                   class="flex justify-between bg-white rounded-lg p-3"
                 >
-                  <div>Share with WhatsApp</div>
+                  <div>Share on WhatsApp</div>
                   <div>
                     <img src={whatsapp} class="w-6" />
                   </div>

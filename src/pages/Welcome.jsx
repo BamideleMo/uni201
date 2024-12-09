@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import CodeVerificationForm from "../components/CodeVerificationForm";
 import { createSignal, createEffect } from "solid-js";
 import { A, useNavigate } from "@solidjs/router";
+import ShareButton from "../components/ShareButton";
 
 const VITE_API_URL = import.meta.env["VITE_API_URL"];
 
@@ -22,9 +23,15 @@ function Welcome() {
     });
     const result = await response.json();
     if (result.success) {
-      navigate("/post/" + result.response[0].issue_number, {
-        replace: true,
-      });
+      navigate(
+        "/post/" +
+          result.response[0].issue_number +
+          "/" +
+          result.response[0].slug,
+        {
+          replace: true,
+        }
+      );
     }
   };
 
@@ -80,17 +87,19 @@ function Welcome() {
                     </li>
                   </ul>
                   <p>
-                    <b>Here’s what you should do:</b>
+                    <b>3 things you should do now:</b>
                   </p>
                   <ul class="mx-4 space-y-4">
                     <li>
-                      <u>Make up your mind:</u> to always come to this website
-                      every Friday evening to get fresh post.
+                      <u>Make up your mind:</u> to always come to this website{" "}
+                      <b>every Friday evening</b> to get fresh post.
                     </li>
                     <li>
-                      <u>Share with Friends:</u> Great things are better when
+                      <u>Tell your Friends:</u> Great things are better when
                       shared! Tell your friends to join UNI201 and build a
                       circle of like-minded student entrepreneurs.
+                      <br />
+                      <ShareButton />
                     </li>
                     <li>
                       <u>Read the Latest Post:</u>{" "}
@@ -100,7 +109,7 @@ function Welcome() {
                         }}
                         class="text-red-600 hover:opacity-60 cursor-pointer"
                       >
-                        Click here now
+                        Click here to read it
                       </span>
                       .
                     </li>
