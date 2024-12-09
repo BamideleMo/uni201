@@ -229,7 +229,7 @@ function Issue() {
                       </h1>
                       <div class="space-y-6 text-base">
                         <p>
-                          Tell a friend about UNI201 -{" "}
+                          Tell a Friend About UNI201 Now -{" "}
                           <a
                             target="_blank"
                             href={
@@ -239,7 +239,7 @@ function Issue() {
                               )
                             }
                           >
-                            send him or her a WhatsApp chat
+                            Click Here to Send a WhatsApp Chat
                           </a>
                           .
                         </p>
