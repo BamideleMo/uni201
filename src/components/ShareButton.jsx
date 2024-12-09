@@ -73,9 +73,9 @@ function ShareButton(props) {
                   href={
                     "https://twitter.com/intent/tweet?text=" +
                     encodeURI(
-                      "I've been reading techINJos Newsletter, and I think you'd also enjoy it. It's an online tech newsletter focused on the tech ecosystem in Jos-Plateau state."
+                      "I like reading UNI201, and I think you'd also like it. It's a weekly post focused on helping university students in Nigeria avoid unemployment after graduation by embracing entrepreneurship."
                     ) +
-                    "&url=https%3A%2F%2Ftechinjos.com.ng"
+                    "&url=https%3A%2F%2Funi201.com.ng"
                   }
                   class="flex justify-between bg-white rounded-lg p-3"
                 >
@@ -89,7 +89,7 @@ function ShareButton(props) {
                   href={
                     "https://wa.me/?text=" +
                     encodeURI(
-                      "I've been reading techINJos Newsletter, and I think you'd also enjoy it. It's an online tech newsletter focused on the tech ecosystem in Jos-Plateau state. Check it out: https://techinjos.com.ng"
+                      "I like reading UNI201, and I think you'd also like it. It's a weekly post focused on helping university students in Nigeria avoid unemployment after graduation by embracing entrepreneurship. Check it out: https://uni201.com.ng"
                     )
                   }
                   class="flex justify-between bg-white rounded-lg p-3"

@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import whatsappShare from "../../src/assets/whatsapp.png";
 import twitterShare from "../../src/assets/x.png";
+import ShareButton from "../components/ShareButton";
 
 function About() {
   return (
@@ -71,12 +72,13 @@ function About() {
                       href={
                         "https://twitter.com/intent/tweet?text=" +
                         encodeURI(
-                          "Avoid unemployment after graduation: Embrace student entrepreneurship! Learn how:" +
+                          "I like reading UNI201, and I think you'd also like it. It's a weekly post focused on helping university students in Nigeria avoid unemployment after graduation by embracing entrepreneurship. See it:" +
                             " 🤖 https://uni201.com.ng/about"
                         )
                       }
                       class="flex md:flex-1 justify-between items-center space-x-1 bg-gray-100 border border-gray-400 hover:opacity-60 text-black px-2 rounded"
                     >
+                      <div class="">Share this on X</div>
                       <div class="-ml-1">
                         <img
                           src={twitterShare}
@@ -84,14 +86,13 @@ function About() {
                           class="w-8 py-1.5"
                         />
                       </div>
-                      <div class="">Share on X</div>
                     </a>
                     <a
                       target="_blank"
                       href={
                         "https://wa.me/?text=" +
                         encodeURI(
-                          "Avoid unemployment after graduation: Embrace student entrepreneurship! Learn how:" +
+                          "I like reading UNI201, and I think you'd also like it. It's a weekly post focused on helping university students in Nigeria avoid unemployment after graduation by embracing entrepreneurship. See it:" +
                             " 🤖 https://uni201.com.ng/about"
                         )
                       }

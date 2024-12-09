@@ -63,7 +63,10 @@ function LoginForm(props) {
         localStorage.setItem("UNI201User", JSON.stringify(data()));
         if (result.response.status === "unconfirmed") {
           window.location.replace(
-            "/confirm-email?e=" + uname + "&i=" + "qwertymnbvcxa1234560987asdfg",
+            "/confirm-email?e=" +
+              uname +
+              "&i=" +
+              "qwertymnbvcxa1234560987asdfg",
             {
               replace: true,
             }
@@ -79,7 +82,12 @@ function LoginForm(props) {
           });
           const result = await response.json();
           if (result.success) {
-            window.location.replace("/post/" + result.response[0].issue_number);
+            window.location.replace(
+              "/post/" +
+                result.response[0].issue_number +
+                "/" +
+                result.response[0].slug
+            );
           }
         }
       }

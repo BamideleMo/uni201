@@ -185,6 +185,7 @@ function Issue() {
                                 }
                                 class="flex md:flex-1 justify-between items-center space-x-1 bg-gray-100 border border-gray-400 hover:opacity-60 text-black px-2 rounded"
                               >
+                                <div class="">Share this on X</div>
                                 <div class="-ml-1">
                                   <img
                                     src={twitterShare}
@@ -192,7 +193,6 @@ function Issue() {
                                     class="w-8 py-1.5"
                                   />
                                 </div>
-                                <div class="">Share Post on X</div>
                               </a>
                               <a
                                 target="_blank"
