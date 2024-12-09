@@ -24,7 +24,7 @@ function Footer() {
             onClick={() => {
               logOut();
             }}
-            class="cursor-pointer text-yellow-500 hover:opacity-60"
+            class="cursor-pointer text-red-600 hover:opacity-60"
           >
             Sign Out
           </span>
