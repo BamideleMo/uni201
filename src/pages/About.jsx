@@ -62,53 +62,6 @@ function About() {
                     future.
                   </p>
                 </div>
-                <div
-                  class="mb-12 o-bg rounded-md 
-                          px-2 md:px-6 py-4 text-xs md:text-base lg:text-lg mx-0"
-                >
-                  <div class="shares w-full md:w-full mx-auto flex justify-between md:space-x-4 lg:space-x-12">
-                    <a
-                      target="_blank"
-                      href={
-                        "https://twitter.com/intent/tweet?text=" +
-                        encodeURI(
-                          "I like reading UNI201, and I think you'd also like it. It's a weekly post focused on helping university students in Nigeria avoid unemployment after graduation by embracing entrepreneurship. See it:" +
-                            " 🤖 https://uni201.com.ng/about"
-                        )
-                      }
-                      class="flex md:flex-1 justify-between items-center space-x-1 bg-gray-100 border border-gray-400 hover:opacity-60 text-black px-2 rounded"
-                    >
-                      <div class="">Share this on X</div>
-                      <div class="-ml-1">
-                        <img
-                          src={twitterShare}
-                          alt="share on twitter"
-                          class="w-8 py-1.5"
-                        />
-                      </div>
-                    </a>
-                    <a
-                      target="_blank"
-                      href={
-                        "https://wa.me/?text=" +
-                        encodeURI(
-                          "I like reading UNI201, and I think you'd also like it. It's a weekly post focused on helping university students in Nigeria avoid unemployment after graduation by embracing entrepreneurship. See it:" +
-                            " 🤖 https://uni201.com.ng/about"
-                        )
-                      }
-                      class="flex md:flex-1 justify-between items-center space-x-1 bg-gray-100 border border-gray-400 hover:opacity-60 text-black px-2 rounded"
-                    >
-                      <div class="">
-                        <img
-                          src={whatsappShare}
-                          alt="share on WhatsApp"
-                          class="w-6 py-1.5"
-                        />
-                      </div>
-                      <div class="">Share on WhatsApp</div>
-                    </a>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

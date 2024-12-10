@@ -160,19 +160,52 @@ function Issue() {
                                 {post.post_highlight}
                               </span>
                             </h2>
-                            <h1 class="my-4 text-xl md:text-2xl !leading-tight font-bold">
+                            <h1 class="my-4 text-xl md:text-3xl !leading-tight font-bold">
                               {post.post_topic}
                             </h1>
+                            <div class="flex text-gray-400 pb-6 space-x-4">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5"
+                                stroke="currentColor"
+                                class="size-6"
+                              >
+                                <path
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z"
+                                />
+                              </svg>
+                              <span class="mt-0.5">
+                                {new Date(post.created_at).toDateString()}
+                              </span>
+                            </div>
                             <div
                               class="space-y-6 text-base"
                               innerHTML={post.conversation_text}
                             ></div>
                           </div>
-                          <div
-                            class="mb-12 o-bg rounded-md 
-                          px-2 md:px-6 py-4 text-xs md:text-base lg:text-lg mx-4"
-                          >
-                            <div class="shares w-full md:w-full mx-auto flex justify-between md:space-x-4 lg:space-x-12">
+                          <div class="mb-12 border-y py-2 text-xs md:text-base lg:text-lg mx-4">
+                            <div class="shares w-full md:w-full mx-auto flex justify-between space-x-2 lg:space-x-2">
+                              <span class="flex justify-between items-center space-x-1 bg-gray-100 border border-gray-400 hover:opacity-60 text-black px-2 rounded">
+                                <span class="pt-0.5">Like this</span>
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke-width="1.5"
+                                  stroke="currentColor"
+                                  class="size-6"
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                                  />
+                                </svg>
+                              </span>
                               <a
                                 target="_blank"
                                 href={
@@ -183,9 +216,9 @@ function Issue() {
                                       post.slug
                                   )
                                 }
-                                class="flex md:flex-1 justify-between items-center space-x-1 bg-gray-100 border border-gray-400 hover:opacity-60 text-black px-2 rounded"
+                                class="flex justify-between items-center space-x-1 bg-gray-100 border border-gray-400 hover:opacity-60 text-black px-2 rounded"
                               >
-                                <div class="">Share this on X</div>
+                                <div class="">Share on</div>
                                 <div class="-ml-1">
                                   <img
                                     src={twitterShare}
@@ -204,8 +237,9 @@ function Issue() {
                                       post.slug
                                   )
                                 }
-                                class="flex md:flex-1 justify-between items-center space-x-1 bg-gray-100 border border-gray-400 hover:opacity-60 text-black px-2 rounded"
+                                class="flex justify-between items-center space-x-2 bg-gray-100 border border-gray-400 hover:opacity-60 text-black px-2 rounded"
                               >
+                                <div class="">Share on</div>
                                 <div class="">
                                   <img
                                     src={whatsappShare}
@@ -213,38 +247,12 @@ function Issue() {
                                     class="w-6 py-1.5"
                                   />
                                 </div>
-                                <div class="">Share on WhatsApp</div>
                               </a>
                             </div>
                           </div>
                         </>
                       )}
                     </For>
-                    <div class="mb-12 bg-white p-2 md:p-6">
-                      <h2 class="text-base md:text-xl border-b-2 border-black pb-2">
-                        <span class="bg-green-300 p-1">Share UNI201</span>
-                      </h2>
-                      <h1 class="my-2 text-xl md:text-2xl leading-tight font-bold">
-                        <b>Help us grow</b>.
-                      </h1>
-                      <div class="space-y-6 text-base">
-                        <p>
-                          Tell a Friend About UNI201 Now -{" "}
-                          <a
-                            target="_blank"
-                            href={
-                              "https://wa.me/?text=" +
-                              encodeURI(
-                                "I've enjoyed reading UNI201, and I think you'd enjoy it too. It's a weekly post focused on helping Nigerian students in Nigerian Universities embrace and pursue entrepreneurship before graduation. Check it out: https://uni201.com.ng"
-                              )
-                            }
-                          >
-                            Click Here to Send a WhatsApp Chat
-                          </a>
-                          .
-                        </p>
-                      </div>
-                    </div>
 
                     <div class="bg-white p-2 md:p-6">
                       <h2 class="text-base md:text-xl border-b-2 border-black pb-2">
@@ -268,6 +276,32 @@ function Issue() {
                           <b>Remember:</b>
                           <br /> We'll post another idea or tip{" "}
                           <b>next Friday evening</b>. See you then!
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="mt-12 bg-white p-2 md:p-6">
+                      <h2 class="text-base md:text-xl border-b-2 border-black pb-2">
+                        <span class="bg-green-300 p-1">Share UNI201</span>
+                      </h2>
+                      <h1 class="my-2 text-xl md:text-2xl leading-tight font-bold">
+                        <b>Help us grow</b>.
+                      </h1>
+                      <div class="space-y-6 text-base">
+                        <p>
+                          Tell a Friend About UNI201 Now -{" "}
+                          <a
+                            target="_blank"
+                            href={
+                              "https://wa.me/?text=" +
+                              encodeURI(
+                                "I've enjoyed reading UNI201, and I think you'd enjoy it too. It's a weekly post focused on helping Nigerian students in Nigerian Universities embrace and pursue entrepreneurship before graduation. Check it out: https://uni201.com.ng"
+                              )
+                            }
+                          >
+                            Click Here to Send a WhatsApp Chat
+                          </a>
+                          .
                         </p>
                       </div>
                     </div>
