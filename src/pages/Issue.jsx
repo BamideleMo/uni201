@@ -116,7 +116,7 @@ function Issue() {
       navigate(
         "/confirm-email?e=" +
           JSON.parse(localStorage.getItem("UNI201User")).email +
-          "&i=",
+          "&i=Xqwertyasdf1234098765Z",
         { replace: true }
       );
     }
@@ -187,7 +187,7 @@ function Issue() {
                               innerHTML={post.conversation_text}
                             ></div>
                           </div>
-                          <div class="mb-12 border-y py-2 text-xs md:text-base lg:text-lg mx-4">
+                          <div class="mb-12 border-t m-2 md:m-6 py-2 text-xs md:text-base lg:text-lg">
                             <div class="shares w-full md:w-full mx-auto flex justify-between space-x-2 lg:space-x-2">
                               <span class="flex justify-between items-center space-x-1 bg-gray-100 border border-gray-400 hover:opacity-60 text-black px-2 rounded">
                                 <span class="pt-0.5">Like this</span>
@@ -254,59 +254,7 @@ function Issue() {
                       )}
                     </For>
 
-                    <div class="bg-white p-2 md:p-6">
-                      <h2 class="text-base md:text-xl border-b-2 border-black pb-2">
-                        <span class="bg-blue-300 p-1">
-                          Send us your Feedback
-                        </span>
-                      </h2>
-                      <h1 class="my-2 text-xl md:text-2xl leading-tight font-bold">
-                        Your feedback is invaluable.
-                      </h1>
-                      <div class="space-y-6 text-base">
-                        <p>
-                          Whether you have ideas or tips you'd like us to post
-                          next, a suggestion, a comment, or a concern, we want
-                          to hear from you. Send email now to{" "}
-                          <a href="mailto:contactUNI201@gmail.com" class="name">
-                            contactUNI201@gmail.com
-                          </a>
-                        </p>
-                        <p>
-                          <b>Remember:</b>
-                          <br /> We'll post another idea or tip{" "}
-                          <b>next Friday evening</b>. See you then!
-                        </p>
-                      </div>
-                    </div>
-
-                    <div class="mt-12 bg-white p-2 md:p-6">
-                      <h2 class="text-base md:text-xl border-b-2 border-black pb-2">
-                        <span class="bg-green-300 p-1">Share UNI201</span>
-                      </h2>
-                      <h1 class="my-2 text-xl md:text-2xl leading-tight font-bold">
-                        <b>Help us grow</b>.
-                      </h1>
-                      <div class="space-y-6 text-base">
-                        <p>
-                          Tell a Friend About UNI201 Now -{" "}
-                          <a
-                            target="_blank"
-                            href={
-                              "https://wa.me/?text=" +
-                              encodeURI(
-                                "I've enjoyed reading UNI201, and I think you'd enjoy it too. It's a weekly post focused on helping Nigerian students in Nigerian Universities embrace and pursue entrepreneurship before graduation. Check it out: https://uni201.com.ng"
-                              )
-                            }
-                          >
-                            Click Here to Send a WhatsApp Chat
-                          </a>
-                          .
-                        </p>
-                      </div>
-                    </div>
-
-                    <div class="w-11/12 mx-auto my-10 py-4 flex justify-between border-t border-black">
+                    <div class="mx-auto m-2 md:m-6 flex justify-between border-t-2 border-black">
                       <Show when={prevIssue()} fallback={<div>.</div>}>
                         <span
                           onClick={() => {
@@ -359,6 +307,86 @@ function Issue() {
                           </svg>
                         </span>
                       </Show>
+                    </div>
+
+                    <div class="mt-12 bg-white p-2 md:p-6">
+                      <h2 class="text-base md:text-xl border-b-2 border-black pb-2">
+                        <span class="bg-green-300 p-1">Share UNI201</span>
+                      </h2>
+                      {/* <h1 class="my-2 text-xl md:text-2xl leading-tight font-bold">
+                        <b>Help us grow</b>.
+                      </h1> */}
+                      <div class="space-y-6 text-base my-2">
+                        <p>
+                          You currently have <b>0</b> referrals. Refer only{" "}
+                          <b>1</b> student to activate the download link for
+                          this ebook:
+                          <br />
+                          <br />
+                          <span class="font-semibold">
+                            How Student Entrepreneurship Saved Me From
+                            Unemployment
+                          </span><br/>
+                          [
+                          <span class="text-gray-400 cursor-not-allowed">
+                            Download Link: not active
+                          </span>
+                          ]
+                        </p>
+                        <p>
+                          <a
+                            target="_blank"
+                            href={
+                              "https://wa.me/?text=" +
+                              encodeURI(
+                                "I like UNI201, and I think you'd like it too. It's a weekly post focused on helping Nigerian students in universities embrace and pursue entrepreneurship before graduation. Check it out: https://uni201.com.ng?ref=" +
+                                  JSON.parse(localStorage.getItem("UNI201User"))
+                                    .custom_id
+                              )
+                            }
+                            class="bg-yellow-400 p-2 text-sm rounded-md"
+                          >
+                            Click here to share on WhatsApp
+                          </a>
+                        </p>
+                        <p>
+                          Or copy and paste this link to others:
+                          <br />
+                          <span class="text-cyan-600">
+                            https://www.uni201.com.ng?ref=
+                            {
+                              JSON.parse(localStorage.getItem("UNI201User"))
+                                .custom_id
+                            }
+                          </span>
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="bg-white p-2 md:p-6">
+                      <h2 class="text-base md:text-xl border-b-2 border-black pb-2">
+                        <span class="bg-blue-300 p-1">
+                          Send us your Feedback
+                        </span>
+                      </h2>
+                      <h1 class="my-2 text-xl md:text-2xl leading-tight font-bold">
+                        Your feedback is invaluable.
+                      </h1>
+                      <div class="space-y-6 text-base">
+                        <p>
+                          Whether you have ideas or tips you'd like us to post
+                          next, a suggestion, a comment, or a concern, we want
+                          to hear from you. Send email now to{" "}
+                          <a href="mailto:contactUNI201@gmail.com" class="name">
+                            contactUNI201@gmail.com
+                          </a>
+                        </p>
+                        <p>
+                          <b>Remember:</b>
+                          <br /> We'll post another idea or tip{" "}
+                          <b>next Friday evening</b>. See you then!
+                        </p>
+                      </div>
                     </div>
                   </>
                 }

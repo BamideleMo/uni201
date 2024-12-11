@@ -193,7 +193,7 @@ function LoginForm(props) {
         >
           <button
             disabled
-            class="bg-gray-400 rounded-lg w-full p-3 text-center cursor-not-allowed"
+            class="bg-gray-400 rounded-lg w-full p-4 text-center cursor-not-allowed"
           >
             Proceed
           </button>

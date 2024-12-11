@@ -10,6 +10,8 @@ function Footer() {
   return (
     <div class="bg-white border-t py-10 mt-0 lg:p-20 xl:py-28 text-slate-950 text-sm text-center space-y-6">
       <div class="space-x-2 md:space-x-4 text-center text-gray-400 text-base">
+        <A href="/about">About</A>
+        <b>.</b>
         <A href="/terms">Terms of use</A>
         <b>.</b>
         <A href="/privacy">Privacy Policy</A>
