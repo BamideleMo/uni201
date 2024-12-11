@@ -326,14 +326,15 @@ function Issue() {
                           <span class="font-semibold">
                             How Student Entrepreneurship Saved Me From
                             Unemployment
-                          </span><br/>
-                          [
+                          </span>
+                          <br />[
                           <span class="text-gray-400 cursor-not-allowed">
                             Download Link: not active
                           </span>
                           ]
                         </p>
                         <p>
+                          👋🏾{" "}
                           <a
                             target="_blank"
                             href={
@@ -344,7 +345,6 @@ function Issue() {
                                     .custom_id
                               )
                             }
-                            class="bg-yellow-400 p-2 text-sm rounded-md"
                           >
                             Click here to share on WhatsApp
                           </a>
