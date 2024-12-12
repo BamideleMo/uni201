@@ -363,7 +363,7 @@ function Issue() {
                       </div>
                     </div>
 
-                    <div class="bg-white p-2 md:p-6">
+                    {/* <div class="bg-white p-2 md:p-6">
                       <h2 class="text-base md:text-xl border-b-2 border-black pb-2">
                         <span class="bg-blue-300 p-1">
                           Send us your Feedback
@@ -387,7 +387,7 @@ function Issue() {
                           <b>next Friday evening</b>. See you then!
                         </p>
                       </div>
-                    </div>
+                    </div> */}
                   </>
                 }
               >
@@ -398,7 +398,7 @@ function Issue() {
                 {/* loading */}
               </Show>
               {/* fetched ends here */}
-              <div class="py-16 md:py-20 md:px-14 lg:px-10 md:pb-10 text-center space-y-4">
+              {/* <div class="py-16 md:py-20 md:px-14 lg:px-10 md:pb-10 text-center space-y-4">
                 <div class="flex justify-center space-x-6">
                   <a
                     href="https://whatsapp.com/channel/0029Vaygmz06hENx0xLBxS2m"
@@ -419,7 +419,7 @@ function Issue() {
                   is a weekly post focused on helping university students in
                   Nigeria embrace and pursue student entrepreneurship.
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

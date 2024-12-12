@@ -48,7 +48,7 @@ function App() {
     console.log(JSON.parse(localStorage.getItem("UNI201User")).expiry);
     if (
       JSON.parse(localStorage.getItem("UNI201User")) &&
-      now.getTime() > JSON.parse(localStorage.getItem("UNI201User")).expiry
+      now.getTime() < JSON.parse(localStorage.getItem("UNI201User")).expiry
     ) {
       setFetching(true);
       latestIssue();
