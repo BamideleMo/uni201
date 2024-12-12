@@ -4,6 +4,7 @@ import Logo from "./Logo";
 function Footer() {
   const navigate = useNavigate();
   const logOut = () => {
+    console.log("out");
     localStorage.removeItem("UNI201User");
     navigate("/", { replace: true });
   };

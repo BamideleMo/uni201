@@ -187,7 +187,7 @@ function Issue() {
                               innerHTML={post.conversation_text}
                             ></div>
                           </div>
-                          <div class="mb-12 border-t m-2 md:m-6 py-2 text-xs md:text-base lg:text-lg">
+                          <div class="mb-12 m-2 md:m-6 py-2 text-xs md:text-base lg:text-lg">
                             <div class="shares w-full md:w-full mx-auto flex justify-between space-x-2 lg:space-x-2">
                               <span class="flex justify-between items-center space-x-1 bg-gray-100 border border-gray-400 hover:opacity-60 text-black px-2 rounded">
                                 <span class="pt-0.5">Like this</span>
@@ -309,30 +309,30 @@ function Issue() {
                       </Show>
                     </div>
 
-                    <div class="mt-12 bg-white p-2 md:p-6">
+                    <div class="my-12 bg-white p-2 md:p-6">
                       <h2 class="text-base md:text-xl border-b-2 border-black pb-2">
                         <span class="bg-green-300 p-1">Share UNI201</span>
                       </h2>
-                      {/* <h1 class="my-2 text-xl md:text-2xl leading-tight font-bold">
-                        <b>Help us grow</b>.
-                      </h1> */}
                       <div class="space-y-6 text-base my-2">
                         <p>
                           You currently have <b>0</b> referrals. Refer only{" "}
                           <b>1</b> student to activate the download link for
                           this ebook:
-                          <br />
-                          <br />
-                          <span class="font-semibold">
-                            How Student Entrepreneurship Saved Me From
-                            Unemployment
-                          </span>
-                          <br />[
-                          <span class="text-gray-400 cursor-not-allowed">
-                            Download Link: not active
-                          </span>
-                          ]
                         </p>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+                          <div>1</div>
+                          <div class="md:col-span-2">
+                            <span class="font-semibold">
+                              How Student Entrepreneurship Saved Me From
+                              Unemployment
+                            </span>
+                            <br />[
+                            <span class="text-gray-400 cursor-not-allowed">
+                              Download Link: not active
+                            </span>
+                            ]
+                          </div>
+                        </div>
                         <p>
                           👋🏾{" "}
                           <a
