@@ -34,15 +34,15 @@ function Popup(props) {
         <Show when={theForm() === "sign in"}>
           <h2 class="text-lg text-center text-slate-800 font-bold">Sign in</h2>
           <p class="text-center text-sm w-full mx-auto py-2 leading-tight">
-            Please enter your email to sign in & proceed.
+            Please enter your email to proceed.
           </p>
         </Show>
         <Show when={theForm() === "create an account"}>
           <h2 class="text-lg text-center text-slate-800 font-bold">
-            Create Account—For FREE
+            Join UNI201 Now—For FREE
           </h2>
           <p class="text-center text-sm w-full mx-auto py-2 leading-tight">
-            UNI201 is free, but you must create an account to proceed.
+            UNI201 is free, but you must a working email to proceed.
           </p>
         </Show>
         <LoginForm />
