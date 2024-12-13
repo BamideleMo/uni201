@@ -72,9 +72,8 @@ function ShareButton(props) {
                 <a
                   target="_blank"
                   href={
-                    "https://www.facebook.com/share.php?u=https://uni201.com.ng?ref=" +
-                    props.CId +
-                    "&amp;title=I like UNI201, and I think you'd like it too. It's a weekly post focused on helping university students in Nigeria avoid unemployment after graduation by embracing entrepreneurship."
+                    "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Funi201.com.ng?ref=" +
+                    props.CId
                   }
                   class="flex justify-between bg-blue-100 rounded-lg p-4 border border-slate-600"
                 >
