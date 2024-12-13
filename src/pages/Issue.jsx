@@ -315,9 +315,11 @@ function Issue() {
                       </h2>
                       <div class="space-y-6 text-base my-2">
                         <p>
-                          You currently have <b>0</b> referrals. Ask other
-                          students to join UNI201 by clicking button below or
-                          using your unique referral link:
+                          You currently have <b>0</b> referrals.
+                        </p>
+                        <p>
+                          Tell other students to join UNI201 by clicking the
+                          button below to share on your WhatsApp:
                         </p>
                         <p>
                           <span
