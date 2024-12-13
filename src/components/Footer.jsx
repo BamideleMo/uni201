@@ -30,9 +30,9 @@ function Footer() {
         <b class="text-black">.</b>
         <A href="/about">About</A>
         <b class="text-black">.</b>
-        <A href="/terms">Terms of use</A>
+        <A href="/terms">Ts & Cs</A>
         <b class="text-black">.</b>
-        <A href="/privacy">Pri. Policy</A>
+        <A href="/privacy">Privacy Policy</A>
       </div>
       <div>
         <Logo />
