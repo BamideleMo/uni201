@@ -64,10 +64,13 @@ function App() {
   });
   return (
     <MetaProvider>
-      <Title>UNI201 - Empower Your Future | www.uni201.com.ng</Title>
+      <Title>
+        UNI201 - Student Entrepreneurship for Nigerian University Students |
+        www.uni201.com.ng
+      </Title>
       <Meta
         name="description"
-        content="Empower Your Future: Become a Successful Student Entrepreneur in a Nigerian University!"
+        content="Avoid unemployment after graduation: Become a Successful Student Entrepreneur in a Nigerian University!"
       ></Meta>
       <Link rel="preload" as="image" href={screen}></Link>
       <Header />

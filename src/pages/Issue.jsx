@@ -8,6 +8,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Skeleton from "../components/Skeleton";
 import Popup from "../components/Popup";
+import ShareButton from "../components/ShareButton";
 
 const VITE_API_URL = import.meta.env["VITE_API_URL"];
 
@@ -319,7 +320,7 @@ function Issue() {
                           button below to share on your WhatsApp:
                         </p>
                         <p>
-                          <span
+                          {/* <span
                             target="_blank"
                             href={
                               "https://wa.me/?text=" +
@@ -332,7 +333,13 @@ function Issue() {
                             class="bg-slate-100 p-2 rounded-lg border cursor-pointer hover:opacity-60"
                           >
                             👋🏾 Share on WhatsApp
-                          </span>
+                          </span> */}
+                          <ShareButton
+                            CId={
+                              JSON.parse(localStorage.getItem("UNI201User"))
+                                .custom_id
+                            }
+                          />
                         </p>
                         <p>
                           Or copy and paste your referral link to others:
