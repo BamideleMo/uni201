@@ -37,6 +37,7 @@ render(
       <Route path="/terms" component={Terms} />
       <Route path="/privacy" component={Privacy} />
       <Route path="/likes" component={Likes} />
+      <Route path="/archive" component={Archive} />
       <Route path="/post/:issueNumber/:slug" component={Issue} />
       <Route path="/confirm-email" component={ConfirmEmail} />
       {/* <Route path="/post/:slug" component={ReadPost} /> */}
