@@ -71,7 +71,7 @@ function Cta() {
                 }}
                 class="bg-red-600 border border-white p-3 rounded-md text-white cursor-pointer hover:opacity-60"
               >
-                Create Account—For FREE
+                Join UNI201 Now—For FREE
               </span>
             </div>
           </div>

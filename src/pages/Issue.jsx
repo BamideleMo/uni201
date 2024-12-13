@@ -6,7 +6,7 @@ import facebook from "../assets/facebook.png";
 import twitter from "../assets/twitterx.png";
 import whatsappShare from "../assets/whatsapp.png";
 import twitterShare from "../assets/x.png";
-import whatsappChannel from "../assets/whatsapp-green.png";
+import ebookCover from "../assets/ebook-cover.png";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Skeleton from "../components/Skeleton";
@@ -254,7 +254,7 @@ function Issue() {
                       )}
                     </For>
 
-                    <div class="mx-auto m-2 md:m-6 flex justify-between border-t-2 border-black">
+                    <div class="m-2 md:m-6 flex justify-between border-t-2 border-black">
                       <Show when={prevIssue()} fallback={<div>.</div>}>
                         <span
                           onClick={() => {
@@ -315,27 +315,12 @@ function Issue() {
                       </h2>
                       <div class="space-y-6 text-base my-2">
                         <p>
-                          You currently have <b>0</b> referrals. Refer only{" "}
-                          <b>1</b> student to activate the download link for
-                          this ebook:
+                          You currently have <b>0</b> referrals. Ask other
+                          students to join UNI201 by clicking button below or
+                          using your unique referral link:
                         </p>
-                        <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
-                          <div>1</div>
-                          <div class="md:col-span-2">
-                            <span class="font-semibold">
-                              How Student Entrepreneurship Saved Me From
-                              Unemployment
-                            </span>
-                            <br />[
-                            <span class="text-gray-400 cursor-not-allowed">
-                              Download Link: not active
-                            </span>
-                            ]
-                          </div>
-                        </div>
                         <p>
-                          👋🏾{" "}
-                          <a
+                          <span
                             target="_blank"
                             href={
                               "https://wa.me/?text=" +
@@ -345,12 +330,13 @@ function Issue() {
                                     .custom_id
                               )
                             }
+                            class="bg-slate-100 p-2 rounded-lg border cursor-pointer hover:opacity-60"
                           >
-                            Click here to share on WhatsApp
-                          </a>
+                            👋🏾 Share on WhatsApp
+                          </span>
                         </p>
                         <p>
-                          Or copy and paste this link to others:
+                          Or copy and paste your referral link to others:
                           <br />
                           <span class="text-cyan-600">
                             https://www.uni201.com.ng?ref=

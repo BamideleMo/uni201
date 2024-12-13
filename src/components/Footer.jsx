@@ -6,7 +6,7 @@ function Footer() {
   const logOut = () => {
     console.log("out");
     localStorage.removeItem("UNI201User");
-    navigate("/", { replace: true });
+    window.location.replace("/");
   };
   return (
     <div class="bg-white border-t py-10 mt-0 lg:p-20 xl:py-28 text-slate-950 text-sm text-center space-y-6">
