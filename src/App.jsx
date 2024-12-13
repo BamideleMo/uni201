@@ -50,16 +50,14 @@ function App() {
 
   const now = new Date();
   createEffect(() => {
-    console.log(now.getTime());
-    console.log(JSON.parse(localStorage.getItem("UNI201User")).expiry);
+    setFetching(true);
     if (
-      JSON.parse(localStorage.getItem("UNI201User")) &&
-      now.getTime() <= JSON.parse(localStorage.getItem("UNI201User")).expiry
+      !JSON.parse(localStorage.getItem("UNI201User")) &&
+      now.getTime() >= JSON.parse(localStorage.getItem("UNI201User")).expiry
     ) {
-      setFetching(true);
-      latestIssue();
-    } else {
       logOut();
+    } else {
+      latestIssue();
     }
   });
   return (
