@@ -14,9 +14,9 @@ function ShareButton(props) {
           onClick={() => {
             setPopup(true);
           }}
-          class="bg-slate-100 w-fit p-2 rounded-lg border cursor-pointer hover:opacity-60"
+          class="bg-slate-100 w-fit p-2 rounded-lg border border-gray-500 cursor-pointer hover:opacity-60"
         >
-          👋🏾 Share on WhatsApp
+          👋🏾 Share UNI201
         </div>
 
         <Show when={popup()}>

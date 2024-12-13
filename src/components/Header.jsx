@@ -4,49 +4,120 @@ import { createSignal } from "solid-js";
 import Logo from "./Logo";
 import { useNavigate } from "@solidjs/router";
 import Popup from "./Popup";
+import TextInput from "./TextInput";
+import { useFormHandler } from "solid-form-handler";
+import { zodSchema } from "solid-form-handler/zod";
+import { z } from "zod";
+
+const schema = z.object({
+  search: z.string().min(3, "*Invalid"),
+});
 
 const VITE_API_URL = import.meta.env["VITE_API_URL"];
 
 function Header() {
+  const formHandler = useFormHandler(zodSchema(schema));
+  const { formData } = formHandler;
+
   const [menu, setMenu] = createSignal(false);
   const navigate = useNavigate();
   const [popup, setPopup] = createSignal(false);
   const [whichForm, setWhichForm] = createSignal("");
   const [whichIssue, setWhichIssue] = createSignal("");
+  const [showSearch, setShowSearch] = createSignal(false);
 
-  // const [fetching, setFetching] = createSignal(false);
-  // const latestIssue = async () => {
-  //   setFetching(true);
-  //   try {
-  //     const response = await fetch(VITE_API_URL + "/open/latest-post", {
-  //       mode: "cors",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         Accept: "application/json",
-  //       },
-  //       method: "GET",
-  //     });
-  //     const result = await response.json();
-  //     if (result.success) {
-  //       setFetching(false);
-  //       navigate("/post/" + result.response[0].issue_number, {
-  //         replace: true,
-  //       });
-  //     }
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
+  const [message, setMessage] = createSignal("");
+  const [isProcessing, setIsProcessing] = createSignal(false);
 
-  // const doPopup = () => {
-  //   setPopup(true);
-  //   setWhichForm("sign in");
-  //   setWhichIssue("latest");
-  // };
+  const submit = async (event) => {
+    event.preventDefault();
+    // setIsProcessing(true);
+    // await doLogin(formData().username, "1234");
+  };
+
   return (
     <>
       <Show when={popup()}>
         <Popup whichForm={whichForm()} whichIssue={whichIssue()} />
+      </Show>
+      <Show when={showSearch()}>
+        <div class="z-50 bg-black w-screen h-screen bg-opacity-95 fixed flex items-center top-0 bottom-0 left-0 right-0">
+          <div class="rounded w-11/12 md:w-96 mx-auto text-sm bg-white p-4 border-b-8 border-cyan-600">
+            <h2 class="flex justify-between pb-2 mb-4 border-b-2 border-cyan-600">
+              <div>Search UNI201 </div>
+              <div>
+                <span
+                  onClick={() => {
+                    setShowSearch(false);
+                  }}
+                  class="uppercase text-red-800 hover:opacity-60 cursor-pointer"
+                >
+                  Close
+                </span>
+              </div>
+            </h2>
+            <div>
+              <form
+                autocomplete="off"
+                onSubmit={submit}
+                class="w-full mx-auto py-2"
+              >
+                <div class="flex space-x-2">
+                  <div class="grow">
+                    <TextInput
+                      label="Search:"
+                      name="search"
+                      required={true}
+                      type="text"
+                      placeholder="Type text here.. ."
+                      formHandler={formHandler}
+                    />
+                  </div>
+                  <div class="w-fit pt-5">
+                    <Show
+                      when={formHandler.isFormInvalid()}
+                      fallback={
+                        <>
+                          <Show
+                            when={isProcessing()}
+                            fallback={
+                              <button
+                                type="submit"
+                                class="bg-cyan-600 rounded-lg w-full p-3.5 text-center hover:opacity-60"
+                              >
+                                Search
+                              </button>
+                            }
+                          >
+                            <button
+                              disabled
+                              class="bg-gray-600 rounded-lg cursor-none w-full p-3.5 text-center animate-pulse"
+                            >
+                              Wait.. .
+                            </button>
+                          </Show>
+                        </>
+                      }
+                    >
+                      <button
+                        disabled
+                        class="bg-gray-400 rounded-lg w-full p-3.5 text-center cursor-not-allowed"
+                      >
+                        Search
+                      </button>
+                    </Show>
+                  </div>
+                </div>
+
+                <Show when={message() !== ""}>
+                  <div class="bg-purple-200 text-purple-900 p-3 text-center animate-pulse border-l-2 border-black">
+                    {message()}
+                  </div>
+                </Show>
+              </form>
+            </div>
+          </div>
+        </div>
       </Show>
       <div class="fixed z-40 w-full bg-white shadow-lg">
         <div class="w-full md:w-11/12 2xl:w-9/12 mx-auto px-2 md:px-0 py-3 lg:py-4 flex justify-between">
@@ -56,12 +127,15 @@ function Header() {
           <div class="text-lg lg:text-lg flex space-x-6 md:space-x-8">
             <span class="mt-1.5 md:mt-2 lg:mt-2.5">
               <svg
+                onClick={() => {
+                  setShowSearch(true);
+                }}
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="size-6"
+                class="size-6 cursor-pointer hover:text-gray-400"
               >
                 <path
                   stroke-linecap="round"
@@ -71,14 +145,14 @@ function Header() {
               </svg>
             </span>
             <Show when={JSON.parse(localStorage.getItem("UNI201User"))}>
-              <span class="mt-1.5 md:mt-2 lg:mt-2.5">
+              <A href="/likes" class="mt-1.5 md:mt-2 lg:mt-2.5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="size-6"
+                  class="size-6 cursor-pointer hover:text-gray-400"
                 >
                   <path
                     stroke-linecap="round"
@@ -86,7 +160,7 @@ function Header() {
                     d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
                   />
                 </svg>
-              </span>
+              </A>
             </Show>
           </div>
         </div>
