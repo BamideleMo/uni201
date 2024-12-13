@@ -42,19 +42,24 @@ function App() {
     }
   };
 
+  const logOut = () => {
+    console.log("out");
+    localStorage.removeItem("UNI201User");
+    window.location.replace("/");
+  };
+
   const now = new Date();
   createEffect(() => {
     console.log(now.getTime());
     console.log(JSON.parse(localStorage.getItem("UNI201User")).expiry);
-    console.log(
-      now.getTime() - JSON.parse(localStorage.getItem("UNI201User")).expiry
-    );
     if (
       JSON.parse(localStorage.getItem("UNI201User")) &&
-      now.getTime() - JSON.parse(localStorage.getItem("UNI201User")).expiry > 0
+      now.getTime() <= JSON.parse(localStorage.getItem("UNI201User")).expiry
     ) {
       setFetching(true);
       latestIssue();
+    } else {
+      logOut();
     }
   });
   return (
