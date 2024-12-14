@@ -156,7 +156,7 @@ function Issue() {
                   </span>
                 </div>
               </h2>
-              <Bamidele/>
+              <Bamidele />
             </div>
           </div>
         </Show>
@@ -189,7 +189,7 @@ function Issue() {
                                 <img src={author} class="w-10 !rounded-full" />
                               </div>
                               <div class="-space-y-0.5">
-                                <div class="space-x-3 pt-0.5">
+                                <div class="space-x-1 pt-0.5">
                                   <span>Bamidele M. O.</span>
                                   <svg
                                     onClick={() => {
@@ -200,7 +200,7 @@ function Issue() {
                                     viewBox="0 0 24 24"
                                     stroke-width="1.5"
                                     stroke="currentColor"
-                                    class="size-4 inline text-gray-600 hover:opacity-60 cursor-pointer"
+                                    class="size-3 inline text-cyan-600 hover:opacity-60 cursor-pointer"
                                   >
                                     <path
                                       stroke-linecap="round"
