@@ -9,12 +9,12 @@ function Bamidele() {
   return (
     <div class="space-y-4">
       <p>
-        Hi. My name is Bamidele, I graduated from ABU Zaria in 2011 & did my
-        NYSC program in the Northwestern part of the country in 2012.
+        Hi. Bamidele here. I graduated from ABU Zaria in 2011 & did my NYSC
+        program in the Northwestern part of the country in 2012.
       </p>
       <p>
-        I got a lecturing job almost immediately after completing my NYSC even
-        though I already had a running business venture.
+        I got a good job almost immediately after completing my NYSC even though
+        I already had a running business venture.
       </p>
       <p>
         I consider myself "lucky" since I never had to experience unemployment
