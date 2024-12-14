@@ -39,6 +39,22 @@ function ShareButton(props) {
                 <a
                   target="_blank"
                   href={
+                    "https://wa.me/?text=" +
+                    encodeURI(
+                      "I like UNI201, and I think you'd like it too. It's a weekly post focused on helping university students in Nigeria avoid unemployment after graduation by embracing entrepreneurship. Check it out: https://uni201.com.ng?ref=" +
+                        props.CId
+                    )
+                  }
+                  class="flex justify-between bg-green-100 rounded-lg p-4 border border-slate-600"
+                >
+                  <div class="text-slate-700">Share UNI201 on WhatsApp</div>
+                  <div>
+                    <img src={whatsapp} class="w-6" />
+                  </div>
+                </a>
+                <a
+                  target="_blank"
+                  href={
                     "https://twitter.com/intent/tweet?text=" +
                     encodeURI(
                       "I like UNI201, and I think you'd like it too. It's a weekly post focused on helping university students in Nigeria avoid unemployment after graduation by embracing entrepreneurship."
@@ -51,22 +67,6 @@ function ShareButton(props) {
                   <div class="text-slate-700">Share UNI201 on X</div>
                   <div>
                     <img src={twitterx} class="w-6" />
-                  </div>
-                </a>
-                <a
-                  target="_blank"
-                  href={
-                    "https://wa.me/?text=" +
-                    encodeURI(
-                      "I like UNI201, and I think you'd like it too. It's a weekly post focused on helping university students in Nigeria avoid unemployment after graduation by embracing entrepreneurship. Check it out: https://uni201.com.ng?ref=" +
-                        props.CId
-                    )
-                  }
-                  class="flex justify-between bg-green-100 rounded-lg p-4 border border-slate-600"
-                >
-                  <div class="text-slate-700">Share UNI201 on WhatsApp</div>
-                  <div>
-                    <img src={whatsapp} class="w-6" />
                   </div>
                 </a>
                 <a
