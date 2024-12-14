@@ -75,7 +75,7 @@ function Welcome() {
                   </p>
                   <ul class="mx-4 space-y-4">
                     <li>
-                      <u>Inspiring Weekly Insights:</u> Every Friday, you’ll get
+                      <u>Inspiring Weekly Insights:</u> Every Saturday morning, you’ll get
                       practical tips and strategies tailored to help you start
                       and grow your own business while balancing life as a
                       student.
@@ -92,7 +92,7 @@ function Welcome() {
                   <ul class="mx-4 space-y-4">
                     <li>
                       <u>Make up your mind:</u> to always come to this website{" "}
-                      <b>every Friday evening</b> to get fresh post.
+                      <b>every Saturday morning</b> to get fresh post.
                     </li>
                     <li>
                       <u>Tell your Friends:</u> Great things are better when

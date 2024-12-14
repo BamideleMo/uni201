@@ -53,7 +53,7 @@ function Cta() {
             <span class="text-white md:block">
               Embrace Student Entrepreneurship.
             </span>{" "}
-            Learn how to do it every Friday:
+            Learn how to do it every Saturday morning:
           </div>
           <div class="mt-4 lg:mt-10 text-lg md:text-2xl w-fit md:mx-auto">
             <div class="space-x-4 mt-6 mb-4 text-base">

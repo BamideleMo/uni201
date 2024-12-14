@@ -23,7 +23,11 @@ function Issue() {
   const [issue, setIssue] = createStore([]);
   const [metaDesc, setMetaDesc] = createSignal("Loading...");
   const [topic, setTopic] = createSignal("");
+  const [likers, setLikers] = createStore([]);
   const [showAuthor, setShowAuthor] = createSignal(false);
+  const [liking, setLiking] = createSignal(false);
+  const [likedThis, setLikedThis] = createSignal(false);
+  const [likedNow, setLikedNow] = createSignal(false);
 
   const issueDetails = async () => {
     if (JSON.parse(localStorage.getItem("UNI201User"))) {
@@ -48,6 +52,15 @@ function Issue() {
       await getPrevIssue();
       await getNextIssue();
       setTopic(result.response[0].post_topic);
+      if (result.response[0].likers) {
+        setLikers(JSON.parse(result.response[0].likers));
+        var liked = checkIfLiked(
+          JSON.parse(localStorage.getItem("UNI201User")).custom_id
+        );
+        if (liked) {
+          setLikedThis(true);
+        }
+      }
       setIssue(result.response);
       setMetaDesc(result.response[0].shareable);
     }
@@ -123,6 +136,59 @@ function Issue() {
     }
   };
 
+  var arr = [];
+  const doLike = async (issue) => {
+    setLiking(true);
+    if (likers.length === 0) {
+      arr.push(JSON.parse(localStorage.getItem("UNI201User")).custom_id);
+    } else {
+      var likersArray = Object.keys(likers).map((key) => likers[key]);
+      for (let index = 0; index < likersArray.length; index++) {
+        var liked = checkIfLiked(
+          JSON.parse(localStorage.getItem("UNI201User")).custom_id
+        );
+        if (liked) {
+          console.log("exist");
+        } else {
+          arr.push(likersArray[index]);
+        }
+      }
+      arr.push(JSON.parse(localStorage.getItem("UNI201User")).custom_id);
+    }
+
+    try {
+      const response = await fetch(VITE_API_URL + "/api/edit-post/" + issue, {
+        mode: "cors",
+        headers: {
+          Authorization: `Bearer ${
+            JSON.parse(localStorage.getItem("UNI201User")).token
+          }`,
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        method: "PATCH",
+        body: JSON.stringify({
+          likers: JSON.stringify(arr),
+        }),
+      });
+      const result = await response.json();
+      setLiking(false);
+      setLikedNow(true);
+      setLikedThis(true);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const checkIfLiked = (val) => {
+    var likersArray = Object.keys(likers).map((key) => likers[key]);
+    if (likersArray.includes(val)) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   const [resource] = createResource(issueDetails);
   return (
     <MetaProvider>
@@ -157,6 +223,38 @@ function Issue() {
                 </div>
               </h2>
               <Bamidele />
+            </div>
+          </div>
+        </Show>
+        <Show when={likedNow()}>
+          <div class="z-50 bg-black w-screen h-screen bg-opacity-95 fixed flex items-center top-0 bottom-0 left-0 right-0">
+            <div class="rounded w-11/12 md:w-96 mx-auto text-sm bg-white p-4 border-b-8 border-cyan-600">
+              <h2 class="flex justify-between pb-2 mb-4 border-b-2 border-cyan-600">
+                <div>Liked!</div>
+                <div>
+                  <span
+                    onClick={() => {
+                      setLikedNow(false);
+                    }}
+                    class="uppercase text-red-800 hover:opacity-60 cursor-pointer"
+                  >
+                    Close
+                  </span>
+                </div>
+              </h2>
+              <div class="text-center">
+                <p>You've liked this post.</p>
+                <div class="py-6">
+                  <span
+                    onClick={() => {
+                      setLikedNow(false);
+                    }}
+                    class="bg-cyan-600 text-white p-2 rounded-lg hover:opacity-60 cursor-pointer"
+                  >
+                    Okay.
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </Show>
@@ -200,7 +298,7 @@ function Issue() {
                                     viewBox="0 0 24 24"
                                     stroke-width="1.5"
                                     stroke="currentColor"
-                                    class="size-3 inline text-cyan-600 hover:opacity-60 cursor-pointer"
+                                    class="size-4 inline text-cyan-600 hover:opacity-60 cursor-pointer"
                                   >
                                     <path
                                       stroke-linecap="round"
@@ -221,23 +319,68 @@ function Issue() {
                           </div>
                           <div class="mb-12 m-2 md:m-6 py-2 text-xs md:text-base lg:text-lg">
                             <div class="shares w-full md:w-full mx-auto flex justify-between space-x-2 lg:space-x-2">
-                              <span class="flex justify-between items-center space-x-1 bg-gray-100 border border-gray-400 hover:opacity-60 text-black px-2 rounded">
-                                <span class="pt-0.5">Like this</span>
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  fill="none"
-                                  viewBox="0 0 24 24"
-                                  stroke-width="1.5"
-                                  stroke="currentColor"
-                                  class="size-6"
-                                >
-                                  <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
-                                  />
-                                </svg>
-                              </span>
+                              <Show
+                                when={liking()}
+                                fallback={
+                                  <Show
+                                    when={likedThis()}
+                                    fallback={
+                                      <span
+                                        onClick={() => {
+                                          doLike(post.issue_number);
+                                        }}
+                                        class="flex justify-between items-center space-x-1 bg-gray-100 border border-gray-400 cursor-pointer hover:opacity-60 text-black px-2 rounded"
+                                      >
+                                        <span class="pt-0.5">Like this</span>
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          stroke-width="1.5"
+                                          stroke="currentColor"
+                                          class="size-6"
+                                        >
+                                          <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                                          />
+                                        </svg>
+                                      </span>
+                                    }
+                                  >
+                                    <span class="flex justify-between items-center space-x-1 bg-gray-100 border border-gray-400 cursor-not-allowed text-black px-2 rounded">
+                                      <span class="pt-0.5">Liked this</span>
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        fill="currentColor"
+                                        class="size-6"
+                                      >
+                                        <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
+                                      </svg>
+                                    </span>
+                                  </Show>
+                                }
+                              >
+                                <span class="flex justify-between items-center space-x-1 bg-gray-100 border border-gray-400 cursor-not-allowed opacity-60 text-black px-2 rounded">
+                                  <span class="pt-0.5">Liking.. .</span>
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="currentColor"
+                                    class="size-6"
+                                  >
+                                    <path
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                                    />
+                                  </svg>
+                                </span>
+                              </Show>
                               <a
                                 target="_blank"
                                 href={
@@ -374,32 +517,6 @@ function Issue() {
                         </p>
                       </div>
                     </div>
-
-                    {/* <div class="bg-white p-2 md:p-6">
-                      <h2 class="text-base md:text-xl border-b-2 border-black pb-2">
-                        <span class="bg-blue-300 p-1">
-                          Send us your Feedback
-                        </span>
-                      </h2>
-                      <h1 class="my-2 text-xl md:text-2xl leading-tight font-bold">
-                        Your feedback is invaluable.
-                      </h1>
-                      <div class="space-y-6 text-base">
-                        <p>
-                          Whether you have ideas or tips you'd like us to post
-                          next, a suggestion, a comment, or a concern, we want
-                          to hear from you. Send email now to{" "}
-                          <a href="mailto:contactUNI201@gmail.com" class="name">
-                            contactUNI201@gmail.com
-                          </a>
-                        </p>
-                        <p>
-                          <b>Remember:</b>
-                          <br /> We'll post another idea or tip{" "}
-                          <b>next Friday evening</b>. See you then!
-                        </p>
-                      </div>
-                    </div> */}
                   </>
                 }
               >
@@ -410,28 +527,6 @@ function Issue() {
                 {/* loading */}
               </Show>
               {/* fetched ends here */}
-              {/* <div class="py-16 md:py-20 md:px-14 lg:px-10 md:pb-10 text-center space-y-4">
-                <div class="flex justify-center space-x-6">
-                  <a
-                    href="https://whatsapp.com/channel/0029Vaygmz06hENx0xLBxS2m"
-                    class="hover:opacity-60"
-                    target="_blank"
-                  >
-                    <img
-                      src={whatsappChannel}
-                      alt="UNI201 WhatsApp Channel"
-                      class="rounded-full w-14"
-                    />
-                  </a>
-                </div>
-                <div class="p-0 text-base">
-                  <A href="https://uni201.com.ng" class="name">
-                    UNI201
-                  </A>{" "}
-                  is a weekly post focused on helping university students in
-                  Nigeria embrace and pursue student entrepreneurship.
-                </div>
-              </div> */}
             </div>
           </div>
         </div>

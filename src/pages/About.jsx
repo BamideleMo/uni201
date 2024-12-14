@@ -48,8 +48,8 @@ function About() {
                   </p>
                   <p>So...</p>
                   <p>
-                    <b>Every Friday evening</b>, I post educative and impactful
-                    ideas & tips that will help you embrace student
+                    <b>Every Saturday morning</b>, I post educative and
+                    impactful ideas & tips that will help you embrace student
                     entrepreneurship, learn to become a successful student
                     entrepreneur, become employable and avoid unemployment after
                     you graduate.
