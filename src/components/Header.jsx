@@ -4,138 +4,33 @@ import { createSignal } from "solid-js";
 import Logo from "./Logo";
 import { useNavigate } from "@solidjs/router";
 import Popup from "./Popup";
-import TextInput from "./TextInput";
-import { useFormHandler } from "solid-form-handler";
-import { zodSchema } from "solid-form-handler/zod";
-import { z } from "zod";
 
-const schema = z.object({
-  search: z.string().min(3, "*Invalid"),
-});
-
-const VITE_API_URL = import.meta.env["VITE_API_URL"];
 
 function Header() {
-  const formHandler = useFormHandler(zodSchema(schema));
-  const { formData } = formHandler;
-
-  const [menu, setMenu] = createSignal(false);
   const navigate = useNavigate();
   const [popup, setPopup] = createSignal(false);
   const [whichForm, setWhichForm] = createSignal("");
   const [whichIssue, setWhichIssue] = createSignal("");
-  const [showSearch, setShowSearch] = createSignal(false);
-
-  const [message, setMessage] = createSignal("");
-  const [isProcessing, setIsProcessing] = createSignal(false);
-
-  const submit = async (event) => {
-    event.preventDefault();
-    // setIsProcessing(true);
-    // await doLogin(formData().username, "1234");
-  };
 
   return (
     <>
       <Show when={popup()}>
         <Popup whichForm={whichForm()} whichIssue={whichIssue()} />
       </Show>
-      <Show when={showSearch()}>
-        <div class="z-50 bg-black w-screen h-screen bg-opacity-95 fixed flex items-center top-0 bottom-0 left-0 right-0">
-          <div class="rounded w-11/12 md:w-96 mx-auto text-sm bg-white p-4 border-b-8 border-cyan-600">
-            <h2 class="flex justify-between pb-2 mb-4 border-b-2 border-cyan-600">
-              <div>Search UNI201 </div>
-              <div>
-                <span
-                  onClick={() => {
-                    setShowSearch(false);
-                  }}
-                  class="uppercase text-red-800 hover:opacity-60 cursor-pointer"
-                >
-                  Close
-                </span>
-              </div>
-            </h2>
-            <div>
-              <form
-                autocomplete="off"
-                onSubmit={submit}
-                class="w-full mx-auto py-2"
-              >
-                <div class="flex space-x-2">
-                  <div class="grow">
-                    <TextInput
-                      label="Search:"
-                      name="search"
-                      required={true}
-                      type="text"
-                      placeholder="Type text here.. ."
-                      formHandler={formHandler}
-                    />
-                  </div>
-                  <div class="w-fit pt-5">
-                    <Show
-                      when={formHandler.isFormInvalid()}
-                      fallback={
-                        <>
-                          <Show
-                            when={isProcessing()}
-                            fallback={
-                              <button
-                                type="submit"
-                                class="bg-cyan-600 rounded-lg w-full p-3.5 text-center hover:opacity-60"
-                              >
-                                Search
-                              </button>
-                            }
-                          >
-                            <button
-                              disabled
-                              class="bg-gray-600 rounded-lg cursor-none w-full p-3.5 text-center animate-pulse"
-                            >
-                              Wait.. .
-                            </button>
-                          </Show>
-                        </>
-                      }
-                    >
-                      <button
-                        disabled
-                        class="bg-gray-400 rounded-lg w-full p-3.5 text-center cursor-not-allowed"
-                      >
-                        Search
-                      </button>
-                    </Show>
-                  </div>
-                </div>
-
-                <Show when={message() !== ""}>
-                  <div class="bg-purple-200 text-purple-900 p-3 text-center animate-pulse border-l-2 border-black">
-                    {message()}
-                  </div>
-                </Show>
-              </form>
-            </div>
-          </div>
-        </div>
-      </Show>
       <div class="fixed z-40 w-full bg-white shadow-lg">
         <div class="w-full md:w-11/12 2xl:w-9/12 mx-auto px-2 md:px-0 py-3 lg:py-4 flex justify-between">
           <div class="md:mt-1">
             <Logo />
           </div>
-          <div class="text-lg lg:text-lg flex space-x-6 md:space-x-8">
-            <span class="mt-1.5 md:mt-2 lg:mt-2.5">
+          <div class="flex space-x-8 md:space-x-8 lg:space-x-12 md:pt-1 lg:pt-1.5">
+            <A href="/search" class="">
               <svg
-                onClick={() => {
-                  setShowSearch(true);
-                }}
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="size-6 cursor-pointer hover:text-gray-400"
+                class="size-8 cursor-pointer hover:text-gray-400"
               >
                 <path
                   stroke-linecap="round"
@@ -143,16 +38,16 @@ function Header() {
                   d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
                 />
               </svg>
-            </span>
+            </A>
             <Show when={JSON.parse(localStorage.getItem("UNI201User"))}>
-              <A href="/likes" class="mt-1.5 md:mt-2 lg:mt-2.5">
+              <A href="/likes" class="">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="size-6 cursor-pointer hover:text-gray-400"
+                  class="size-8 cursor-pointer text-cyan-600 hover:text-gray-400"
                 >
                   <path
                     stroke-linecap="round"

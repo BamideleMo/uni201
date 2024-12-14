@@ -9,6 +9,8 @@ import Footer from "../components/Footer";
 import Skeleton from "../components/Skeleton";
 import Popup from "../components/Popup";
 import ShareButton from "../components/ShareButton";
+import author from "../assets/user2.png";
+import Bamidele from "../components/Bamidele";
 
 const VITE_API_URL = import.meta.env["VITE_API_URL"];
 
@@ -21,6 +23,7 @@ function Issue() {
   const [issue, setIssue] = createStore([]);
   const [metaDesc, setMetaDesc] = createSignal("Loading...");
   const [topic, setTopic] = createSignal("");
+  const [showAuthor, setShowAuthor] = createSignal(false);
 
   const issueDetails = async () => {
     if (JSON.parse(localStorage.getItem("UNI201User"))) {
@@ -137,6 +140,26 @@ function Issue() {
         content={metaDesc() ? metaDesc() : "Loading..."}
       />
       <div>
+        <Show when={showAuthor()}>
+          <div class="z-50 bg-black w-screen h-screen bg-opacity-95 fixed flex items-center top-0 bottom-0 left-0 right-0">
+            <div class="rounded w-11/12 md:w-96 mx-auto text-sm bg-white p-4 border-b-8 border-cyan-600">
+              <h2 class="flex justify-between pb-2 mb-4 border-b-2 border-cyan-600">
+                <div>Why Trust Me?</div>
+                <div>
+                  <span
+                    onClick={() => {
+                      setShowAuthor(false);
+                    }}
+                    class="uppercase text-red-800 hover:opacity-60 cursor-pointer"
+                  >
+                    Close
+                  </span>
+                </div>
+              </h2>
+              <Bamidele/>
+            </div>
+          </div>
+        </Show>
         <Show when={popup()}>
           <Popup whichForm={"sign in"} whichIssue={params.issueNumber} />
         </Show>
@@ -161,24 +184,35 @@ function Issue() {
                             <h1 class="my-4 text-xl md:text-3xl !leading-tight font-bold">
                               {post.post_topic}
                             </h1>
-                            <div class="flex text-gray-400 pb-6 space-x-4">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke-width="1.5"
-                                stroke="currentColor"
-                                class="size-6"
-                              >
-                                <path
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                  d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z"
-                                />
-                              </svg>
-                              <span class="mt-0.5">
-                                {new Date(post.created_at).toDateString()}
-                              </span>
+                            <div class="flex space-x-1 text-sm py-4">
+                              <div class="w-fit">
+                                <img src={author} class="w-10 !rounded-full" />
+                              </div>
+                              <div class="-space-y-0.5">
+                                <div class="space-x-3 pt-0.5">
+                                  <span>Bamidele M. O.</span>
+                                  <svg
+                                    onClick={() => {
+                                      setShowAuthor(true);
+                                    }}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="currentColor"
+                                    class="size-4 inline text-gray-600 hover:opacity-60 cursor-pointer"
+                                  >
+                                    <path
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
+                                    />
+                                  </svg>
+                                </div>
+                                <div class="text-gray-400">
+                                  {new Date(post.created_at).toDateString()}
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="space-y-6 text-base"
@@ -320,20 +354,6 @@ function Issue() {
                           button below to share on your WhatsApp:
                         </p>
                         <p>
-                          {/* <span
-                            target="_blank"
-                            href={
-                              "https://wa.me/?text=" +
-                              encodeURI(
-                                "I like UNI201, and I think you'd like it too. It's a weekly post focused on helping Nigerian students in universities embrace and pursue entrepreneurship before graduation. Check it out: https://uni201.com.ng?ref=" +
-                                  JSON.parse(localStorage.getItem("UNI201User"))
-                                    .custom_id
-                              )
-                            }
-                            class="bg-slate-100 p-2 rounded-lg border cursor-pointer hover:opacity-60"
-                          >
-                            👋🏾 Share on WhatsApp
-                          </span> */}
                           <ShareButton
                             CId={
                               JSON.parse(localStorage.getItem("UNI201User"))
@@ -342,7 +362,7 @@ function Issue() {
                           />
                         </p>
                         <p>
-                          Or copy and paste your referral link to others:
+                          Or copy & paste your referral link to others:
                           <br />
                           <span class="text-cyan-600">
                             https://www.uni201.com.ng?ref=

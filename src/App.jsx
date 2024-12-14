@@ -43,7 +43,6 @@ function App() {
   };
 
   const logOut = () => {
-    console.log("out");
     localStorage.removeItem("UNI201User");
     window.location.replace("/");
   };
@@ -51,13 +50,11 @@ function App() {
   const now = new Date();
   createEffect(() => {
     setFetching(true);
-    if (
-      !JSON.parse(localStorage.getItem("UNI201User")) &&
-      now.getTime() >= JSON.parse(localStorage.getItem("UNI201User")).expiry
-    ) {
-      logOut();
-    } else {
+    if (JSON.parse(localStorage.getItem("UNI201User"))) {
+      // now.getTime() >= JSON.parse(localStorage.getItem("UNI201User")).expiry
       latestIssue();
+    } else {
+      setFetching(false);
     }
   });
   return (
