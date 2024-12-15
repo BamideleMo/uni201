@@ -13,9 +13,12 @@ function Welcome() {
   const navigate = useNavigate();
 
   const getLatest = async () => {
-    const response = await fetch(VITE_API_URL + "/open/latest-post", {
+    const response = await fetch(VITE_API_URL + "/api/latest-post", {
       mode: "cors",
       headers: {
+        Authorization: `Bearer ${
+          JSON.parse(localStorage.getItem("UNI201User")).token
+        }`,
         "Content-Type": "application/json",
         Accept: "application/json",
       },
@@ -75,10 +78,10 @@ function Welcome() {
                   </p>
                   <ul class="mx-4 space-y-4">
                     <li>
-                      <u>Inspiring Weekly Insights:</u> Every Saturday morning, you’ll get
-                      practical tips and strategies tailored to help you start
-                      and grow your own business while balancing life as a
-                      student.
+                      <u>Inspiring Weekly Insights:</u> Every Saturday morning,
+                      you’ll get practical tips and strategies tailored to help
+                      you start and grow your own business while balancing life
+                      as a student.
                     </li>
                     <li>
                       <u>Exclusive Stories:</u> You'll learn from real-life case

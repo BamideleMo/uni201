@@ -6,7 +6,7 @@ import Faces from "./Faces";
 
 const VITE_API_URL = import.meta.env["VITE_API_URL"];
 
-function Hero() {
+function Hero(props) {
   const navigate = useNavigate();
   const [popup, setPopup] = createSignal(false);
   const [whichForm, setWhichForm] = createSignal("");
@@ -45,7 +45,11 @@ function Hero() {
   return (
     <>
       <Show when={popup()}>
-        <Popup whichForm={whichForm()} whichIssue={whichIssue()} />
+        <Popup
+          whichForm={whichForm()}
+          whichIssue={whichIssue()}
+          ref2={props.ref1}
+        />
       </Show>
       <div class="w-full md:w-11/12 2xl:w-9/12 mx-auto pt-4">
         <div

@@ -45,7 +45,7 @@ function Popup(props) {
             UNI201 is free, but you must a working email to proceed.
           </p>
         </Show>
-        <LoginForm />
+        <LoginForm ref3={props.ref2} />
       </div>
     </div>
   );

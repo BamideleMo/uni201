@@ -37,10 +37,13 @@ function Issue() {
     }
 
     const response = await fetch(
-      VITE_API_URL + "/open/view-posts/" + params.issueNumber,
+      VITE_API_URL + "/api/post/" + params.issueNumber,
       {
         mode: "cors",
         headers: {
+          Authorization: `Bearer ${
+            JSON.parse(localStorage.getItem("UNI201User")).token
+          }`,
           "Content-Type": "application/json",
           Accept: "application/json",
         },
@@ -51,9 +54,10 @@ function Issue() {
     if (result.success) {
       await getPrevIssue();
       await getNextIssue();
-      setTopic(result.response[0].post_topic);
-      if (result.response[0].likers) {
-        setLikers(JSON.parse(result.response[0].likers));
+
+      setTopic(result.response.post_topic);
+      if (result.response.likers) {
+        setLikers(JSON.parse(result.response.likers));
         var liked = checkIfLiked(
           JSON.parse(localStorage.getItem("UNI201User")).custom_id
         );
@@ -62,7 +66,7 @@ function Issue() {
         }
       }
       setIssue(result.response);
-      setMetaDesc(result.response[0].shareable);
+      setMetaDesc(result.response.shareable);
     }
 
     return {
@@ -74,16 +78,19 @@ function Issue() {
   const [nextSlug, setNextSlug] = createSignal(false);
   const getNextIssue = async () => {
     var v = parseInt(params.issueNumber) + 1;
-    const response = await fetch(VITE_API_URL + "/open/view-posts/" + v, {
+    const response = await fetch(VITE_API_URL + "/api/post/" + v, {
       mode: "cors",
       headers: {
+        Authorization: `Bearer ${
+          JSON.parse(localStorage.getItem("UNI201User")).token
+        }`,
         "Content-Type": "application/json",
         Accept: "application/json",
       },
       method: "GET",
     });
     const result = await response.json();
-    if (result.response.length > 0) {
+    if (result.response) {
       setNextIssue(true);
       setNextSlug(result.response[0].slug);
     }
@@ -93,16 +100,19 @@ function Issue() {
   const [prevSlug, setPrevSlug] = createSignal(false);
   const getPrevIssue = async () => {
     var v = parseInt(params.issueNumber) - 1;
-    const response = await fetch(VITE_API_URL + "/open/view-posts/" + v, {
+    const response = await fetch(VITE_API_URL + "/api/post/" + v, {
       mode: "cors",
       headers: {
+        Authorization: `Bearer ${
+          JSON.parse(localStorage.getItem("UNI201User")).token
+        }`,
         "Content-Type": "application/json",
         Accept: "application/json",
       },
       method: "GET",
     });
     const result = await response.json();
-    if (result.response.length > 0) {
+    if (result.response) {
       setPrevIssue(true);
       setPrevSlug(result.response[0].slug);
     }
@@ -199,11 +209,11 @@ function Issue() {
             " - " +
             topic() +
             " : www.uni201.com.ng"
-          : "Loading.. . "}
+          : "Just a moment.. ."}
       </Title>
       <Meta
         name="description"
-        content={metaDesc() ? metaDesc() : "Loading..."}
+        content={metaDesc() ? metaDesc() : "Just a moment.. ."}
       />
       <div>
         <Show when={showAuthor()}>
@@ -270,101 +280,65 @@ function Issue() {
                 when={resource.loading}
                 fallback={
                   <>
-                    <For each={resource().issue}>
-                      {(post, i) => (
-                        <>
-                          <div class="bg-white p-2 md:p-6">
-                            <h2 class="text-base md:text-xl border-b-2 border-black pb-2">
-                              <span class={post.post_bg + " " + "p-1"}>
-                                {post.post_highlight}
-                              </span>
-                            </h2>
-                            <h1 class="my-4 text-xl md:text-3xl !leading-tight font-bold">
-                              {post.post_topic}
-                            </h1>
-                            <div class="flex space-x-1 text-sm py-4">
-                              <div class="w-fit">
-                                <img src={author} class="w-10 !rounded-full" />
-                              </div>
-                              <div class="-space-y-0.5">
-                                <div class="space-x-1 pt-0.5">
-                                  <span>Bamidele M. O.</span>
-                                  <svg
-                                    onClick={() => {
-                                      setShowAuthor(true);
-                                    }}
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="1.5"
-                                    stroke="currentColor"
-                                    class="size-4 inline text-cyan-600 hover:opacity-60 cursor-pointer"
-                                  >
-                                    <path
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
-                                    />
-                                  </svg>
-                                </div>
-                                <div class="text-gray-400">
-                                  {new Date(post.created_at).toDateString()}
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              class="space-y-6 text-base"
-                              innerHTML={post.conversation_text}
-                            ></div>
+                    <div class="bg-white p-2 md:p-6">
+                      <h2 class="text-base md:text-xl border-b-2 border-black pb-2">
+                        <span class={resource().issue.post_bg + " " + "p-1"}>
+                          {resource().issue.post_highlight}
+                        </span>
+                      </h2>
+                      <h1 class="my-4 text-xl md:text-3xl !leading-tight font-bold">
+                        {resource().issue.post_topic}
+                      </h1>
+                      <div class="flex space-x-1 text-sm py-4">
+                        <div class="w-fit">
+                          <img src={author} class="w-10 !rounded-full" />
+                        </div>
+                        <div class="-space-y-0.5">
+                          <div class="space-x-1 pt-0.5">
+                            <span>Bamidele M. O.</span>
+                            <svg
+                              onClick={() => {
+                                setShowAuthor(true);
+                              }}
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke-width="1.5"
+                              stroke="currentColor"
+                              class="size-4 inline text-cyan-600 hover:opacity-60 cursor-pointer"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
+                              />
+                            </svg>
                           </div>
-                          <div class="mb-12 m-2 md:m-6 py-2 text-xs md:text-base lg:text-lg">
-                            <div class="shares w-full md:w-full mx-auto flex justify-between space-x-2 lg:space-x-2">
-                              <Show
-                                when={liking()}
-                                fallback={
-                                  <Show
-                                    when={likedThis()}
-                                    fallback={
-                                      <span
-                                        onClick={() => {
-                                          doLike(post.issue_number);
-                                        }}
-                                        class="flex justify-between items-center space-x-1 bg-gray-100 border border-gray-400 cursor-pointer hover:opacity-60 text-black px-2 rounded"
-                                      >
-                                        <span class="pt-0.5">Like this</span>
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          fill="none"
-                                          viewBox="0 0 24 24"
-                                          stroke-width="1.5"
-                                          stroke="currentColor"
-                                          class="size-6"
-                                        >
-                                          <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
-                                          />
-                                        </svg>
-                                      </span>
-                                    }
-                                  >
-                                    <span class="flex justify-between items-center space-x-1 bg-gray-100 border border-gray-400 cursor-not-allowed text-black px-2 rounded">
-                                      <span class="pt-0.5">Liked this</span>
-                                      <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 24 24"
-                                        fill="currentColor"
-                                        class="size-6"
-                                      >
-                                        <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
-                                      </svg>
-                                    </span>
-                                  </Show>
-                                }
-                              >
-                                <span class="flex justify-between items-center space-x-1 bg-gray-100 border border-gray-400 cursor-not-allowed opacity-60 text-black px-2 rounded">
-                                  <span class="pt-0.5">Liking.. .</span>
+                          <div class="text-gray-400">
+                            {new Date(resource().issue.created_at).toDateString()}
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="space-y-6 text-base"
+                        innerHTML={resource().issue.conversation_text}
+                      ></div>
+                    </div>
+                    <div class="mb-12 m-2 md:m-6 py-2 text-xs md:text-base lg:text-lg">
+                      <div class="shares w-full md:w-full mx-auto flex justify-between space-x-2 lg:space-x-2">
+                        <Show
+                          when={liking()}
+                          fallback={
+                            <Show
+                              when={likedThis()}
+                              fallback={
+                                <span
+                                  onClick={() => {
+                                    doLike(resource().issue.issue_number);
+                                  }}
+                                  class="flex justify-between items-center space-x-1 bg-gray-100 border border-gray-400 cursor-pointer hover:opacity-60 text-black px-2 rounded"
+                                >
+                                  <span class="pt-0.5">Like this</span>
                                   <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
@@ -380,54 +354,85 @@ function Issue() {
                                     />
                                   </svg>
                                 </span>
-                              </Show>
-                              <a
-                                target="_blank"
-                                href={
-                                  "https://twitter.com/intent/tweet?text=" +
-                                  encodeURI(
-                                    post.shareable +
-                                      " 🤖 https://uni201.com.ng/post/" +
-                                      post.slug
-                                  )
-                                }
-                                class="flex justify-between items-center space-x-1 bg-gray-100 border border-gray-400 hover:opacity-60 text-black px-2 rounded"
-                              >
-                                <div class="">Share on</div>
-                                <div class="-ml-1">
-                                  <img
-                                    src={twitterShare}
-                                    alt="share on twitter"
-                                    class="w-8 py-1.5"
-                                  />
-                                </div>
-                              </a>
-                              <a
-                                target="_blank"
-                                href={
-                                  "https://wa.me/?text=" +
-                                  encodeURI(
-                                    post.shareable +
-                                      " 🤖 https://uni201.com.ng/post/" +
-                                      post.slug
-                                  )
-                                }
-                                class="flex justify-between items-center space-x-2 bg-gray-100 border border-gray-400 hover:opacity-60 text-black px-2 rounded"
-                              >
-                                <div class="">Share on</div>
-                                <div class="">
-                                  <img
-                                    src={whatsappShare}
-                                    alt="share on WhatsApp"
-                                    class="w-6 py-1.5"
-                                  />
-                                </div>
-                              </a>
-                            </div>
+                              }
+                            >
+                              <span class="flex justify-between items-center space-x-1 bg-gray-100 border border-gray-400 cursor-not-allowed text-black px-2 rounded">
+                                <span class="pt-0.5">Liked this</span>
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 24 24"
+                                  fill="currentColor"
+                                  class="size-6"
+                                >
+                                  <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
+                                </svg>
+                              </span>
+                            </Show>
+                          }
+                        >
+                          <span class="flex justify-between items-center space-x-1 bg-gray-100 border border-gray-400 cursor-not-allowed opacity-60 text-black px-2 rounded">
+                            <span class="pt-0.5">Liking.. .</span>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke-width="1.5"
+                              stroke="currentColor"
+                              class="size-6"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                              />
+                            </svg>
+                          </span>
+                        </Show>
+                        <a
+                          target="_blank"
+                          href={
+                            "https://twitter.com/intent/tweet?text=" +
+                            encodeURI(
+                              resource().issue.shareable +
+                                " 🤖 https://uni201.com.ng/post/" +
+                                resource().issue.slug
+                            )
+                          }
+                          class="flex justify-between items-center space-x-1 bg-gray-100 border border-gray-400 hover:opacity-60 text-black px-2 rounded"
+                        >
+                          <div class="">Share on</div>
+                          <div class="-ml-1">
+                            <img
+                              src={twitterShare}
+                              alt="share on twitter"
+                              class="w-8 py-1.5"
+                            />
                           </div>
-                        </>
-                      )}
-                    </For>
+                        </a>
+                        <a
+                          target="_blank"
+                          href={
+                            "https://wa.me/?text=" +
+                            encodeURI(
+                              resource().issue.shareable +
+                                " 🤖 https://uni201.com.ng/post/" +
+                                resource().issue.slug
+                            )
+                          }
+                          class="flex justify-between items-center space-x-2 bg-gray-100 border border-gray-400 hover:opacity-60 text-black px-2 rounded"
+                        >
+                          <div class="">Share on</div>
+                          <div class="">
+                            <img
+                              src={whatsappShare}
+                              alt="share on WhatsApp"
+                              class="w-6 py-1.5"
+                            />
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    {/* ccccgggg */}
 
                     <div class="m-2 md:m-6 flex justify-between border-t-2 border-black">
                       <Show when={prevIssue()} fallback={<div>.</div>}>

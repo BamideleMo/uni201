@@ -1,4 +1,4 @@
-import { A, useNavigate } from "@solidjs/router";
+import { A, useNavigate, useSearchParams } from "@solidjs/router";
 import { MetaProvider, Title, Meta, Link } from "@solidjs/meta";
 import { createSignal, createEffect, Show } from "solid-js";
 import Header from "./components/Header";
@@ -13,13 +13,18 @@ const VITE_API_URL = import.meta.env["VITE_API_URL"];
 function App() {
   const navigate = useNavigate();
 
+  const [searchParams, setSearchParams] = useSearchParams();
+
   const [fetching, setFetching] = createSignal(false);
 
   const latestIssue = async () => {
     try {
-      const response = await fetch(VITE_API_URL + "/open/latest-post", {
+      const response = await fetch(VITE_API_URL + "/api/latest-post", {
         mode: "cors",
         headers: {
+          Authorization: `Bearer ${
+            JSON.parse(localStorage.getItem("UNI201User")).token
+          }`,
           "Content-Type": "application/json",
           Accept: "application/json",
         },
@@ -40,11 +45,6 @@ function App() {
     } catch (error) {
       console.error(error);
     }
-  };
-
-  const logOut = () => {
-    localStorage.removeItem("UNI201User");
-    window.location.replace("/");
   };
 
   const now = new Date();
@@ -74,7 +74,7 @@ function App() {
           when={fetching()}
           fallback={
             <>
-              <Hero />
+              <Hero ref1={searchParams.ref} />
               <Why />
               <Cta />
             </>

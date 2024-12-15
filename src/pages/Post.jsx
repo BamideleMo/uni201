@@ -16,9 +16,12 @@ function Post() {
   const [topic, setTopic] = createSignal();
 
   const postDetails = async () => {
-    const response = await fetch(VITE_API_URL + "/open/post/" + params.slug, {
+    const response = await fetch(VITE_API_URL + "/api/post/" + params.slug, {
       mode: "cors",
       headers: {
+        Authorization: `Bearer ${
+          JSON.parse(localStorage.getItem("UNI201User")).token
+        }`,
         "Content-Type": "application/json",
         Accept: "application/json",
       },

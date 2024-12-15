@@ -113,7 +113,7 @@ function Privacy() {
                       Request the deletion of your data by contacting us at{" "}
                       <a
                         href="mailto:contactUNI201@gmail.com"
-                        class="text-red-600"
+                        class="text-cyan-600"
                       >
                         contactUNI201@gmail.com
                       </a>
@@ -140,16 +140,19 @@ function Privacy() {
                     <b class="underline font-normal">8. Contact Us</b>
                     <br />
                     If you have any questions or concerns about this Privacy
-                    Policy, please reach out to us at: <br />
-                    Email:{" "}
+                    Policy, please reach out to us at:
+                  </p>
+                  <p>
+                    <b>Email:</b>{" "}
                     <a
                       href="mailto:contactUNI201@gmail.com"
-                      class="text-red-600"
+                      class="text-cyan-600"
                     >
                       contactUNI201@gmail.com
-                    </a><br/>
-                    Website:{" "}
-                    <a href="https://www.uni201.com.ng" class="text-red-600">
+                    </a>
+                    <br />
+                    <b>Website:</b>{" "}
+                    <a href="https://www.uni201.com.ng" class="text-cyan-600">
                       https://www.uni201.com.ng
                     </a>
                   </p>

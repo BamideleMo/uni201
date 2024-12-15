@@ -86,7 +86,7 @@ function Search() {
                           formHandler={formHandler}
                         />
                       </div>
-                      <div class="w-fit pt-5">
+                      <div class="w-fit pt-5 text-white text-sm">
                         <Show
                           when={formHandler.isFormInvalid()}
                           fallback={
@@ -96,7 +96,7 @@ function Search() {
                                 fallback={
                                   <button
                                     type="submit"
-                                    class="bg-cyan-600 rounded-lg w-full p-3 text-center hover:opacity-60"
+                                    class="bg-cyan-600 rounded-lg w-full p-3.5 text-center hover:opacity-60"
                                   >
                                     Search
                                   </button>
@@ -104,7 +104,7 @@ function Search() {
                               >
                                 <button
                                   disabled
-                                  class="bg-gray-600 rounded-lg cursor-none w-full p-3 text-center animate-pulse"
+                                  class="bg-gray-600 rounded-lg cursor-none w-full p-3.5 text-center animate-pulse"
                                 >
                                   Wait.. .
                                 </button>
@@ -114,7 +114,7 @@ function Search() {
                         >
                           <button
                             disabled
-                            class="bg-gray-400 rounded-lg w-full p-3 text-center cursor-not-allowed"
+                            class="bg-gray-400 rounded-lg w-full p-3.5 text-center cursor-not-allowed"
                           >
                             Search
                           </button>

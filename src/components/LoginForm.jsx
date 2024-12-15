@@ -72,9 +72,12 @@ function LoginForm(props) {
             }
           );
         } else {
-          const response = await fetch(VITE_API_URL + "/open/latest-post", {
+          const response = await fetch(VITE_API_URL + "/api/latest-post", {
             mode: "cors",
             headers: {
+              Authorization: `Bearer ${
+                JSON.parse(localStorage.getItem("UNI201User")).token
+              }`,
               "Content-Type": "application/json",
               Accept: "application/json",
             },
@@ -108,10 +111,11 @@ function LoginForm(props) {
         body: JSON.stringify({
           username: uname,
           password: pword,
+          referrer: props.ref3 ? props.ref3 : "",
         }),
       });
       const result = await response.json();
-      console.log(result.success);
+
       if (result.success) {
         await sendEmail(uname);
         await doLogin(uname, pword);
