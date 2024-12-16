@@ -224,66 +224,66 @@ function Issue() {
         content={metaDesc() ? metaDesc() : "Just a moment.. ."}
       />
       <div>
-        <Show when={showAuthor()}>
-          <div class="z-50 bg-black w-screen h-screen bg-opacity-95 fixed flex items-center top-0 bottom-0 left-0 right-0">
-            <div class="rounded w-11/12 md:w-96 mx-auto text-sm bg-white p-4 border-b-8 border-cyan-600">
-              <h2 class="flex justify-between pb-2 mb-4 border-b-2 border-cyan-600">
-                <div>Why Trust Me?</div>
-                <div>
-                  <span
-                    onClick={() => {
-                      setShowAuthor(false);
-                    }}
-                    class="uppercase text-red-800 hover:opacity-60 cursor-pointer"
-                  >
-                    Close
-                  </span>
-                </div>
-              </h2>
-              <Bamidele />
-            </div>
-          </div>
-        </Show>
-        <Show when={likedNow()}>
-          <div class="z-50 bg-black w-screen h-screen bg-opacity-95 fixed flex items-center top-0 bottom-0 left-0 right-0">
-            <div class="rounded w-11/12 md:w-96 mx-auto text-sm bg-white p-4 border-b-8 border-cyan-600">
-              <h2 class="flex justify-between pb-2 mb-4 border-b-2 border-cyan-600">
-                <div>Liked!</div>
-                <div>
-                  <span
-                    onClick={() => {
-                      setLikedNow(false);
-                    }}
-                    class="uppercase text-red-800 hover:opacity-60 cursor-pointer"
-                  >
-                    Close
-                  </span>
-                </div>
-              </h2>
-              <div class="text-center">
-                <p>You've liked this post.</p>
-                <div class="py-6">
-                  <span
-                    onClick={() => {
-                      setLikedNow(false);
-                    }}
-                    class="bg-cyan-600 text-white p-2 rounded-lg hover:opacity-60 cursor-pointer"
-                  >
-                    Okay.
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Show>
-        <Show when={popup()}>
-          <Popup whichForm={"sign in"} whichIssue={params.issueNumber} />
-        </Show>
         <Header />
 
         <div class="pt-24 md:pt-28">
           <div class="w-full md:w-11/12 2xl:w-9/12 mx-auto pt-0 md:px-12 lg:px-12">
             <div class="content md:w-10/12 lg:w-7/12 2xl:w-6/12 mx-auto">
+              <Show when={showAuthor()}>
+                <div class="z-50 bg-black w-screen h-screen bg-opacity-95 fixed flex items-center top-0 bottom-0 left-0 right-0">
+                  <div class="rounded w-11/12 md:w-96 mx-auto text-sm bg-white p-4 border-b-8 border-cyan-600">
+                    <h4 class="flex justify-between pb-2 mb-4 border-b-2 border-cyan-600">
+                      <div>Why Trust Me?</div>
+                      <div>
+                        <span
+                          onClick={() => {
+                            setShowAuthor(false);
+                          }}
+                          class="uppercase text-red-800 hover:opacity-60 cursor-pointer"
+                        >
+                          Close
+                        </span>
+                      </div>
+                    </h4>
+                    <Bamidele />
+                  </div>
+                </div>
+              </Show>
+              <Show when={likedNow()}>
+                <div class="z-50 bg-black w-screen h-screen bg-opacity-95 fixed flex items-center top-0 bottom-0 left-0 right-0">
+                  <div class="rounded w-11/12 md:w-96 mx-auto text-sm bg-white p-4 border-b-8 border-cyan-600">
+                    <h4 class="flex justify-between pb-2 mb-4 border-b-2 border-cyan-600">
+                      <div>Liked!</div>
+                      <div>
+                        <span
+                          onClick={() => {
+                            setLikedNow(false);
+                          }}
+                          class="uppercase text-red-800 hover:opacity-60 cursor-pointer"
+                        >
+                          Close
+                        </span>
+                      </div>
+                    </h4>
+                    <div class="text-center">
+                      <p>You've liked this post.</p>
+                      <div class="py-6">
+                        <span
+                          onClick={() => {
+                            setLikedNow(false);
+                          }}
+                          class="bg-cyan-600 text-white p-2 rounded-lg hover:opacity-60 cursor-pointer"
+                        >
+                          Okay.
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Show>
+              <Show when={popup()}>
+                <Popup whichForm={"sign in"} whichIssue={params.issueNumber} />
+              </Show>
               <Show
                 when={resource.loading}
                 fallback={

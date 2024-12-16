@@ -111,7 +111,7 @@ function LoginForm(props) {
         body: JSON.stringify({
           username: uname,
           password: pword,
-          referrer: props.ref3 ? props.ref3 : "",
+          referrer: props.ref3 ? props.ref3 : "none",
         }),
       });
       const result = await response.json();

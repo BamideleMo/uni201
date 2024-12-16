@@ -22,7 +22,7 @@ function ShareButton(props) {
         <Show when={popup()}>
           <div class="z-50 bg-black w-screen h-screen bg-opacity-95 fixed flex items-center top-0 bottom-0 left-0 right-0">
             <div class="rounded w-11/12 md:w-96 mx-auto text-base bg-white p-4 border-b-8 border-cyan-600">
-              <h2 class="flex justify-between pb-2 mb-4 border-b-2 border-cyan-600">
+              <h4 class="flex justify-between pb-2 mb-4 border-b-2 border-cyan-600">
                 <div>Share UNI201 🙏🏾</div>
                 <div>
                   <span
@@ -34,7 +34,7 @@ function ShareButton(props) {
                     Close
                   </span>
                 </div>
-              </h2>
+              </h4>
               <div class="text-white space-y-6">
                 <a
                   target="_blank"
