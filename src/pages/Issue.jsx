@@ -294,7 +294,7 @@ function Issue() {
                           {resource().issue.post_highlight}
                         </span>
                       </h4>
-                      <h1 class="my-4 text-xl md:text-3xl !leading-tight font-bold">
+                      <h1 class="my-4 text-2xl md:text-3xl !leading-tight font-bold">
                         {resource().issue.post_topic}
                       </h1>
                       <div class="flex space-x-1 text-sm py-4">
@@ -442,7 +442,6 @@ function Issue() {
                         </a>
                       </div>
                     </div>
-                    {/* ccccgggg */}
 
                     <div class="m-2 md:m-6 flex justify-between border-t-2 border-black">
                       <Show when={prevIssue()} fallback={<div>.</div>}>
