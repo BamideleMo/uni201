@@ -2,8 +2,13 @@ User-agent: *
 Disallow: /a/login
 Disallow: /a/post
 Disallow: /a/post-image
+Disallow: /likes
+Disallow: /post
+Disallow: /welcome
+Disallow: /confirm-email
 Allow: /
-Allow: /post
-Allow: /issue
 Allow: /about
-Allow: /advertise
+Allow: /archive
+Allow: /search
+Allow: /terms
+Allow: /privacy
