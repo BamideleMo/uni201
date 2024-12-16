@@ -91,15 +91,14 @@ function Likes() {
                     <h4 class="text-lg md:text-xl border-b-2 border-black pb-2">
                       <span class="bg-purple-300 p-1">Liked Posts</span>
                     </h4>
-                    <h4 class="mt-8 text-xl md:text-2xl leading-tight font-bold">
-                    🚀
-                    </h4>
                     <div class="my-4 space-y-6 text-base">
                       <Show
                         when={posts.length > 0}
                         fallback={
                           <>
-                            <p>You've not liked any post!</p>
+                            <p class="text-gray-400">
+                              You've not liked any post yet!
+                            </p>
                           </>
                         }
                       >
