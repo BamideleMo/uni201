@@ -66,6 +66,11 @@ blockquote p i {
   text-decoration: underline;
 }
 
+.content h5{
+  font-weight: 600;
+  font-size: large;
+}
+
 .name,
 .content p a,
 .content p a span,

@@ -232,7 +232,7 @@ function Issue() {
               <Show when={showAuthor()}>
                 <div class="z-50 bg-black w-screen h-screen bg-opacity-95 fixed flex items-center top-0 bottom-0 left-0 right-0">
                   <div class="rounded w-11/12 md:w-96 mx-auto text-sm bg-white p-4 border-b-8 border-cyan-600">
-                    <h4 class="flex justify-between pb-2 mb-4 border-b-2 border-cyan-600">
+                    <h5 class="flex justify-between pb-2 mb-4 border-b-2 border-cyan-600">
                       <div>Why Trust Me?</div>
                       <div>
                         <span
@@ -244,7 +244,7 @@ function Issue() {
                           Close
                         </span>
                       </div>
-                    </h4>
+                    </h5>
                     <Bamidele />
                   </div>
                 </div>
