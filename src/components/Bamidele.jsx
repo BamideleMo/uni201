@@ -6,17 +6,17 @@ function Bamidele() {
         program in the Northwestern part of the country in 2012.
       </p>
       <p>
-        I got a good job almost immediately after completing my NYSC while
-        running a business venture.
+        Got employed almost immediately after completing my NYSC while running a
+        business venture.
       </p>
       <p>
-        I consider myself "lucky" since I never had to experience unemployment
-        or joblessness like many other uni graduates in this country.
+        I consider myself "lucky" since I never had to experience
+        unemployment/joblessness like many other uni graduates in this country.
       </p>
       <p>
-        Escaping joblessness & unemployment didn't just happen out of nowhere
-        for me. There were certain and specific moves I made while in uni that
-        were extremely helpful.
+        Escaping joblessness/unemployment didn't just happen out of nowhere for
+        me. There were deliberate moves I made while in uni that were extremely
+        helpful.
       </p>
       <p>
         I write posts on UNI201 because I want to share those moves so you too
