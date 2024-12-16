@@ -68,6 +68,9 @@ function Issue() {
       setIssue(result.response);
       setMetaDesc(result.response.shareable);
     }
+    if (result.response === "Expired token") {
+      logOut();
+    }
 
     return {
       issue,
@@ -199,6 +202,11 @@ function Issue() {
     }
   };
 
+  const logOut = () => {
+    localStorage.removeItem("UNI201User");
+    window.location.replace("/");
+  };
+
   const [resource] = createResource(issueDetails);
   return (
     <MetaProvider>
@@ -315,7 +323,9 @@ function Issue() {
                             </svg>
                           </div>
                           <div class="text-gray-400">
-                            {new Date(resource().issue.created_at).toDateString()}
+                            {new Date(
+                              resource().issue.created_at
+                            ).toDateString()}
                           </div>
                         </div>
                       </div>

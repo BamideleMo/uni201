@@ -17,6 +17,11 @@ function App() {
 
   const [fetching, setFetching] = createSignal(false);
 
+  const logOut = () => {
+    localStorage.removeItem("UNI201User");
+    window.location.replace("/");
+  };
+
   const latestIssue = async () => {
     try {
       const response = await fetch(VITE_API_URL + "/api/latest-post", {
@@ -42,6 +47,9 @@ function App() {
           }
         );
       }
+      if (result.response === "Expired token") {
+        logOut();
+      }
     } catch (error) {
       console.error(error);
     }
@@ -51,7 +59,6 @@ function App() {
   createEffect(() => {
     setFetching(true);
     if (JSON.parse(localStorage.getItem("UNI201User"))) {
-      // now.getTime() >= JSON.parse(localStorage.getItem("UNI201User")).expiry
       latestIssue();
     } else {
       setFetching(false);
