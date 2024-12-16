@@ -1,5 +1,3 @@
-
-
 function Bamidele() {
   return (
     <div class="space-y-4">
@@ -8,8 +6,8 @@ function Bamidele() {
         program in the Northwestern part of the country in 2012.
       </p>
       <p>
-        I got a good job almost immediately after completing my NYSC even though
-        I already had a running business venture.
+        I got a good job almost immediately after completing my NYSC while
+        running a business venture.
       </p>
       <p>
         I consider myself "lucky" since I never had to experience unemployment

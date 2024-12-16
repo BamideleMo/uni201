@@ -28,12 +28,14 @@ function Issue() {
   const [liking, setLiking] = createSignal(false);
   const [likedThis, setLikedThis] = createSignal(false);
   const [likedNow, setLikedNow] = createSignal(false);
+  const [referrals, setReferrals] = createSignal("");
 
   const issueDetails = async () => {
     if (JSON.parse(localStorage.getItem("UNI201User"))) {
       setPopup(false);
 
       await getUser();
+      await getReferrals();
     }
 
     const response = await fetch(
@@ -147,6 +149,27 @@ function Issue() {
         { replace: true }
       );
     }
+  };
+
+  const getReferrals = async () => {
+    const response = await fetch(
+      VITE_API_URL +
+        "/api/referrals/" +
+        JSON.parse(localStorage.getItem("UNI201User")).custom_id,
+      {
+        mode: "cors",
+        headers: {
+          Authorization: `Bearer ${
+            JSON.parse(localStorage.getItem("UNI201User")).token
+          }`,
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        method: "GET",
+      }
+    );
+    const result = await response.json();
+    setReferrals(result.response);
   };
 
   var arr = [];
@@ -504,7 +527,8 @@ function Issue() {
                       </h4>
                       <div class="space-y-6 text-base my-2">
                         <p>
-                          You currently have <b>0</b> referrals.
+                          You currently have <b>{referrals()}</b> referral
+                          {referrals() > 1 ? "s" : ""}.
                         </p>
                         <p>
                           Tell other students to join UNI201 by clicking the
