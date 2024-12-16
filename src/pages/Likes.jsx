@@ -96,7 +96,7 @@ function Likes() {
                         when={posts.length > 0}
                         fallback={
                           <>
-                            <p class="text-gray-400">
+                            <p class="text-gray-400 text-center">
                               You've not liked any post yet!
                             </p>
                           </>
