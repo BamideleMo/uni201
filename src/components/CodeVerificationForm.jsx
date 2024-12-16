@@ -110,7 +110,7 @@ function CodeVerificationForm(props) {
                   disabled
                   class="bg-gray-600 rounded-lg cursor-none w-full py-3 px-2 text-center animate-pulse"
                 >
-                  Wait.. .
+                  .. .
                 </button>
               </Show>
             </>
