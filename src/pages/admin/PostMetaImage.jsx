@@ -91,9 +91,9 @@ function PostMetaImage() {
           <div class="w-full md:w-11/12 mx-auto backgound-color md:p-12 lg:p-12">
             <div class="content md:w-10/12 lg:w-6/12 mx-auto space-y-3">
               <div class="bg-white p-2 md:p-6">
-                <h2 class="text-lg md:text-xl border-b-2 border-black pb-2">
+                <h4 class="text-lg md:text-xl border-b-2 border-black pb-2">
                   <span class="bg-pink-300 p-1">Post Meta Picture</span>
-                </h2>
+                </h4>
                 <div class="space-y-6 text-base">
                   <form
                     autocomplete="off"

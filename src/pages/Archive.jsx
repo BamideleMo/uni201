@@ -51,24 +51,21 @@ function Archive() {
                 fallback={
                   <>
                     <div class="bg-white p-2 md:p-6">
-                      <h2 class="text-lg md:text-xl border-b-2 border-black pb-2">
+                      <h4 class="text-lg md:text-xl border-b-2 border-black pb-2">
                         <span class="bg-blue-300 p-1">Archive</span>
-                      </h2>
-                      <h2 class="mt-8 text-xl md:text-2xl leading-tight font-bold">
-                        See all Posts
-                      </h2>
-                      <div class="my-4 space-y-6 text-base">
+                      </h4>
+                      <div class="my-10 space-y-6 text-base">
                         <For each={posts}>
                           {(post, i) => (
-                            <p>
-                              <span class="block text-gray-500 text-xs border-t pt-4">
+                            <p class="border-b pb-6">
+                              <span class="block text-gray-500 text-xs">
                                 {new Date(post.created_at).toDateString()}
                               </span>
                               <A
                                 href={
                                   "/post/" + post.issue_number + "/" + post.slug
                                 }
-                                class="hover:border-b border-black"
+                                class="hover:border-b border-black text-xl"
                               >
                                 {post.post_topic}
                               </A>

@@ -36,27 +36,29 @@ function Likes() {
 
       for (let index = 0; index < theRes.length; index++) {
         var arr = JSON.parse(theRes[index].likers);
-        if (
-          arr.includes(JSON.parse(localStorage.getItem("UNI201User")).custom_id)
-        ) {
-          // obj["liked"] = [
-          //   theRes[index].post_topic,
-          //   theRes[index].issue_number,
-          //   theRes[index].slug,
-          //   theRes[index].created_at,
-          // ];
-          // var arrObj = {};
-          // arrObj[] = {
-          var topic = theRes[index].post_topic;
-          var issue_no = theRes[index].issue_number;
-          var slug = theRes[index].slug;
-          var date = theRes[index].created_at;
-          // };
+        if (arr) {
+          if (
+            arr.includes(
+              JSON.parse(localStorage.getItem("UNI201User")).custom_id
+            )
+          ) {
+            var topic = theRes[index].post_topic;
+            var issue_no = theRes[index].issue_number;
+            var slug = theRes[index].slug;
+            var date = theRes[index].created_at;
+          }
         }
       }
-      theArr.push({ topic: topic, issue_no: issue_no, slug: slug, date: date });
-      console.log(theArr);
-      setPosts(theArr);
+      if (arr) {
+        theArr.push({
+          topic: topic,
+          issue_no: issue_no,
+          slug: slug,
+          date: date,
+        });
+
+        setPosts(theArr);
+      }
       setFetching(false);
     } catch (error) {
       console.error(error);
@@ -86,28 +88,39 @@ function Likes() {
               <div class="w-full md:w-11/12 2xl:w-9/12 mx-auto md:px-12 lg:px-12">
                 <div class="content md:w-10/12 lg:w-7/12 2xl:w-6/12 mx-auto space-y-3">
                   <div class="bg-white p-2 md:p-6">
-                    <h2 class="text-lg md:text-xl border-b-2 border-black pb-2">
-                      <span class="bg-purple-300 p-1">My Liked Posts</span>
-                    </h2>
-                    <h2 class="mt-8 text-xl md:text-2xl leading-tight font-bold">
-                      Saved for Easy Access
-                    </h2>
+                    <h4 class="text-lg md:text-xl border-b-2 border-black pb-2">
+                      <span class="bg-purple-300 p-1">Liked Posts</span>
+                    </h4>
+                    <h4 class="mt-8 text-xl md:text-2xl leading-tight font-bold">
+                    🚀
+                    </h4>
                     <div class="my-4 space-y-6 text-base">
-                      <For each={posts}>
-                        {(post, i) => (
-                          <p>
-                            <span class="block text-gray-500 text-xs border-t pt-4">
-                              {new Date(post.date).toDateString()}
-                            </span>
-                            <A
-                              href={"/post/" + post.issue_no + "/" + post.slug}
-                              class="hover:border-b border-black"
-                            >
-                              {post.topic}
-                            </A>
-                          </p>
-                        )}
-                      </For>
+                      <Show
+                        when={posts.length > 0}
+                        fallback={
+                          <>
+                            <p>You've not liked any post!</p>
+                          </>
+                        }
+                      >
+                        <For each={posts}>
+                          {(post, i) => (
+                            <p>
+                              <span class="block text-gray-500 text-xs border-t pt-4">
+                                {new Date(post.date).toDateString()}
+                              </span>
+                              <A
+                                href={
+                                  "/post/" + post.issue_no + "/" + post.slug
+                                }
+                                class="hover:border-b border-black"
+                              >
+                                {post.topic}
+                              </A>
+                            </p>
+                          )}
+                        </For>
+                      </Show>
                     </div>
                   </div>
                 </div>

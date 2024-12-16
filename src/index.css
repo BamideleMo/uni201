@@ -30,16 +30,46 @@ body {
 }
 
 blockquote {
-  background-color: #defae8 !important;
+  background-color: rgb(251, 251, 193) !important;
   padding: 15px;
   border-radius: 10px;
+}
+
+blockquote p a {
+  text-decoration: underline 2px red !important;
+}
+
+blockquote p {
+  margin: 15px 0;
+}
+
+blockquote p i {
+  background-color: black !important;
+  padding: 2px 5px;
+  color: white !important;
+  font-style: normal;
+  font-size: smaller;
+}
+
+.content h2 {
+  font-weight: bold;
+  font-size: larger;
+  text-decoration: underline rgb(4, 135, 187) 4px;
+}
+
+.content h3 {
+  font-size: large;
+  font-weight: 500;
+  border-left: rgb(4, 135, 187) 4px solid;
+  padding-left: 6px;
+  text-decoration: underline;
 }
 
 .name,
 .content p a,
 .content p a span,
 .content li a span {
-  color: rgb(3, 139, 139) !important;
+  color: rgb(4, 135, 187) !important;
 }
 
 .content .green {

@@ -4,7 +4,6 @@ import Logo from "./Logo";
 function Footer() {
   const navigate = useNavigate();
   const logOut = () => {
-    console.log("out");
     localStorage.removeItem("UNI201User");
     window.location.replace("/");
   };
@@ -44,7 +43,7 @@ function Footer() {
             onClick={() => {
               logOut();
             }}
-            class="cursor-pointer text-red-600 hover:opacity-60"
+            class="cursor-pointer text-gray-400 hover:opacity-60"
           >
             Sign Out
           </span>

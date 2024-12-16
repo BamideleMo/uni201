@@ -5,7 +5,6 @@ import { Router, Route } from "@solidjs/router";
 import "./index.css";
 import App from "./App";
 import About from "./pages/About";
-import Sponsorship from "./pages/Sponsorship";
 import Login from "./pages/admin/Login";
 import Post from "./pages/admin/Post";
 import Issue from "./pages/Issue";

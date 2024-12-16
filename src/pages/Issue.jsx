@@ -9,7 +9,7 @@ import Footer from "../components/Footer";
 import Skeleton from "../components/Skeleton";
 import Popup from "../components/Popup";
 import ShareButton from "../components/ShareButton";
-import author from "../assets/user2.png";
+import author from "../assets/headshot.png";
 import Bamidele from "../components/Bamidele";
 
 const VITE_API_URL = import.meta.env["VITE_API_URL"];
@@ -289,11 +289,11 @@ function Issue() {
                 fallback={
                   <>
                     <div class="bg-white p-2 md:p-6">
-                      <h2 class="text-base md:text-xl border-b-2 border-black pb-2">
+                      <h4 class="text-base md:text-xl border-b-2 border-black pb-2">
                         <span class={resource().issue.post_bg + " " + "p-1"}>
                           {resource().issue.post_highlight}
                         </span>
-                      </h2>
+                      </h4>
                       <h1 class="my-4 text-xl md:text-3xl !leading-tight font-bold">
                         {resource().issue.post_topic}
                       </h1>
@@ -500,9 +500,9 @@ function Issue() {
                     </div>
 
                     <div class="my-12 bg-white p-2 md:p-6">
-                      <h2 class="text-base md:text-xl border-b-2 border-black pb-2">
+                      <h4 class="text-base md:text-xl border-b-2 border-black pb-2">
                         <span class="bg-green-300 p-1">Share UNI201</span>
-                      </h2>
+                      </h4>
                       <div class="space-y-6 text-base my-2">
                         <p>
                           You currently have <b>0</b> referrals.
@@ -522,7 +522,7 @@ function Issue() {
                         <p>
                           Or copy & paste your referral link to others:
                           <br />
-                          <span class="text-cyan-600">
+                          <span class="text-purple-600">
                             https://www.uni201.com.ng?ref=
                             {
                               JSON.parse(localStorage.getItem("UNI201User"))

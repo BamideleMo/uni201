@@ -65,9 +65,9 @@ function Search() {
           <div class="w-full md:w-11/12 2xl:w-9/12 mx-auto md:px-12 lg:px-12">
             <div class="content md:w-10/12 lg:w-7/12 2xl:w-6/12 mx-auto space-y-3">
               <div class="bg-white p-2 md:p-6">
-                <h2 class="text-lg md:text-xl border-b-2 border-black pb-2">
+                <h4 class="text-lg md:text-xl border-b-2 border-black pb-2">
                   <span class="bg-blue-300 p-1">Search UNI201</span>
-                </h2>
+                </h4>
 
                 <div class="my-4 space-y-6 text-base">
                   <form
@@ -132,15 +132,15 @@ function Search() {
                   <div class="space-y-4">
                     <For each={posts}>
                       {(post, i) => (
-                        <p>
-                          <span class="block text-gray-500 text-xs border-t pt-4">
+                        <p class=" border-t pt-6">
+                          <span class="block text-gray-500 text-xs">
                             {new Date(post.created_at).toDateString()}
                           </span>
                           <A
                             href={
                               "/post/" + post.issue_number + "/" + post.slug
                             }
-                            class="hover:border-b border-black"
+                            class="hover:border-b border-black text-xl"
                           >
                             {post.post_topic}
                           </A>

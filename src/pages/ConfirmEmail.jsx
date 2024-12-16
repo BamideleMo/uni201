@@ -53,9 +53,9 @@ function ConfirmEmail() {
         <Show when={emailSent()}>
           <div class="z-50 bg-black w-screen h-screen bg-opacity-95 fixed flex items-center top-0 bottom-0 left-0 right-0">
             <div class="rounded w-11/12 md:w-96 mx-auto text-sm bg-white p-4 border-b-8 border-yellow-400">
-              <h2 class="text-lg text-center text-slate-800 font-bold">
+              <h4 class="text-lg text-center text-slate-800 font-bold">
                 Email Resent Successfully
-              </h2>
+              </h4>
               <p class="py-3 border-y-2 my-3">
                 The Verification Code has been resent to <b>{searchParams.e}</b>{" "}
                 successfully. Check your Inbox or Spam folder please.
@@ -77,12 +77,12 @@ function ConfirmEmail() {
           <div class="w-full md:w-11/12 2xl:w-9/12 mx-auto md:px-12 lg:px-12">
             <div class="content md:w-10/12 lg:w-7/12 2xl:w-6/12 mx-auto space-y-3">
               <div class="bg-white p-2 md:p-6">
-                <h2 class="text-lg md:text-xl border-b-2 border-black pb-2">
+                <h4 class="text-lg md:text-xl border-b-2 border-black pb-2">
                   <span class="bg-purple-400 p-1">Hi</span>
-                </h2>
-                <h2 class="my-2 text-xl md:text-2xl leading-tight font-bold">
+                </h4>
+                <h4 class="my-2 text-xl md:text-2xl leading-tight font-bold">
                   Please confirm your email.
-                </h2>
+                </h4>
                 <div class="space-y-6 text-base">
                   <p>Thanks for your interest to join UNI201.</p>
                   <p>
