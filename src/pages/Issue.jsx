@@ -297,7 +297,7 @@ function Issue() {
                       <h1 class="my-4 text-2xl md:text-3xl !leading-tight font-bold">
                         {resource().issue.post_topic}
                       </h1>
-                      <div class="flex space-x-1 text-sm py-4">
+                      <div class="flex space-x-1 text-sm pb-4">
                         <div class="w-fit">
                           <img src={author} class="w-10 !rounded-full" />
                         </div>
