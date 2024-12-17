@@ -82,8 +82,8 @@ function App() {
           fallback={
             <>
               <Hero ref1={searchParams.ref} />
-              <Why />
-              <Cta />
+              {/* <Why /> */}
+              {/* <Cta /> */}
             </>
           }
         >

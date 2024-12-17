@@ -20,10 +20,10 @@ function Footer() {
         <b class="text-black">.</b>
         <A href="/privacy">Privacy</A>
       </div>
-      <div>
+      {/* <div>
         <Logo />
         <div class="text-gray-400 -mt-1">www.uni201.com.ng</div>
-      </div>
+      </div> */}
       <Show when={JSON.parse(localStorage.getItem("UNI201User"))}>
         <div class="py-0 text-center">
           <span

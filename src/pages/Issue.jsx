@@ -523,7 +523,9 @@ function Issue() {
 
                     <div class="my-12 bg-white p-2 md:p-6">
                       <h4 class="text-base md:text-xl border-b-2 border-black pb-2">
-                        <span class="bg-green-300 p-1">Share UNI201</span>
+                        <span class="bg-green-300 p-1">
+                          Refer others to UNI201
+                        </span>
                       </h4>
                       <div class="space-y-6 text-base my-2">
                         <p>
@@ -531,7 +533,7 @@ function Issue() {
                           {referrals() > 1 ? "s" : ""}.
                         </p>
                         <p>
-                          Tell other students to join UNI201 by clicking the
+                          Refer other students to join UNI201 by clicking the
                           button below to share on your WhatsApp:
                         </p>
                         <p>

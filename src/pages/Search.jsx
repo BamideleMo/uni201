@@ -41,10 +41,10 @@ function Search() {
         }
       );
       const result = await response.json();
-      console.log(result.response);
+      
       if (result.response.length < 1) {
         setIsProcessing(false);
-        setMessage("Not found!");
+        setMessage("No related post found!");
       } else {
         setIsProcessing(false);
         setPosts(result.response);
@@ -106,7 +106,7 @@ function Search() {
                                   disabled
                                   class="bg-gray-600 rounded-lg cursor-none w-full p-3.5 text-center animate-pulse"
                                 >
-                                  Wait.. .
+                                  .. .
                                 </button>
                               </Show>
                             </>
