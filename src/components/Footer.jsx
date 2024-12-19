@@ -30,11 +30,7 @@ function Footer() {
           Privacy
         </A>
       </div>
-      {/* <div>
-        <Logo />
-        <div class="text-gray-400 -mt-1">www.uni201.com.ng</div>
-      </div> */}
-      <Show when={JSON.parse(localStorage.getItem("UNI201User"))}>
+      {/* <Show when={JSON.parse(localStorage.getItem("UNI201User"))}>
         <div class="py-0 text-center">
           <span
             onClick={() => {
@@ -45,7 +41,7 @@ function Footer() {
             Sign Out
           </span>
         </div>
-      </Show>
+      </Show> */}
       <div>&copy; UNI201 Media - 2024. All rights reserved.</div>
     </div>
   );
