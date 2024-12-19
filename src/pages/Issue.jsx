@@ -97,6 +97,7 @@ function Issue() {
     const result = await response.json();
     if (result.response) {
       setNextIssue(true);
+      console.log(result.response);
       setNextSlug(result.response.slug);
     }
   };
@@ -469,15 +470,18 @@ function Issue() {
                       </div>
                     </div>
 
-                    <div class="m-2 md:m-6 flex justify-between border-t-2 border-black">
+                    <div class="m-2 md:m-6 pt-12 text-red-600 flex justify-between border-t-2 border-black">
                       <Show when={prevIssue()} fallback={<div>.</div>}>
                         <span
                           onClick={() => {
                             window.location.replace(
-                              "/lesson/" + (parseInt(params.issueNumber) - 1)
+                              "/lesson/" +
+                                (parseInt(params.issueNumber) - 1) +
+                                "/" +
+                                prevSlug()
                             );
                           }}
-                          class="flex space-x-1 cursor-pointer hover:text-red-600"
+                          class="flex space-x-1 cursor-pointer hover:text-cyan-600"
                         >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -493,19 +497,22 @@ function Issue() {
                               d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                             />
                           </svg>
-                          <span>PREVIOUS</span>
+                          <span>PREVIOUS LESSON</span>
                         </span>
                       </Show>
                       <Show when={nextIssue()} fallback={<div>.</div>}>
                         <span
                           onClick={() => {
                             window.location.replace(
-                              "/lesson/" + (parseInt(params.issueNumber) + 1)
+                              "/lesson/" +
+                                (parseInt(params.issueNumber) + 1) +
+                                "/" +
+                                nextSlug()
                             );
                           }}
-                          class="flex space-x-1 cursor-pointer hover:text-red-600"
+                          class="flex space-x-1 cursor-pointer hover:text-cyan-600"
                         >
-                          <span>NEXT</span>
+                          <span>NEXT LESSON</span>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
