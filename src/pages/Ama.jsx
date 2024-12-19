@@ -61,8 +61,8 @@ function Ama() {
                       If you prefer email, add your email address instead.
                     </li>
                     <li>
-                      Regardless, I'll answer and post it as a lesson on
-                      www.uni201.com.ng
+                      Regardless, I'll answer and post it as a lesson on this
+                      site.
                     </li>
                   </ol>
                   <form autocomplete="off" onSubmit={submit} class="space-y-4">

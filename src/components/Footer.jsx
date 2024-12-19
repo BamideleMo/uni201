@@ -14,12 +14,12 @@ function Footer() {
           Lessons
         </A>
         <b class="text-black">.</b>
-        <A href="/about" class="hover:text-cyan-600">
-          About
-        </A>
-        <b class="text-black">.</b>
         <A href="/ask-me-anything" class="hover:text-cyan-600">
           AMA
+        </A>
+        <b class="text-black">.</b>
+        <A href="/about" class="hover:text-cyan-600">
+          About
         </A>
         <b class="text-black">.</b>
         <A href="/terms" class="hover:text-cyan-600">
