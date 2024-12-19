@@ -75,9 +75,9 @@ function Likes() {
   });
   return (
     <MetaProvider>
-      <Title>Liked Posts | www.uni201.com.ng</Title>
+      <Title>Liked Lessons | www.uni201.com.ng</Title>
       <Link rel="canonical" href="https://techinjos.com.ng/" />
-      <Meta name="description" content="All posts I have liked on UNI201." />
+      <Meta name="description" content="All Lessons I have liked on UNI201." />
       <div>
         <Header />
 
@@ -89,7 +89,7 @@ function Likes() {
                 <div class="content md:w-10/12 lg:w-7/12 2xl:w-6/12 mx-auto space-y-3">
                   <div class="bg-white p-2 md:p-6">
                     <h4 class="text-lg md:text-xl border-b-2 border-black pb-2">
-                      <span class="bg-purple-300 p-1">Liked Posts</span>
+                      <span class="bg-purple-300 p-1">Liked Lessons</span>
                     </h4>
                     <div class="my-4 space-y-6 text-base">
                       <Show
@@ -97,7 +97,7 @@ function Likes() {
                         fallback={
                           <>
                             <p class="text-gray-400 text-center">
-                              You've not liked any post yet!
+                              You've not liked any lesson yet!
                             </p>
                           </>
                         }
