@@ -110,7 +110,7 @@ function Likes() {
                               </span>
                               <A
                                 href={
-                                  "/post/" + post.issue_no + "/" + post.slug
+                                  "/lesson/" + post.issue_no + "/" + post.slug
                                 }
                                 class="hover:border-b border-black"
                               >

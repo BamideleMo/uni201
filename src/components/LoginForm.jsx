@@ -86,7 +86,7 @@ function LoginForm(props) {
           const result = await response.json();
           if (result.success) {
             window.location.replace(
-              "/post/" +
+              "/lesson/" +
                 result.response[0].issue_number +
                 "/" +
                 result.response[0].slug

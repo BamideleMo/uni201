@@ -63,7 +63,7 @@ function Archive() {
                               </span>
                               <A
                                 href={
-                                  "/post/" + post.issue_number + "/" + post.slug
+                                  "/lesson/" + post.issue_number + "/" + post.slug
                                 }
                                 class="hover:border-b border-black text-xl"
                               >

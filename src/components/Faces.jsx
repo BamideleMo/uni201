@@ -35,7 +35,7 @@ function Faces() {
           class="w-8 h-8 md:w-8 md:h-8 rounded-full border-2 border-white"
         />
       </div>
-      <div class="mt-1.5 md:mt-1.5">Join 1,003+ other students.</div>
+      <div class="mt-1.5 md:mt-1.5">1,003+ uni students joined!</div>
     </div>
   );
 }

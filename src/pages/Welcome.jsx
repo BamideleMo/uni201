@@ -27,7 +27,7 @@ function Welcome() {
     const result = await response.json();
     if (result.success) {
       navigate(
-        "/post/" +
+        "/lesson/" +
           result.response[0].issue_number +
           "/" +
           result.response[0].slug,

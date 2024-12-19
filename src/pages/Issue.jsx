@@ -427,7 +427,7 @@ function Issue() {
                             "https://twitter.com/intent/tweet?text=" +
                             encodeURI(
                               resource().issue.shareable +
-                                " 🤖 https://uni201.com.ng/post/" +
+                                " 🤖 https://uni201.com.ng/lesson/" +
                                 resource().issue.slug
                             )
                           }
@@ -448,7 +448,7 @@ function Issue() {
                             "https://wa.me/?text=" +
                             encodeURI(
                               resource().issue.shareable +
-                                " 🤖 https://uni201.com.ng/post/" +
+                                " 🤖 https://uni201.com.ng/lesson/" +
                                 resource().issue.slug
                             )
                           }
@@ -471,7 +471,7 @@ function Issue() {
                         <span
                           onClick={() => {
                             window.location.replace(
-                              "/post/" + (parseInt(params.issueNumber) - 1)
+                              "/lesson/" + (parseInt(params.issueNumber) - 1)
                             );
                           }}
                           class="flex space-x-1 cursor-pointer hover:text-red-600"
@@ -497,7 +497,7 @@ function Issue() {
                         <span
                           onClick={() => {
                             window.location.replace(
-                              "/post/" + (parseInt(params.issueNumber) + 1)
+                              "/lesson/" + (parseInt(params.issueNumber) + 1)
                             );
                           }}
                           class="flex space-x-1 cursor-pointer hover:text-red-600"
