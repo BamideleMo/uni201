@@ -8,17 +8,23 @@ function Footer() {
     window.location.replace("/");
   };
   return (
-    <div class="bg-white border-t py-10 mt-0 lg:p-20 xl:py-28 text-slate-950 text-sm text-center space-y-6">
-      <div class="space-x-2 md:space-x-4 text-center text-gray-400 text-base">
-        <A href="/archive">
-          Archive
+    <div class="bg-white border-t border-black py-10 mt-0 lg:pt-12 text-slate-950 text-sm text-center space-y-6">
+      <div class="space-x-4 md:space-x-4 text-center text-gray-400 text-sm md:text-base">
+        <A href="/archive" class="hover:text-cyan-600">
+          Lessons
         </A>
         <b class="text-black">.</b>
-        <A href="/about">About</A>
+        <A href="/about" class="hover:text-cyan-600">
+          About
+        </A>
         <b class="text-black">.</b>
-        <A href="/terms">Ts & Cs</A>
+        <A href="/terms" class="hover:text-cyan-600">
+          Ts & Cs
+        </A>
         <b class="text-black">.</b>
-        <A href="/privacy">Privacy</A>
+        <A href="/privacy" class="hover:text-cyan-600">
+          Privacy
+        </A>
       </div>
       {/* <div>
         <Logo />
@@ -36,10 +42,7 @@ function Footer() {
           </span>
         </div>
       </Show>
-      <div>
-        &copy; UNI201 Media - 2024. <br class="md:hidden" />
-        All rights reserved.
-      </div>
+      <div>&copy; UNI201 Media - 2024. All rights reserved.</div>
     </div>
   );
 }

@@ -41,10 +41,10 @@ function Search() {
         }
       );
       const result = await response.json();
-      
+
       if (result.response.length < 1) {
         setIsProcessing(false);
-        setMessage("No related post found!");
+        setMessage("No related lesson found!");
       } else {
         setIsProcessing(false);
         setPosts(result.response);

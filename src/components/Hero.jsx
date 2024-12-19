@@ -12,29 +12,6 @@ function Hero(props) {
   const [whichForm, setWhichForm] = createSignal("");
   const [whichIssue, setWhichIssue] = createSignal("");
 
-  // const [fetching, setFetching] = createSignal(false);
-
-  // const latestIssue = async () => {
-  //   setFetching(true);
-  //   try {
-  //     const response = await fetch(VITE_API_URL + "/open/latest-post", {
-  //       mode: "cors",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         Accept: "application/json",
-  //       },
-  //       method: "GET",
-  //     });
-  //     const result = await response.json();
-  //     if (result.success) {
-  //       navigate("/newsletter/" + result.response[0].issue_number, {
-  //         replace: true,
-  //       });
-  //     }
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
 
   const doPopup = (which) => {
     setPopup(true);
@@ -68,7 +45,7 @@ function Hero(props) {
             </h1>
             <div class="mx-2 md:mx-0 bg-cyan-100 border border-cyan-200 rounded-lg p-2 mt-4">
               <div class="mt-0 mb-0 px-1 md:px-8 lg:px-0 text-lg md:text-xl leading-tight">
-                Get 1 Post Every Saturday Morning To Learn How To Do It:
+                Get 1 Lesson Every Saturday Morning To Learn How To Do It:
               </div>
               <div class="md:mt-6">
                 <div class="space-x-4 mt-6 mb-4">

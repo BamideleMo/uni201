@@ -33,13 +33,13 @@ function About() {
                     <a href="https://uni201.com.ng">www.uni201.com.ng</a>).
                   </p>
                   <p>
-                    If you're a Nigerian university student, you're in the right
-                    place.
+                    If you're a student in a Nigerian university, you're in the
+                    right place.
                   </p>
                   <p>
-                    <b>UNI201</b> is a weekly post focused on helping students
-                    in Nigerian universities embrace and pursue entrepreneurship
-                    before graduation.
+                    <b>UNI201</b> is focused on helping students in Nigerian
+                    universities embrace and pursue entrepreneurship before
+                    graduation.
                   </p>
                   <p>
                     <b>Because</b>, one of the ways to avoid unemployment and
@@ -48,10 +48,10 @@ function About() {
                   </p>
                   <p>So...</p>
                   <p>
-                    <b>Every Saturday morning</b>, I post educative and
+                    <b>Every Saturday morning</b>, I share educative and
                     impactful ideas & tips that will help you embrace student
-                    entrepreneurship, learn to become a successful student
-                    entrepreneur, become employable and avoid unemployment after
+                    entrepreneurship, learn how to become a successful student
+                    entrepreneur, become employable, and avoid unemployment after
                     you graduate.
                   </p>
                   <p>

@@ -38,9 +38,9 @@ function Archive() {
   });
   return (
     <MetaProvider>
-      <Title>Archive | www.uni201.com.ng</Title>
+      <Title>All Lessons | www.uni201.com.ng</Title>
       <Link rel="canonical" href="https://techinjos.com.ng/" />
-      <Meta name="description" content="Archive of Posts on UNI201." />
+      <Meta name="description" content="All Lessons on UNI201." />
       <div>
         <Header />
         <div class="pt-24 md:pt-28">
@@ -52,7 +52,7 @@ function Archive() {
                   <>
                     <div class="bg-white p-2 md:p-6">
                       <h4 class="text-lg md:text-xl border-b-2 border-black pb-2">
-                        <span class="bg-blue-300 p-1">Archive</span>
+                        <span class="bg-blue-300 p-1">Lessons</span>
                       </h4>
                       <div class="my-10 space-y-6 text-base">
                         <For each={posts}>
