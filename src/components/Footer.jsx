@@ -42,7 +42,9 @@ function Footer() {
           </span>
         </div>
       </Show> */}
-      <div>&copy; UNI201 Media - 2024. All rights reserved.</div>
+      <div>
+        &copy; UNI201 Media <br class="lg:hidden" /> 2024. All rights reserved.
+      </div>
     </div>
   );
 }
