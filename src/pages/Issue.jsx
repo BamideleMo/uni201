@@ -327,7 +327,7 @@ function Issue() {
                         <div class="-space-y-0.5">
                           <div class="space-x-1 pt-0.5">
                             <span class="space-x-1">
-                              <span class="text-yellow-500">By</span>
+                              <span class="text-gray-400">By</span>
                               <span>Bamidele M. O.</span>
                             </span>
                             <svg

@@ -6,8 +6,8 @@ function Bamidele() {
         program in the Northwestern part of the country in 2012.
       </p>
       <p>
-        Got employed almost immediately after completing my NYSC while running a
-        business venture.
+        Got employed as a lecturer almost immediately after completing my NYSC
+        while running a business venture.
       </p>
       <p>
         I consider myself "lucky" since I never had to experience
