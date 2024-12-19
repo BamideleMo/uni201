@@ -48,11 +48,11 @@ function About() {
                   </p>
                   <p>So...</p>
                   <p>
-                    <b>Every Saturday morning</b>, I share educative and
+                    <b>Every Saturday morning</b>, I post educative and
                     impactful ideas & tips that will help you embrace student
                     entrepreneurship, learn how to become a successful student
-                    entrepreneur, become employable, and avoid unemployment after
-                    you graduate.
+                    entrepreneur, become employable, and avoid unemployment
+                    after you graduate.
                   </p>
                   <p>
                     <b>And this isn’t just about theory</b>—it's about real-life

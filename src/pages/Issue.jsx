@@ -326,7 +326,10 @@ function Issue() {
                         </div>
                         <div class="-space-y-0.5">
                           <div class="space-x-1 pt-0.5">
-                            <span>Bamidele M. O.</span>
+                            <span class="space-x-1">
+                              <span class="text-yellow-500">By</span>
+                              <span>Bamidele M. O.</span>
+                            </span>
                             <svg
                               onClick={() => {
                                 setShowAuthor(true);
