@@ -322,7 +322,6 @@ function Issue() {
                         {resource().issue.post_topic}
                       </h1>
                       <div class="flex justify-between text-sm pb-6 lg:pb-12">
-                        
                         <div class="text-gray-400 flex space-x-1">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -448,6 +447,8 @@ function Issue() {
                             encodeURI(
                               resource().issue.shareable +
                                 " 🤖 https://uni201.com.ng/lesson/" +
+                                resource().issue.issue_number +
+                                "/" +
                                 resource().issue.slug
                             )
                           }
@@ -469,6 +470,8 @@ function Issue() {
                             encodeURI(
                               resource().issue.shareable +
                                 " 🤖 https://uni201.com.ng/lesson/" +
+                                resource().issue.issue_number +
+                                "/" +
                                 resource().issue.slug
                             )
                           }
