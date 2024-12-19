@@ -30,10 +30,10 @@ body {
 }
 
 blockquote {
-  background-color: rgb(251, 251, 193) !important;
-  border: #f5ecbc solid 1px;
+  background-color: rgb(239, 218, 249) !important;
+  border: #c8aef5 solid 1px;
   padding: 0 15px;
-  border-radius: 15px;
+  border-radius: 5px;
 }
 
 blockquote p a {

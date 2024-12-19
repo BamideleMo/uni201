@@ -97,7 +97,7 @@ function Issue() {
     const result = await response.json();
     if (result.response) {
       setNextIssue(true);
-      setNextSlug(result.response[0].slug);
+      setNextSlug(result.response.slug);
     }
   };
 
@@ -119,7 +119,7 @@ function Issue() {
     const result = await response.json();
     if (result.response) {
       setPrevIssue(true);
-      setPrevSlug(result.response[0].slug);
+      setPrevSlug(result.response.slug);
     }
   };
 
@@ -327,7 +327,7 @@ function Issue() {
                         <div class="-space-y-0.5">
                           <div class="space-x-1 pt-0.5">
                             <span class="space-x-1">
-                              <span class="text-gray-400 uppercase">By</span>
+                              <span class="text-gray-400">Written by</span>
                               <span>Bamidele M. O.</span>
                             </span>
                             <svg
