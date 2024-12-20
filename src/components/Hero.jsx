@@ -31,20 +31,20 @@ function Hero(props) {
       <div class="w-full md:w-11/12 2xl:w-9/12 mx-auto pt-4">
         <div
           class="w-full mx-auto grid grid-cols-1 
-          lg:grid-cols-2 lg:py-0"
+          md:grid-cols-2 lg:grid-cols-2 lg:py-0"
         >
-          <div class="text-center md:text-center lg:text-left lg:pt-0">
+          <div class="text-center md:col-span-0 md:text-left lg:col-span-0 lg:text-left md:pt-10 lg:pt-0">
             <h1
-              class="text-4xl md:text-4xl lg:text-4xl xl:text-6xl 
+              class="text-4xl md:text-3xl lg:text-4xl xl:text-6xl 
                drop-shadow-lg font-bold"
             >
               Avoid Unemployment After Graduation:
             </h1>
-            <h1 class="md:mt-3 capitalize text-xl md:text-3xl text-red-600">
+            <h1 class="md:mt-3 capitalize text-xl lg:text-3xl text-red-600">
               Embrace Student Entrepreneurship.
             </h1>
             <div class="mx-2 md:mx-0 bg-cyan-100 border border-cyan-200 rounded-lg p-2 mt-4">
-              <div class="mt-0 mb-0 px-1 md:px-8 lg:px-0 text-lg md:text-xl leading-tight">
+              <div class="mt-0 mb-0 px-1 md:px-0 lg:px-0 text-lg lg:text-xl leading-tight">
                 Get 1 Lesson Every Saturday Morning To Learn How To Do It:
               </div>
               <div class="md:mt-6">
@@ -70,7 +70,7 @@ function Hero(props) {
               </div>
             </div>
           </div>
-          <div class="mt-8 md:mt-8 overflow-hidden h-72 md:h-96">
+          <div class="mt-8 md:mt-0 lg:mt-8 overflow-hidden h-72 md:h-96">
             <div class="overflow-hidden w-72 mx-auto md:w-96 h-72 md:h-96 px-2 lg:float-right">
               <img
                 src={screen}

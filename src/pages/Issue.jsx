@@ -321,7 +321,7 @@ function Issue() {
                       <h1 class="my-4 text-2xl md:text-3xl !leading-tight font-bold">
                         {resource().issue.post_topic}
                       </h1>
-                      <div class="flex justify-between text-sm pb-6 lg:pb-12">
+                      <div class="flex space-x-3 text-sm pb-6 lg:pb-12">
                         <div class="text-gray-400 flex space-x-1">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -343,6 +343,7 @@ function Issue() {
                             ).toDateString()}
                           </span>
                         </div>
+                        <span class="text-black">.</span>
                         <div class="text-gray-400 flex space-x-1">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
