@@ -361,7 +361,7 @@ function Issue() {
                           </svg>
 
                           <span class="flex">
-                            <span class="mt-0.5">Bamidele M. O.</span>
+                            <span class="mt-0.5">Bamidele M.</span>
                             <svg
                               onClick={() => {
                                 setShowAuthor(true);
