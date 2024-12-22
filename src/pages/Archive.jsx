@@ -52,24 +52,34 @@ function Archive() {
                   <>
                     <div class="bg-white p-2 md:p-6">
                       <h4 class="text-lg md:text-xl border-b-2 border-black pb-2">
-                        <span class="bg-blue-300 p-1">Lessons</span>
+                        <span class="bg-green-300 p-1">Lessons</span>
                       </h4>
                       <div class="my-10 space-y-6 text-base">
                         <For each={posts}>
                           {(post, i) => (
-                            <p class="border-b pb-4">
-                              <span class="block text-gray-500 text-xs">
-                                {new Date(post.created_at).toDateString()}
-                              </span>
-                              <A
-                                href={
-                                  "/lesson/" + post.issue_number + "/" + post.slug
-                                }
-                                class="hover:border-b border-black text-xl"
-                              >
-                                {post.post_topic}
-                              </A>
-                            </p>
+                            <div class="flex space-x-3 border-b pb-4">
+                              <div class="w-fit font-semibold text-xl text-red-600 flex items-center">
+                                <span>#{post.issue_number}</span>
+                              </div>
+                              <div>
+                                <p class="">
+                                  <span class="block text-gray-500 text-xs">
+                                    {new Date(post.created_at).toDateString()}
+                                  </span>
+                                  <A
+                                    href={
+                                      "/lesson/" +
+                                      post.issue_number +
+                                      "/" +
+                                      post.slug
+                                    }
+                                    class="hover:border-b border-black text-xl"
+                                  >
+                                    {post.post_topic}
+                                  </A>
+                                </p>
+                              </div>
+                            </div>
                           )}
                         </For>
                       </div>
