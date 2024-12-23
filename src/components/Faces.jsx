@@ -20,7 +20,7 @@ function Faces() {
           class="w-8 h-8 md:w-8 md:h-8 rounded-full border-2 border-white"
         />
 
-        {/* 
+        {/*         
         <img
           src={user3}
           alt="subscribers"

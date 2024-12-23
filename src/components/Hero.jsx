@@ -12,7 +12,6 @@ function Hero(props) {
   const [whichForm, setWhichForm] = createSignal("");
   const [whichIssue, setWhichIssue] = createSignal("");
 
-
   const doPopup = (which) => {
     setPopup(true);
     setWhichForm(which);
@@ -33,15 +32,19 @@ function Hero(props) {
           class="w-full mx-auto grid grid-cols-1 
           md:grid-cols-2 lg:grid-cols-2 lg:py-0"
         >
-          <div class="text-center md:col-span-0 md:text-left lg:col-span-0 lg:text-left md:pt-0 lg:pt-0">
+          <div class="text-center md:col-span-0 md:text-left lg:col-span-0 lg:text-left md:pt-0 lg:pt-16">
             <h1
-              class="text-4xl md:text-4xl lg:text-4xl xl:text-6xl 
+              class="text-4xl md:text-4xl lg:text-4xl xl:text-5xl 
                drop-shadow-lg font-bold"
             >
               Avoid Unemployment After Graduation
             </h1>
-            <h1 class="md:mt-3 capitalize text-3xl md:text-2xl lg:text-4xl text-red-600">
-              Through Student Entrepreneurship:
+            <h1 class="md:mt-3 capitalize text-3xl md:text-2xl lg:text-4xl text-cyan-600">
+              Through{" "}
+              <u class="decoration-black decoration-2">
+                Student Entrepreneurship
+              </u>
+              :
             </h1>
             <div class="mx-2 md:mx-0 bg-cyan-50 border border-cyan-100 rounded-lg p-2 mt-4">
               <div class="mt-0 mb-0 px-1 md:px-0 lg:px-0 text-lg lg:text-xl leading-tight">
