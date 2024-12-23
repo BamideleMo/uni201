@@ -33,20 +33,23 @@ function Hero(props) {
           md:grid-cols-2 lg:grid-cols-2 lg:py-0"
         >
           <div class="text-center md:col-span-0 md:text-left lg:col-span-0 lg:text-left md:pt-0 lg:pt-16">
+            <div class="text-gray-500 text-lg uppercase">
+              Are you a University Student?
+            </div>
             <h1
-              class="text-4xl md:text-4xl lg:text-4xl xl:text-5xl 
-               drop-shadow-lg font-bold"
+              class="mt-0 text-3xl md:text-4xl lg:text-4xl xl:text-5xl 
+               font-bold text-cyan-600"
             >
               Avoid Unemployment After Graduation
             </h1>
-            <h1 class="md:mt-3 capitalize text-3xl md:text-2xl lg:text-4xl text-cyan-600">
+            <h1 class="md:mt-3 capitalize text-2xl md:text-2xl lg:text-4xl">
               Through{" "}
-              <u class="decoration-black decoration-2">
+              <u class="decoration-red-600 decoration-2">
                 Student Entrepreneurship
               </u>
               :
             </h1>
-            <div class="mx-2 md:mx-0 bg-cyan-50 border border-cyan-100 rounded-lg p-2 mt-4">
+            <div class="mx-2 md:mx-0 bg-cyan-50 border border-cyan-300 rounded-lg p-2 mt-4">
               <div class="mt-0 mb-0 px-1 md:px-0 lg:px-0 text-lg lg:text-xl leading-tight">
                 Get 1 Lesson Every Saturday Morning To Learn How To Do It.
               </div>
@@ -66,7 +69,7 @@ function Hero(props) {
                     }}
                     class="bg-red-600 p-3 rounded-md text-white cursor-pointer hover:opacity-60"
                   >
-                    Join UNI201 Now—For FREE
+                    Join Now—For FREE
                   </span>
                 </div>
                 <Faces />
