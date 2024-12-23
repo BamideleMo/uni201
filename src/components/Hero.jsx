@@ -49,7 +49,7 @@ function Hero(props) {
               </u>
               :
             </h1>
-            <div class="mx-2 md:mx-0 bg-cyan-50 border border-cyan-300 rounded-lg p-2 mt-4">
+            <div class="mx-2 md:mx-0 bg-cyan-100 border border-cyan-300 rounded-lg p-2 mt-4">
               <div class="mt-0 mb-0 px-1 md:px-0 lg:px-0 text-lg lg:text-xl leading-tight">
                 Get 1 Lesson Every Saturday Morning To Learn How To Do It.
               </div>
