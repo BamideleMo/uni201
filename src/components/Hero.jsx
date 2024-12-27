@@ -33,8 +33,8 @@ function Hero(props) {
           md:grid-cols-3 lg:grid-cols-3 lg:py-0"
         >
           <div class="text-left md:col-span-2 md:text-left lg:col-span-2 lg:text-left md:pt-0 lg:pt-6">
-            <div class="text-gray-800 text-lg uppercase">
-              Are you a University Student?
+            <div class="text-gray-800 text-base md:text-lg uppercase">
+              Are you a University Student in Nigeria?
             </div>
             <h1
               class="mt-0 text-4xl md:text-4xl lg:text-4xl xl:text-6xl 
