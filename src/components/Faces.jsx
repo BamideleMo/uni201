@@ -14,11 +14,11 @@ function Faces() {
           alt="subscribers"
           class="w-8 h-8 md:w-8 md:h-8 rounded-full border-2 border-cyan-600"
         />
-        <img
+        {/* <img
           src={user2}
           alt="subscribers"
           class="w-8 h-8 md:w-8 md:h-8 rounded-full border-2 border-cyan-600"
-        />
+        /> */}
 
         <img
           src={user3}
