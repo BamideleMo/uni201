@@ -91,7 +91,9 @@ function Likes() {
                     <h4 class="text-lg md:text-xl border-b-2 border-black pb-2">
                       <span class="bg-purple-300 p-1">Liked Lessons</span>
                     </h4>
+
                     <div class="my-4 space-y-6 text-base">
+                      <p>Below are all the Lessons you have liked:</p>
                       <Show
                         when={posts.length > 0}
                         fallback={

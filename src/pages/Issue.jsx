@@ -97,7 +97,6 @@ function Issue() {
     const result = await response.json();
     if (result.response) {
       setNextIssue(true);
-      console.log(result.response);
       setNextSlug(result.response.slug);
     }
   };
