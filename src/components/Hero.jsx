@@ -27,12 +27,12 @@ function Hero(props) {
           ref2={props.ref1}
         />
       </Show>
-      <div class="w-full md:w-11/12 2xl:w-9/12 mx-auto pt-4">
+      <div class="w-fit mx-2 md:w-11/12 2xl:w-9/12 md:mx-auto pt-4">
         <div
-          class="w-full mx-auto grid grid-cols-1 
-          md:grid-cols-2 lg:grid-cols-3 lg:py-0"
+          class="w-full md:mx-auto grid grid-cols-1 
+          md:grid-cols-3 lg:grid-cols-3 lg:py-0"
         >
-          <div class="text-center md:col-span-0 md:text-left lg:col-span-2 lg:text-left md:pt-0 lg:pt-6">
+          <div class="text-left md:col-span-2 md:text-left lg:col-span-2 lg:text-left md:pt-0 lg:pt-6">
             <div class="text-gray-800 text-lg uppercase">
               Are you a University Student?
             </div>
@@ -46,7 +46,7 @@ function Hero(props) {
               <span class="text-black">Embrace</span> Student Entrepreneurship
               🚀
             </h1>
-            <div class="w-fit mx-2 md:mx-0 bg-cyan-100 border border-cyan-300 rounded-lg p-2 mt-4">
+            <div class="w-fit md:mx-0 bg-cyan-100 border border-cyan-300 rounded-lg p-2 mt-4">
               <div class="mt-0 mb-0 px-1 md:px-0 lg:px-0 text-lg lg:text-xl leading-tight">
                 Get 1 Lesson Every Saturday Morning To Learn How:
               </div>
@@ -73,8 +73,8 @@ function Hero(props) {
               </div>
             </div>
           </div>
-          <div class="mt-8 md:mt-0 lg:mt-8 h-72 md:h-96 overflow-hidden">
-            <div class="overflow-hidden w-72 mx-auto md:w-96 h-72 md:h-96 px-2 lg:float-right">
+          <div class="max-h-72 md:max-h-full mt-8 md:mt-0 lg:mt-8 overflow-hidden">
+            <div class="ht overflow-hidden w-72 mx-auto md:w-96 px-2 lg:float-right">
               <img
                 src={screen}
                 alt="tech in Jos mobile display"
