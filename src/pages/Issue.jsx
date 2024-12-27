@@ -338,8 +338,7 @@ function Issue() {
                             />
                           </svg>
                           <span class="mt-0.5">
-                            {likers.length}35 Likes{" "}
-                            {likers.length > 1 ? "s" : ""}
+                            {likers.length} Like {likers.length > 1 ? "s" : ""}
                           </span>
                         </div>
                         <span class="text-black">.</span>
