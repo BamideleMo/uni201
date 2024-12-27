@@ -28,6 +28,7 @@ function Issue() {
   const [liking, setLiking] = createSignal(false);
   const [likedThis, setLikedThis] = createSignal(false);
   const [likedNow, setLikedNow] = createSignal(false);
+  const [copiedRefLink, setCopiedRefLink] = createSignal(false);
   const [referrals, setReferrals] = createSignal("");
 
   const issueDetails = async () => {
@@ -225,6 +226,15 @@ function Issue() {
     }
   };
 
+  const copyRefLink = () => {
+    var copyText = document.getElementById("myRefLink");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(copyText.value);
+
+    setCopiedRefLink(true);
+  };
+
   const logOut = () => {
     localStorage.removeItem("UNI201User");
     window.location.replace("/");
@@ -294,6 +304,38 @@ function Issue() {
                         <span
                           onClick={() => {
                             setLikedNow(false);
+                          }}
+                          class="bg-cyan-600 text-white p-2 rounded-lg hover:opacity-60 cursor-pointer"
+                        >
+                          Okay.
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Show>
+              <Show when={copiedRefLink()}>
+                <div class="z-50 bg-black w-screen h-screen bg-opacity-95 fixed flex items-center top-0 bottom-0 left-0 right-0">
+                  <div class="rounded w-11/12 md:w-96 mx-auto text-sm bg-white p-4 border-b-8 border-cyan-600">
+                    <h4 class="flex justify-between pb-2 mb-4 border-b-2 border-cyan-600">
+                      <div>Copied!</div>
+                      <div>
+                        <span
+                          onClick={() => {
+                            setCopiedRefLink(false);
+                          }}
+                          class="uppercase text-red-800 hover:opacity-60 cursor-pointer"
+                        >
+                          Close
+                        </span>
+                      </div>
+                    </h4>
+                    <div class="text-center">
+                      <p>You've copied your referral link.</p>
+                      <div class="py-6">
+                        <span
+                          onClick={() => {
+                            setCopiedRefLink(false);
                           }}
                           class="bg-cyan-600 text-white p-2 rounded-lg hover:opacity-60 cursor-pointer"
                         >
@@ -561,7 +603,7 @@ function Issue() {
                     <div class="my-12 bg-white p-2 md:p-6">
                       <h4 class="text-base md:text-xl border-b-2 border-black pb-2">
                         <span class="bg-green-300 p-1">
-                          Refer others to UNI201
+                          Refer friends to UNI201
                         </span>
                       </h4>
                       <div class="space-y-6 text-base my-2">
@@ -571,7 +613,7 @@ function Issue() {
                         </p>
                         <p>
                           Refer other students to join UNI201 by clicking the
-                          button below to share on your WhatsApp:
+                          button below to share on your WhatsApp, X & Facebook:
                         </p>
                         <p>
                           <ShareButton
@@ -581,17 +623,28 @@ function Issue() {
                             }
                           />
                         </p>
-                        <p>
-                          Or copy & paste your referral link to others:
-                          <br />
-                          <span class="text-purple-600">
-                            https://www.uni201.com.ng?ref=
-                            {
+                        <p>Or copy & paste your referral link to others:</p>
+                        <div class="flex">
+                          <input
+                            type="text"
+                            id="myRefLink"
+                            disabled
+                            class="outline-none w-96 text-purple-600 border border-gray-500 p-1"
+                            value={
+                              "www.uni201.com.ng?ref=" +
                               JSON.parse(localStorage.getItem("UNI201User"))
                                 .custom_id
                             }
+                          />
+                          <span
+                            onClick={() => {
+                              copyRefLink();
+                            }}
+                            class="bg-slate-100 w-fit p-1 border border-l-0 border-gray-500 hover:opacity-60 cursor-pointer"
+                          >
+                            Copy
                           </span>
-                        </p>
+                        </div>
                       </div>
                     </div>
                   </>
