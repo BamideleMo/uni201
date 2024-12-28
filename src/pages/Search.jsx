@@ -133,9 +133,9 @@ function Search() {
                     <For each={posts}>
                       {(post, i) => (
                         <p class=" border-t pt-6">
-                          <span class="block text-gray-500 text-xs">
+                          {/* <span class="block text-gray-500 text-xs">
                             {new Date(post.created_at).toDateString()}
-                          </span>
+                          </span> */}
                           <A
                             href={
                               "/lesson/" + post.issue_number + "/" + post.slug

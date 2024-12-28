@@ -63,9 +63,9 @@ function Archive() {
                               </div>
                               <div>
                                 <p class="">
-                                  <span class="block text-gray-500 text-xs">
+                                  {/* <span class="block text-gray-500 text-xs">
                                     {new Date(post.created_at).toDateString()}
-                                  </span>
+                                  </span> */}
                                   <A
                                     href={
                                       "/lesson/" +
