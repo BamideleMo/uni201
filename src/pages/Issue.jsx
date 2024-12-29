@@ -613,7 +613,7 @@ function Issue() {
                         </p>
                         <p>
                           Refer other students to join UNI201 by clicking the
-                          button below to share on your WhatsApp, X & Facebook:
+                          button below to share your referral link to your WhatsApp, X & Facebook:
                         </p>
                         <p>
                           <ShareButton

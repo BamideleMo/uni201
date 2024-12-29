@@ -16,14 +16,14 @@ function ShareButton(props) {
           }}
           class="bg-slate-100 w-fit p-2 rounded-lg border border-gray-500 cursor-pointer hover:opacity-60"
         >
-          👋🏾 Share UNI201
+          👋🏾 Share Referral Link
         </div>
 
         <Show when={popup()}>
           <div class="z-50 bg-black w-screen h-screen bg-opacity-95 fixed flex items-center top-0 bottom-0 left-0 right-0">
             <div class="rounded w-11/12 md:w-96 mx-auto text-base bg-white p-4 border-b-8 border-cyan-600">
-              <h5 class="flex justify-between pb-2 mb-4 border-b-2 border-cyan-600">
-                <div>Share UNI201 🙏🏾</div>
+              <h4 class="flex justify-between pb-2 mb-4 border-b-2 border-cyan-600">
+                <div>Share Referral Link 🙏🏾</div>
                 <div>
                   <span
                     onClick={() => {
@@ -34,7 +34,7 @@ function ShareButton(props) {
                     Close
                   </span>
                 </div>
-              </h5>
+              </h4>
               <div class="text-white space-y-6">
                 <a
                   target="_blank"
@@ -45,12 +45,9 @@ function ShareButton(props) {
                         props.CId
                     )
                   }
-                  class="flex justify-between bg-green-100 rounded-lg p-4 border border-slate-600"
+                  class="flex justify-between bg-green-600 rounded-lg p-4"
                 >
-                  <div class="text-slate-700">Share UNI201 on WhatsApp</div>
-                  <div>
-                    <img src={whatsapp} class="w-6" />
-                  </div>
+                  <div class="text-white">Share Referral Link to WhatsApp</div>
                 </a>
                 <a
                   target="_blank"
@@ -62,12 +59,9 @@ function ShareButton(props) {
                     "&url=https%3A%2F%2Funi201.com.ng?ref=" +
                     props.CId
                   }
-                  class="flex justify-between bg-gray-100 rounded-lg p-4 border border-slate-600"
+                  class="flex justify-between bg-gray-900 rounded-lg p-4"
                 >
-                  <div class="text-slate-700">Share UNI201 on X</div>
-                  <div>
-                    <img src={twitterx} class="w-6" />
-                  </div>
+                  <div class="text-white">Share Referral Link to X</div>
                 </a>
                 <a
                   target="_blank"
@@ -75,12 +69,9 @@ function ShareButton(props) {
                     "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Funi201.com.ng?ref=" +
                     props.CId
                   }
-                  class="flex justify-between bg-blue-100 rounded-lg p-4 border border-slate-600"
+                  class="flex justify-between bg-blue-800 rounded-lg p-4"
                 >
-                  <div class="text-slate-700">Share UNI201 on Facebook</div>
-                  <div>
-                    <img src={facebook} class="w-6" />
-                  </div>
+                  <div class="text-white">Share Referral Link to Facebook</div>
                 </a>
               </div>
             </div>
