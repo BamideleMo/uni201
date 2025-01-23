@@ -22,12 +22,14 @@ function Header() {
             <Logo />
           </div>
           <div class="flex space-x-8 md:space-x-8 lg:space-x-12 md:pt-1 lg:pt-1.5">
-            <A
-              href="/archive"
-              class="-mt-1 hover:opacity-60 border border-black rounded-lg p-2"
-            >
-              Lessons
-            </A>
+            <span class="mt-1.5 md:mt-1">
+              <A
+                href="/archive"
+                class="hover:opacity-60 border-2 border-black rounded-lg py-1.5 px-2 md:p-2"
+              >
+                Lessons
+              </A>
+            </span>
             <A href="/search" class="">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
