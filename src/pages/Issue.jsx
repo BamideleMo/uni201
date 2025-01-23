@@ -9,7 +9,6 @@ import Footer from "../components/Footer";
 import Skeleton from "../components/Skeleton";
 import Popup from "../components/Popup";
 import ShareButton from "../components/ShareButton";
-import author from "../assets/headshot.png";
 import Bamidele from "../components/Bamidele";
 
 const VITE_API_URL = import.meta.env["VITE_API_URL"];

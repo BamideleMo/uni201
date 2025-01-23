@@ -32,19 +32,18 @@ function Hero(props) {
           class="w-full md:mx-auto grid grid-cols-1 
           md:grid-cols-3 lg:grid-cols-3 lg:py-0"
         >
-          <div class="text-left md:col-span-2 md:text-left lg:col-span-2 lg:text-left md:pt-0 lg:pt-6">
-            <div class="text-gray-800 text-lg md:text-lg uppercase">
-              A University Student in Nigeria?
+          <div class="text-left md:col-span-2 md:text-left lg:col-span-2 lg:text-left md:pt-0 lg:pt-6  xl:pt-20">
+            <div class="text-gray-800 text-lg md:text-lg capitalize">
+              Dear Nigerian Student:
             </div>
             <h1
-              class="mt-0 text-4xl md:text-4xl lg:text-4xl xl:text-6xl 
-               font-bold text-cyan-600"
+              class="mt-2 text-4xl md:text-4xl lg:text-4xl xl:text-5xl 
+               font-bold text-black"
             >
               Want to Avoid Unemployment After Graduation?
             </h1>
-            <h1 class="md:mt-3 capitalize text-3xl md:text-3xl lg:text-3xl xl:text-4xl font-semibold text-black">
-              <span class="text-black">Embrace</span> Student Entrepreneurship
-              🚀
+            <h1 class="leading-none mt-3 capitalize text-3xl md:text-3xl lg:text-3xl xl:text-4xl font-semibold text-cyan-700">
+              Embrace Student Entrepreneurship 🚀
             </h1>
             <div class="w-fit md:mx-0 bg-cyan-100 border border-cyan-300 rounded-lg p-2 mt-4">
               <div class="mt-0 mb-0 px-1 md:px-0 lg:px-0 text-lg lg:text-xl leading-tight">
@@ -56,7 +55,7 @@ function Hero(props) {
                     onClick={() => {
                       doPopup("sign in");
                     }}
-                    class="bg-cyan-600 p-3 rounded-md text-white cursor-pointer hover:opacity-60"
+                    class="bg-cyan-700 p-3 rounded-md text-white cursor-pointer hover:opacity-60"
                   >
                     Sign In
                   </span>
