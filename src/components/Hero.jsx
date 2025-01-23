@@ -33,12 +33,12 @@ function Hero(props) {
           md:grid-cols-3 lg:grid-cols-3 lg:py-0"
         >
           <div class="text-left md:col-span-2 md:text-left lg:col-span-2 lg:text-left md:pt-0 lg:pt-6  xl:pt-20">
-            <div class="text-gray-800 text-lg md:text-lg capitalize">
+            <div class="text-gray-800 text-xl md:text-2xl capitalize">
               Dear Nigerian Student:
             </div>
             <h1
-              class="mt-2 text-4xl md:text-4xl lg:text-4xl xl:text-5xl 
-               font-bold text-black"
+              class="mt-2 text-3xl md:text-4xl lg:text-4xl xl:text-5xl 
+               font-bold text-black uppercase leading-none"
             >
               Want to Avoid Unemployment After Graduation?
             </h1>
