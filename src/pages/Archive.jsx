@@ -57,10 +57,7 @@ function Archive() {
                       <div class="my-10 space-y-6 text-base">
                         <For each={posts}>
                           {(post, i) => (
-                            <div class="flex space-x-3 border-b pb-4">
-                              <div class="w-fit font-semibold text-xl text-red-600 flex items-center">
-                                <span>#{post.issue_number}</span>
-                              </div>
+                            <div class="border-b pb-4">
                               <div>
                                 <p class="">
                                   {/* <span class="block text-gray-500 text-xs">
@@ -73,7 +70,7 @@ function Archive() {
                                       "/" +
                                       post.slug
                                     }
-                                    class="hover:border-b border-black text-xl"
+                                    class="hover:!text-red-600 text-xl"
                                   >
                                     {post.post_topic}
                                   </A>

@@ -7,7 +7,7 @@ import user5 from "../assets/user5.png";
 
 function Faces() {
   return (
-    <div class="pt-2 lg:pt-5 text-cyan-900 text-left text-sm w-fit mx-0 md:mx-0 flex space-x-1">
+    <div class="pt-2 lg:pt-5 text-cyan-900 text-left text-sm w-fit mx-auto md:mx-0 flex space-x-1">
       <div class="flex -space-x-2">
         <img
           src={user1}

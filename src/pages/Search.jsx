@@ -140,7 +140,7 @@ function Search() {
                             href={
                               "/lesson/" + post.issue_number + "/" + post.slug
                             }
-                            class="hover:border-b border-black text-xl"
+                            class="hover:!text-red-600 text-xl"
                           >
                             {post.post_topic}
                           </A>

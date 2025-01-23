@@ -5,7 +5,6 @@ import Logo from "./Logo";
 import { useNavigate } from "@solidjs/router";
 import Popup from "./Popup";
 
-
 function Header() {
   const navigate = useNavigate();
   const [popup, setPopup] = createSignal(false);
@@ -23,6 +22,12 @@ function Header() {
             <Logo />
           </div>
           <div class="flex space-x-8 md:space-x-8 lg:space-x-12 md:pt-1 lg:pt-1.5">
+            <A
+              href="/archive"
+              class="-mt-1 hover:opacity-60 border border-black rounded-lg p-2"
+            >
+              Lessons
+            </A>
             <A href="/search" class="">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
