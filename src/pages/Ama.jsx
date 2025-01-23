@@ -50,7 +50,7 @@ function Ama() {
                 <div class="my-4 space-y-6 text-base">
                   <p>
                     Have question(s) about student entrepreneurship? Ask me
-                    (anything at all & I'll answer to the best of my ability):
+                    (anything at all) & I'll answer to the best of my ability:
                   </p>
                   <ol class="list-decimal mx-4 md:mx-6 space-y-6">
                     <li>
