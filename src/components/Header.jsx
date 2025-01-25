@@ -21,11 +21,11 @@ function Header() {
           <div class="md:mt-1">
             <Logo />
           </div>
-          <div class="flex text-gray-600 space-x-8 md:space-x-8 lg:space-x-12 md:pt-1 lg:pt-1.5">
+          <div class="flex text-gray-600 space-x-4 md:space-x-8 lg:space-x-12 md:pt-1 lg:pt-1.5">
             <span class="mt-1.5 md:mt-1">
               <A
                 href="/archive"
-                class="hover:opacity-60 border-2 border-black rounded-lg py-1.5 px-2 md:p-2"
+                class="hover:bg-cyan-50 border-2 border-black rounded-lg py-1.5 px-2 md:p-2"
               >
                 Lessons
               </A>
@@ -37,7 +37,7 @@ function Header() {
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="size-10 cursor-pointer border-2 border-black p-1.5 rounded-full hover:opacity-60"
+                class="size-10 cursor-pointer border-2 border-black p-1.5 rounded-full hover:bg-cyan-50"
               >
                 <path
                   stroke-linecap="round"
@@ -47,14 +47,14 @@ function Header() {
               </svg>
             </A>
             <Show when={JSON.parse(localStorage.getItem("UNI201User"))}>
-              <A href="/likes" class="">
+              <A href="/likes" class="-mt-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="size-8 cursor-pointer hover:text-gray-400"
+                  class="size-10 cursor-pointer border-2 border-black p-1.5 rounded-full hover:bg-cyan-50"
                 >
                   <path
                     stroke-linecap="round"

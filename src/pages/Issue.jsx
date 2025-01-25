@@ -361,7 +361,7 @@ function Issue() {
                       <h1 class="my-4 text-2xl md:text-3xl !leading-tight font-bold">
                         {resource().issue.post_topic}
                       </h1>
-                      <div class="flex space-x-3 text-sm pb-8 lg:pb-12">
+                      <div class="flex justify-between text-sm pb-8 lg:pb-12">
                         <div class="text-gray-400 flex space-x-1">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -369,7 +369,7 @@ function Issue() {
                             viewBox="0 0 24 24"
                             stroke-width="1.5"
                             stroke="currentColor"
-                            class="size-6"
+                            class="size-6 text-red-600"
                           >
                             <path
                               stroke-linecap="round"
@@ -385,38 +385,21 @@ function Issue() {
                         <div class="text-gray-400 flex space-x-1">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
                             viewBox="0 0 24 24"
-                            stroke-width="1.5"
-                            stroke="currentColor"
-                            class="size-6"
+                            fill="currentColor"
+                            class="size-5 mb-0.5 text-cyan-600"
                           >
+                            <path d="M12.75 12.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM7.5 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM8.25 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM9.75 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM10.5 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM12.75 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM14.25 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM15 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM16.5 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM15 12.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM16.5 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" />
                             <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                              fill-rule="evenodd"
+                              d="M6.75 2.25A.75.75 0 0 1 7.5 3v1.5h9V3A.75.75 0 0 1 18 3v1.5h.75a3 3 0 0 1 3 3v11.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V7.5a3 3 0 0 1 3-3H6V3a.75.75 0 0 1 .75-.75Zm13.5 9a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5Z"
+                              clip-rule="evenodd"
                             />
                           </svg>
-
                           <span class="flex">
-                            <span class="mt-0.5">Bamidele M.</span>
-                            <svg
-                              onClick={() => {
-                                setShowAuthor(true);
-                              }}
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke-width="1.5"
-                              stroke="currentColor"
-                              class="size-6 cursor-pointer text-cyan-600 hover:text-black"
-                            >
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672ZM12 2.25V4.5m5.834.166-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243-1.59-1.59"
-                              />
-                            </svg>
+                            <span class="mt-0.5">
+                              {resource().issue.created_at.substring(0, 10)}
+                            </span>
                           </span>
                         </div>
                       </div>
@@ -446,7 +429,7 @@ function Issue() {
                                     viewBox="0 0 24 24"
                                     stroke-width="1.5"
                                     stroke="currentColor"
-                                    class="size-8"
+                                    class="size-8 text-red-600"
                                   >
                                     <path
                                       stroke-linecap="round"
@@ -458,12 +441,12 @@ function Issue() {
                               }
                             >
                               <span class="flex justify-between items-center space-x-1 bg-gray-100 border border-gray-400 cursor-not-allowed text-black px-2 rounded">
-                                <span class="pt-0.5">Liked this</span>
+                                <span class="pt-0.5">Liked</span>
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
                                   viewBox="0 0 24 24"
                                   fill="currentColor"
-                                  class="size-8"
+                                  class="size-8 text-red-600"
                                 >
                                   <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
                                 </svg>
@@ -612,7 +595,8 @@ function Issue() {
                         </p>
                         <p>
                           Refer other students to join UNI201 by clicking the
-                          button below to share your referral link to your WhatsApp, X & Facebook:
+                          button below to share your referral link to your
+                          WhatsApp, X & Facebook:
                         </p>
                         <p>
                           <ShareButton

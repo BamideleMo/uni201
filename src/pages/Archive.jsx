@@ -57,12 +57,12 @@ function Archive() {
                       <div class="my-10 space-y-6 text-base">
                         <For each={posts}>
                           {(post, i) => (
-                            <div class="border-b pb-4">
+                            <div class="">
                               <div>
-                                <p class="">
-                                  {/* <span class="block text-gray-500 text-xs">
+                                <p>
+                                  <span class="block text-gray-500 text-xs border-t pt-4">
                                     {new Date(post.created_at).toDateString()}
-                                  </span> */}
+                                  </span>
                                   <A
                                     href={
                                       "/lesson/" +
@@ -70,7 +70,7 @@ function Archive() {
                                       "/" +
                                       post.slug
                                     }
-                                    class="hover:!text-red-600 text-xl"
+                                    class="hover:border-b border-black"
                                   >
                                     {post.post_topic}
                                   </A>
