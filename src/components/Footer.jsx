@@ -14,7 +14,7 @@ function Footer() {
           About
         </A>
         <b class="text-black">.</b>
-        <A href="/ask-anything" class="hover:text-cyan-600">
+        <A href="/ask-me-anything" class="hover:text-cyan-600">
           Ask Anything
         </A>
         <b class="text-black">.</b>

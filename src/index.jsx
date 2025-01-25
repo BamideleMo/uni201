@@ -38,7 +38,7 @@ render(
       <Route path="/privacy" component={Privacy} />
       <Route path="/likes" component={Likes} />
       <Route path="/search" component={Search} />
-      <Route path="/ask-anything" component={Ama} />
+      <Route path="/ask-me-anything" component={Ama} />
       <Route path="/lesson/:issueNumber/:slug" component={Issue} />
       <Route path="/confirm-email" component={ConfirmEmail} />
       <Route path="/a/login" component={Login} />
