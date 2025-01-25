@@ -54,7 +54,9 @@ function Archive() {
                       <h4 class="text-lg md:text-xl border-b-2 border-black pb-2">
                         <span class="bg-green-300 p-1">Lessons</span>
                       </h4>
-                      <div class="my-10 space-y-6 text-base">
+                      <div class="my-4 space-y-6 text-base">
+                        <p>Archive of Lessons:</p>
+
                         <For each={posts}>
                           {(post, i) => (
                             <div class="">

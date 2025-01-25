@@ -38,14 +38,15 @@ body {
 }
 
 blockquote {
-  background-color: rgb(239, 218, 249) !important;
-  border: #c8aef5 solid 1px;
+  background-color: rgb(243, 255, 247) !important;
+  border: #aef5e3 solid 1px;
   padding: 0 15px;
+  margin: 25px 0 !important;
   border-radius: 5px;
 }
 
 blockquote p a {
-  text-decoration: underline 2px red !important;
+  text-decoration: underline 1px red !important;
 }
 
 blockquote p {
@@ -63,7 +64,7 @@ blockquote p i {
 .content h2 {
   font-weight: bold;
   font-size: larger;
-  text-decoration: underline rgb(4, 135, 187) 4px;
+  text-decoration: underline rgb(4, 135, 187) 2px;
 }
 
 .content h3 {
@@ -87,13 +88,13 @@ blockquote p i {
 }
 
 .content .green {
-  background-color: #86efac !important;
+  background-color: #b8ffd2 !important;
 }
 .content .purple {
   background-color: #d8b4fe !important;
 }
 .content .yellow {
-  background-color: #fde047 !important;
+  background-color: #ffe772 !important;
 }
 .content .cyan {
   background-color: #67e8f9 !important;

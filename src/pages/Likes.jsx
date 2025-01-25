@@ -47,18 +47,18 @@ function Likes() {
             var slug = theRes[index].slug;
             var date = theRes[index].created_at;
           }
+
+          theArr.push({
+            topic: topic,
+            issue_no: issue_no,
+            slug: slug,
+            date: date,
+          });
         }
       }
-      if (arr) {
-        theArr.push({
-          topic: topic,
-          issue_no: issue_no,
-          slug: slug,
-          date: date,
-        });
 
-        setPosts(theArr);
-      }
+      setPosts(theArr);
+
       setFetching(false);
     } catch (error) {
       console.error(error);

@@ -358,7 +358,7 @@ function Issue() {
                           {resource().issue.post_highlight}
                         </span>
                       </h4>
-                      <h1 class="my-4 text-2xl md:text-3xl !leading-tight font-bold">
+                      <h1 class="drop-shadow-lg my-4 text-2xl md:text-3xl !leading-tight font-semibold">
                         {resource().issue.post_topic}
                       </h1>
                       <div class="flex justify-between text-sm pb-8 lg:pb-12">
@@ -398,7 +398,7 @@ function Issue() {
                           </svg>
                           <span class="flex">
                             <span class="mt-0.5">
-                              {resource().issue.created_at.substring(0, 10)}
+                              {new Date(issue.created_at).toDateString()}
                             </span>
                           </span>
                         </div>
@@ -612,7 +612,7 @@ function Issue() {
                             type="text"
                             id="myRefLink"
                             disabled
-                            class="outline-none w-72 text-purple-600 border border-gray-500 p-1"
+                            class="outline-none w-72 text-blue-600 border border-gray-500 p-1"
                             value={
                               "www.uni201.com.ng?ref=" +
                               JSON.parse(localStorage.getItem("UNI201User"))
