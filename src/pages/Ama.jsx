@@ -109,7 +109,7 @@ function Ama() {
                   <p>
                     <a
                       target="_blank"
-                      href="https://wa.me/2348092772909?text=I%20have%20a%20question."
+                      href="https://wa.me/2348124802798?text=I%20have%20a%20question."
                       class="hover:opacity-60"
                     >
                       Click here to ask
