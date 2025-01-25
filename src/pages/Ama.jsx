@@ -45,8 +45,10 @@ function Ama() {
         }),
       });
       const result = await response.json();
+      console.log(result);
+      console.log(result.response);
       if (!result.success) {
-        setMessage(result.response);
+        setMessage(result);
         setIsProcessing(false);
       } else {
         setSuccess(true);
@@ -97,16 +99,30 @@ function Ama() {
                 <div class="my-4 space-y-6 text-base">
                   <p>
                     Have question(s) about student entrepreneurship? Ask me
-                    (anything at all) & I'll answer to the best of my ability:
+                    (anything at all) & I'll answer to the best of my ability.
                   </p>
-                  <ol class="list-disc mx-4 md:mx-10 space-y-6">
+                  <p>
+                    I'll post my answer on this website and notify you ASAP.
+                    Please click the link below to ask your question via
+                    WhatsApp:
+                  </p>
+                  <p>
+                    <a
+                      target="_blank"
+                      href="https://wa.me/2348092772909?text=I%20have%20a%20question."
+                      class="hover:opacity-60"
+                    >
+                      Click here to ask
+                    </a>
+                  </p>
+                  {/* <ol class="list-disc mx-4 md:mx-10 space-y-6">
                     <li>I'll post my answer on this website;</li>
                     <li>
                       If you want me to notify you when I do, add your WhatsApp
                       number at the end of your question.
                     </li>
-                  </ol>
-                  <form autocomplete="off" onSubmit={submit} class="space-y-4">
+                  </ol> */}
+                  {/* <form autocomplete="off" onSubmit={submit} class="space-y-4">
                     <div>
                       <TextArea
                         label="Ask:"
@@ -161,7 +177,7 @@ function Ama() {
                         </Show>
                       </div>
                     </div>
-                  </form>
+                  </form> */}
                 </div>
               </div>
             </div>
