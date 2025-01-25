@@ -34,7 +34,7 @@ function Hero(props) {
         >
           <div class="md:col-span-2 lg:col-span-2 md:pt-0 lg:pt-6  xl:pt-20">
             <div class="text-gray-800 text-sm md:text-2xl capitalize">
-              Dear Nigerian Student:
+              Dear Nigerian Uni Student:
             </div>
             <h1
               class="mt-2 text-2xl md:text-4xl lg:text-4xl xl:text-5xl 

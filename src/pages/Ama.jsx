@@ -13,56 +13,97 @@ const schema = z.object({
   question: z.string().min(1, "*Invalid").max(160, "*Too long"),
 });
 
-const VITE_API_URL = import.meta.env["VITE_API_URL"];
+const VITE_TERMII_URL = import.meta.env["VITE_TERMII_URL"];
 
 function Ama() {
   const formHandler = useFormHandler(zodSchema(schema));
   const { formData } = formHandler;
 
   const [isProcessing, setIsProcessing] = createSignal(false);
+  const [success, setSuccess] = createSignal(false);
   const [message, setMessage] = createSignal("");
 
   const submit = async (event) => {
     event.preventDefault();
     setIsProcessing(true);
+    console.log(formData().question);
+    try {
+      const response = await fetch("https://api.ng.termii.com/api/sms/send", {
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify({
+          api_key: VITE_TERMII_URL,
+          to: "2347036935026",
+          from: "UJG",
+          sms: formData().question,
+          type: "plain",
+          channel: "generic",
+        }),
+      });
+      const result = await response.json();
+      if (!result.success) {
+        setMessage(result.response);
+        setIsProcessing(false);
+      } else {
+        setSuccess(true);
+        setIsProcessing(false);
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
     <MetaProvider>
-      <Title>Ask Me Anything | www.uni201.com.ng</Title>
+      <Title>Ask Anything | www.uni201.com.ng</Title>
       <Link rel="canonical" href="https://techinjos.com.ng/" />
       <Meta
         name="description"
-        content="Ask Me Anything to become a Successful Student Entrepreneur in a Nigerian University!"
+        content="Ask Anything to become a Successful Student Entrepreneur in a Nigerian University!"
       />
       <div>
+        <Show when={success()}>
+          <div class="z-50 bg-black w-screen h-screen bg-opacity-95 fixed flex items-center top-0 bottom-0 left-0 right-0">
+            <div class="rounded w-11/12 md:w-96 mx-auto text-sm bg-white p-4 border-b-8 border-cyan-600">
+              <div class="text-center space-y-4 text-base">
+                <p>Thanks for your question! Will revert back ASAP.</p>
+                <p>
+                  <span
+                    onClick={() => setSuccess(false)}
+                    class="text-cyan-700 hover:opacity-60 cursor-pointer"
+                  >
+                    Okay
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </Show>
         <Header />
         <div class="pt-24 md:pt-28">
           <div class="w-full md:w-11/12 2xl:w-9/12 mx-auto md:px-12 lg:px-12">
             <div class="content md:w-10/12 lg:w-7/12 2xl:w-6/12 mx-auto space-y-3">
               <div class="bg-white p-2 md:p-6">
                 <h4 class="text-lg md:text-xl border-b-2 border-black pb-2">
-                  <span class="bg-violet-300 p-1">AMA</span>
+                  <span class="bg-violet-300 p-1">Question?</span>
                 </h4>
                 <h4 class="mt-8 text-xl md:text-2xl leading-tight font-bold">
-                  Ask Me Anything!
+                  Ask Anything!
                 </h4>
                 <div class="my-4 space-y-6 text-base">
                   <p>
                     Have question(s) about student entrepreneurship? Ask me
                     (anything at all) & I'll answer to the best of my ability:
                   </p>
-                  <ol class="list-decimal mx-4 md:mx-6 space-y-6">
+                  <ol class="list-disc mx-4 md:mx-10 space-y-6">
+                    <li>I'll post my answer on this website;</li>
                     <li>
-                      If you want me to respond to you directly via WhatsApp add
-                      your WhatsApp number at the end of your question.
-                    </li>
-                    <li>
-                      If you prefer email, add your email address instead.
-                    </li>
-                    <li>
-                      Regardless, I'll answer and post it as a lesson on this
-                      site.
+                      If you want me to notify you when I do, add your WhatsApp
+                      number at the end of your question.
                     </li>
                   </ol>
                   <form autocomplete="off" onSubmit={submit} class="space-y-4">
@@ -72,7 +113,7 @@ function Ama() {
                         name="question"
                         required={true}
                         type="text"
-                        max="160"
+                        max="159"
                         placeholder="Type your Question(s) here..."
                         formHandler={formHandler}
                       />

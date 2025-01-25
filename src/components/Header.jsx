@@ -21,7 +21,7 @@ function Header() {
           <div class="md:mt-1">
             <Logo />
           </div>
-          <div class="flex space-x-8 md:space-x-8 lg:space-x-12 md:pt-1 lg:pt-1.5">
+          <div class="flex text-gray-600 space-x-8 md:space-x-8 lg:space-x-12 md:pt-1 lg:pt-1.5">
             <span class="mt-1.5 md:mt-1">
               <A
                 href="/archive"
@@ -30,14 +30,14 @@ function Header() {
                 Lessons
               </A>
             </span>
-            <A href="/search" class="">
+            <A href="/search" class="-mt-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="size-8 cursor-pointer hover:text-gray-400"
+                class="size-10 cursor-pointer border-2 border-black p-1.5 rounded-full hover:opacity-60"
               >
                 <path
                   stroke-linecap="round"
