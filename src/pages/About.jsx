@@ -63,7 +63,7 @@ function About() {
                     graduation.
                   </p>
                   <p>
-                    Because, <b>one sure way</b> to avoid unemployment and
+                    Because, <b>one SURE WAY</b> to avoid unemployment and
                     unemployability bedeviling too many fresh university
                     graduates in Nigeria is to embrace student entrepreneurship.
                   </p>
