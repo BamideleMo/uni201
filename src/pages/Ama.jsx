@@ -114,70 +114,8 @@ function Ama() {
                     >
                       Click here to ask
                     </a>
+                    .
                   </p>
-                  {/* <ol class="list-disc mx-4 md:mx-10 space-y-6">
-                    <li>I'll post my answer on this website;</li>
-                    <li>
-                      If you want me to notify you when I do, add your WhatsApp
-                      number at the end of your question.
-                    </li>
-                  </ol> */}
-                  {/* <form autocomplete="off" onSubmit={submit} class="space-y-4">
-                    <div>
-                      <TextArea
-                        label="Ask:"
-                        name="question"
-                        required={true}
-                        type="text"
-                        max="159"
-                        placeholder="Type your Question(s) here..."
-                        formHandler={formHandler}
-                      />
-                    </div>
-
-                    <Show when={message() !== ""}>
-                      <div class="bg-purple-200 text-purple-900 p-3 text-center animate-pulse border-l-2 border-black">
-                        {message()}
-                      </div>
-                    </Show>
-                    <div class="text-white flex">
-                      <div class="grow">&nbsp;</div>
-                      <div class="w-40">
-                        <Show
-                          when={formHandler.isFormInvalid()}
-                          fallback={
-                            <>
-                              <Show
-                                when={isProcessing()}
-                                fallback={
-                                  <button
-                                    type="submit"
-                                    class="bg-cyan-600 rounded-lg w-full p-4 text-center hover:opacity-60"
-                                  >
-                                    Send
-                                  </button>
-                                }
-                              >
-                                <button
-                                  disabled
-                                  class="bg-gray-600 rounded-lg cursor-none w-full p-4 text-center animate-pulse"
-                                >
-                                  Sending.. .
-                                </button>
-                              </Show>
-                            </>
-                          }
-                        >
-                          <button
-                            disabled
-                            class="bg-gray-400 rounded-lg w-full p-4 text-center cursor-not-allowed"
-                          >
-                            Send
-                          </button>
-                        </Show>
-                      </div>
-                    </div>
-                  </form> */}
                 </div>
               </div>
             </div>

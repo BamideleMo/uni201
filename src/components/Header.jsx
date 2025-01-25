@@ -30,7 +30,7 @@ function Header() {
                 Lessons
               </A>
             </span>
-            <A href="/search" class="-mt-1">
+            <A href="/search" class="-mt-0.5 md:-mt-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -47,7 +47,7 @@ function Header() {
               </svg>
             </A>
             <Show when={JSON.parse(localStorage.getItem("UNI201User"))}>
-              <A href="/likes" class="-mt-1">
+              <A href="/likes" class="-mt-0.5 md:-mt-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
