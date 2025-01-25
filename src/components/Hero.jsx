@@ -33,7 +33,7 @@ function Hero(props) {
           md:grid-cols-3 lg:grid-cols-3 lg:py-0"
         >
           <div class="md:col-span-2 lg:col-span-2 md:pt-0 lg:pt-6  xl:pt-20">
-            <div class="text-gray-800 text-sm md:text-2xl capitalize">
+            <div class="text-gray-400 text-sm md:text-2xl capitalize">
               Dear Nigerian Uni Student:
             </div>
             <h1
@@ -42,7 +42,7 @@ function Hero(props) {
             >
               Want to Avoid Unemployment After Graduation?
             </h1>
-            <h1 class="leading-none mt-3 capitalize text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-semibold text-cyan-700">
+            <h1 class="leading-none mt-1 md:mt-3 capitalize text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-semibold text-cyan-700">
               Embrace Student Entrepreneurship!
             </h1>
             <div class="w-fit md:mx-0 bg-cyan-100 border border-cyan-300 rounded-lg p-2 mt-4">
