@@ -25,7 +25,7 @@ function Header() {
             <span class="mt-1.5 md:mt-1">
               <A
                 href="/archive"
-                class="bg-cyan-50 hover:bg-white border-2 border-black rounded-lg py-1.5 px-2"
+                class="bg-cyan-50 hover:bg-white border-2 border-black rounded-lg py-1 px-2"
               >
                 Lessons
               </A>

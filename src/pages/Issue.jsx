@@ -41,6 +41,7 @@ function Issue() {
   const [copiedRefLink, setCopiedRefLink] = createSignal(false);
   const [referrals, setReferrals] = createSignal("");
   const [isProcessing, setIsProcessing] = createSignal(false);
+  const [comments, setComments] = createStore([]);
 
   const issueDetails = async () => {
     if (JSON.parse(localStorage.getItem("UNI201User"))) {
@@ -48,6 +49,7 @@ function Issue() {
 
       await getUser();
       await getReferrals();
+      await getComments();
     }
 
     const response = await fetch(
@@ -246,6 +248,25 @@ function Issue() {
     setCopiedRefLink(true);
   };
 
+  const getComments = async () => {
+    const response = await fetch(
+      VITE_API_URL + "/api/view-comments?lesson_num=" + params.issueNumber,
+      {
+        mode: "cors",
+        headers: {
+          Authorization: `Bearer ${
+            JSON.parse(localStorage.getItem("UNI201User")).token
+          }`,
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        method: "GET",
+      }
+    );
+    const result = await response.json();
+    setComments(result.response);
+  };
+
   const logOut = () => {
     localStorage.removeItem("UNI201User");
     window.location.replace("/");
@@ -265,8 +286,8 @@ function Issue() {
         method: "POST",
         body: JSON.stringify({
           user: JSON.parse(localStorage.getItem("UNI201User")).id,
-          comment: formData().comment,
-          lesson: params.issueNumber,
+          comment: formData().comment.replace(/(\r\n|\n|\r)/gm, "<br />"),
+          lesson_num: params.issueNumber,
         }),
       });
       const result = await response.json();
@@ -658,11 +679,11 @@ function Issue() {
                       </div>
                     </div>
 
-                    <div class="my-12 bg-white p-2 md:p-6">
+                    <div class="my-12 bg-white p-2 md:p-4">
                       <h4 class="text-base md:text-xl border-b-2 border-black pb-2">
                         <span class="bg-cyan-200 p-1">Comments</span>
                       </h4>
-                      <div class="text-sm my-2 border border-gray-400 rounded-lg p-4">
+                      <div class="text-sm my-2 border border-black p-4">
                         <form autocomplete="off" onSubmit={submit}>
                           <div class="">
                             <TextArea
@@ -676,7 +697,7 @@ function Issue() {
                               type="text"
                               max="600"
                               formHandler={formHandler}
-                              placeholder="Type here..."
+                              placeholder="Type comment here..."
                             />
                           </div>
                           <div class="text-white text-right mt-2">
@@ -691,7 +712,7 @@ function Issue() {
                                         type="submit"
                                         class="bg-cyan-600 rounded-lg w-fit p-4 text-center hover:opacity-60"
                                       >
-                                        Post
+                                        Post Comment
                                       </button>
                                     }
                                   >
@@ -709,25 +730,26 @@ function Issue() {
                                 disabled
                                 class="bg-gray-400 rounded-lg w-fit p-4 text-center cursor-not-allowed"
                               >
-                                Post
+                                Post Comment
                               </button>
                             </Show>
                           </div>
                         </form>
                       </div>
                       <div class="text-base my-12 space-y-5">
-                        <div class="border-b border-gray-100 pb-4">
-                          <div class="text-slate-600 uppercase mb-0 flex">
-                            <span class="mt-0.5">User376</span>
-                          </div>
-                          <div>The comment by the user goes here.</div>
-                        </div>
-                        <div class="border-b border-gray-100 pb-4">
-                          <div class="text-slate-600 uppercase mb-0 flex">
-                            <span class="mt-0.5">User3</span>
-                          </div>
-                          <div>Wow. Thank you so much for this.</div>
-                        </div>
+                        <Show when={comments.length < 1} fallback={
+                          <For each={comments}>
+                          {(comment, i) => (
+                            <div class="rounded-lg p-2 border border-gray-200 bg-gray-100 pb-4">
+                              <div class="text-slate-600 uppercase mb-0 flex">
+                                <span class="mt-0.5">User376</span>
+                              </div>
+                              <div>The comment by the user goes here.</div>
+                            </div>
+                          )}
+                        </For>
+                        }></Show>
+                        
                       </div>
                     </div>
                   </>
