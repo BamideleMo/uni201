@@ -41,6 +41,7 @@ function Issue() {
   const [copiedRefLink, setCopiedRefLink] = createSignal(false);
   const [referrals, setReferrals] = createSignal("");
   const [isProcessing, setIsProcessing] = createSignal(false);
+  const [madeComment, setMadeComment] = createSignal(false);
   const [comments, setComments] = createStore([]);
 
   const issueDetails = async () => {
@@ -280,6 +281,9 @@ function Issue() {
       const response = await fetch(VITE_API_URL + "/api/create-comment", {
         mode: "cors",
         headers: {
+          Authorization: `Bearer ${
+            JSON.parse(localStorage.getItem("UNI201User")).token
+          }`,
           "Content-Type": "application/json",
           Accept: "application/json",
         },
@@ -293,6 +297,7 @@ function Issue() {
       const result = await response.json();
       if (result.success) {
         setIsProcessing(false);
+        setMadeComment(true);
       } else {
         console.log(result);
       }
@@ -397,6 +402,38 @@ function Issue() {
                         <span
                           onClick={() => {
                             setCopiedRefLink(false);
+                          }}
+                          class="bg-cyan-600 text-white p-2 rounded-lg hover:opacity-60 cursor-pointer"
+                        >
+                          Okay.
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Show>
+              <Show when={madeComment()}>
+                <div class="z-50 bg-black w-screen h-screen bg-opacity-95 fixed flex items-center top-0 bottom-0 left-0 right-0">
+                  <div class="rounded w-11/12 md:w-96 mx-auto text-sm bg-white p-4 border-b-8 border-cyan-600">
+                    <h4 class="flex justify-between pb-2 mb-4 border-b-2 border-cyan-600">
+                      <div>Comment Posted</div>
+                      <div>
+                        <span
+                          onClick={() => {
+                            setMadeComment(false);
+                          }}
+                          class="uppercase text-red-800 hover:opacity-60 cursor-pointer"
+                        >
+                          Close
+                        </span>
+                      </div>
+                    </h4>
+                    <div class="text-center">
+                      <p>Your comment was posted successfully.</p>
+                      <div class="py-6">
+                        <span
+                          onClick={() => {
+                            window.location.reload();
                           }}
                           class="bg-cyan-600 text-white p-2 rounded-lg hover:opacity-60 cursor-pointer"
                         >
@@ -743,10 +780,12 @@ function Issue() {
                             <For each={comments}>
                               {(comment, i) => (
                                 <div class="rounded-lg p-2 border border-gray-200 bg-gray-100 pb-4">
-                                  <div class="text-slate-600 uppercase mb-0 flex">
-                                    <span class="mt-0.5">User376</span>
+                                  <div class="text-slate-600 uppercase mb-1 flex">
+                                    <span class="mt-0.5 text-sm">
+                                      User{comment.id}
+                                    </span>
                                   </div>
-                                  <div>The comment by the user goes here.</div>
+                                  <div innerHTML={comment.comment}></div>
                                 </div>
                               )}
                             </For>
