@@ -14,7 +14,7 @@ function ShareButton(props) {
           onClick={() => {
             setPopup(true);
           }}
-          class="text-cyan-700 w-fit p-2 rounded-lg cursor-pointer hover:opacity-60"
+          class="text-cyan-700 w-fit rounded-lg cursor-pointer hover:opacity-60"
         >
           👋🏾 Share Referral Link
         </div>

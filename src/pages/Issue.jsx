@@ -660,7 +660,7 @@ function Issue() {
                             type="text"
                             id="myRefLink"
                             disabled
-                            class="outline-none w-72 text-slate-600 border border-gray-50 p-1"
+                            class="outline-none w-72 text-slate-600 border border-gray-300 p-1"
                             value={
                               "www.uni201.com.ng?ref=" +
                               JSON.parse(localStorage.getItem("UNI201User"))
