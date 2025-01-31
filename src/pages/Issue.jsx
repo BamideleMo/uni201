@@ -448,7 +448,7 @@ function Issue() {
                             <path d="M15.75 7.5c-1.376 0-2.739.057-4.086.169C10.124 7.797 9 9.103 9 10.609v4.285c0 1.507 1.128 2.814 2.67 2.94 1.243.102 2.5.157 3.768.165l2.782 2.781a.75.75 0 0 0 1.28-.53v-2.39l.33-.026c1.542-.125 2.67-1.433 2.67-2.94v-4.286c0-1.505-1.125-2.811-2.664-2.94A49.392 49.392 0 0 0 15.75 7.5Z" />
                           </svg>
 
-                          <span class="flex mt-0.5">13</span>
+                          <span class="flex mt-0.5">{comments.length}</span>
                         </div>
                       </div>
                       <div
@@ -737,19 +737,21 @@ function Issue() {
                         </form>
                       </div>
                       <div class="text-base my-12 space-y-5">
-                        <Show when={comments.length < 1} fallback={
-                          <For each={comments}>
-                          {(comment, i) => (
-                            <div class="rounded-lg p-2 border border-gray-200 bg-gray-100 pb-4">
-                              <div class="text-slate-600 uppercase mb-0 flex">
-                                <span class="mt-0.5">User376</span>
-                              </div>
-                              <div>The comment by the user goes here.</div>
-                            </div>
-                          )}
-                        </For>
-                        }></Show>
-                        
+                        <Show
+                          when={comments.length < 1}
+                          fallback={
+                            <For each={comments}>
+                              {(comment, i) => (
+                                <div class="rounded-lg p-2 border border-gray-200 bg-gray-100 pb-4">
+                                  <div class="text-slate-600 uppercase mb-0 flex">
+                                    <span class="mt-0.5">User376</span>
+                                  </div>
+                                  <div>The comment by the user goes here.</div>
+                                </div>
+                              )}
+                            </For>
+                          }
+                        ></Show>
                       </div>
                     </div>
                   </>
