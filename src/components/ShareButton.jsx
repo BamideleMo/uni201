@@ -14,7 +14,7 @@ function ShareButton(props) {
           onClick={() => {
             setPopup(true);
           }}
-          class="bg-slate-100 w-fit p-2 rounded-lg border border-gray-500 cursor-pointer hover:opacity-60"
+          class="bg-cyan-700 w-fit p-2 rounded-lg text-white border border-black cursor-pointer hover:opacity-60"
         >
           👋🏾 Share Referral Link
         </div>
@@ -41,7 +41,7 @@ function ShareButton(props) {
                   href={
                     "https://wa.me/?text=" +
                     encodeURI(
-                      "I like UNI201, and I think you'd like it too. It's a weekly post focused on helping university students in Nigeria avoid unemployment after graduation by embracing entrepreneurship. Check it out: https://uni201.com.ng?ref=" +
+                      "I like UNI201, and I think you'd like it too. Check it out: https://uni201.com.ng?ref=" +
                         props.CId
                     )
                   }
@@ -53,9 +53,7 @@ function ShareButton(props) {
                   target="_blank"
                   href={
                     "https://twitter.com/intent/tweet?text=" +
-                    encodeURI(
-                      "I like UNI201, and I think you'd like it too. It's a weekly post focused on helping university students in Nigeria avoid unemployment after graduation by embracing entrepreneurship."
-                    ) +
+                    encodeURI("I like UNI201, and I think you'd like it too.") +
                     "&url=https%3A%2F%2Funi201.com.ng?ref=" +
                     props.CId
                   }
