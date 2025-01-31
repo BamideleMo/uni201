@@ -1,5 +1,4 @@
 import { A, useNavigate } from "@solidjs/router";
-import Logo from "./Logo";
 
 function Footer() {
   const navigate = useNavigate();
