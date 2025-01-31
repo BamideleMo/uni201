@@ -10,10 +10,21 @@ import Skeleton from "../components/Skeleton";
 import Popup from "../components/Popup";
 import ShareButton from "../components/ShareButton";
 import Bamidele from "../components/Bamidele";
+import TextArea from "./TextArea";
+import { useFormHandler } from "solid-form-handler";
+import { zodSchema } from "solid-form-handler/zod";
+import { z } from "zod";
+
+const schema = z.object({
+  comment: z.string().min(1, "*Invalid"),
+});
 
 const VITE_API_URL = import.meta.env["VITE_API_URL"];
 
 function Issue() {
+  const formHandler = useFormHandler(zodSchema(schema));
+  const { formData } = formHandler;
+
   const [popup, setPopup] = createSignal(true);
 
   const navigate = useNavigate();
@@ -29,6 +40,7 @@ function Issue() {
   const [likedNow, setLikedNow] = createSignal(false);
   const [copiedRefLink, setCopiedRefLink] = createSignal(false);
   const [referrals, setReferrals] = createSignal("");
+  const [isProcessing, setIsProcessing] = createSignal(false);
 
   const issueDetails = async () => {
     if (JSON.parse(localStorage.getItem("UNI201User"))) {
@@ -598,7 +610,7 @@ function Issue() {
                             type="text"
                             id="myRefLink"
                             disabled
-                            class="outline-none w-72 text-blue-600 border border-gray-50 p-1"
+                            class="outline-none w-72 text-slate-600 border border-gray-50 p-1"
                             value={
                               "www.uni201.com.ng?ref=" +
                               JSON.parse(localStorage.getItem("UNI201User"))
@@ -613,6 +625,79 @@ function Issue() {
                           >
                             Copy
                           </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="my-12 bg-white p-2 md:p-6">
+                      <h4 class="text-base md:text-xl border-b-2 border-black pb-2">
+                        <span class="bg-cyan-200 p-1">Comments</span>
+                      </h4>
+                      <div class="text-sm my-2 border border-gray-400 rounded-lg p-4">
+                        <form>
+                          <div class="">
+                            <TextArea
+                              label={
+                                "USER" +
+                                JSON.parse(localStorage.getItem("UNI201User"))
+                                  .id
+                              }
+                              name="comment"
+                              required={true}
+                              type="text"
+                              max="600"
+                              formHandler={formHandler}
+                              placeholder="Type here..."
+                            />
+                          </div>
+                          <div class="text-white text-right mt-2">
+                            <Show
+                              when={formHandler.isFormInvalid()}
+                              fallback={
+                                <>
+                                  <Show
+                                    when={isProcessing()}
+                                    fallback={
+                                      <button
+                                        type="submit"
+                                        class="bg-cyan-600 rounded-lg w-fit p-4 text-center hover:opacity-60"
+                                      >
+                                        Post
+                                      </button>
+                                    }
+                                  >
+                                    <button
+                                      disabled
+                                      class="bg-gray-600 rounded-lg cursor-none w-fit p-4 text-center animate-pulse"
+                                    >
+                                      Posting.. .
+                                    </button>
+                                  </Show>
+                                </>
+                              }
+                            >
+                              <button
+                                disabled
+                                class="bg-gray-400 rounded-lg w-fit p-4 text-center cursor-not-allowed"
+                              >
+                                Post
+                              </button>
+                            </Show>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="text-xs my-12 space-y-5">
+                        <div class="border-b border-gray-100 pb-4">
+                          <div class="text-slate-600 uppercase mb-2 flex">
+                            <span class="mt-0.5">User376</span>
+                          </div>
+                          <div>The comment by the user goes here.</div>
+                        </div>
+                        <div class="border-b border-gray-100 pb-4">
+                          <div class="text-slate-600 uppercase mb-2 flex">
+                            <span class="mt-0.5">User3</span>
+                          </div>
+                          <div>Wow. Thank you so much for this.</div>
                         </div>
                       </div>
                     </div>

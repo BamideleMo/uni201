@@ -55,6 +55,7 @@ function LoginForm(props) {
         var store = {
           email: result.response.email,
           custom_id: result.response.custom_id,
+          id: result.response.id,
           user_role: result.response.role,
           token: result.response.token,
           expiry: now.getTime() + 10800000,

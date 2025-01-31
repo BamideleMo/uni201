@@ -21,23 +21,23 @@ function Header() {
           <div class="md:mt-1">
             <Logo />
           </div>
-          <div class="flex text-gray-600 space-x-4 md:space-x-8 lg:space-x-12 md:pt-1 lg:pt-1.5">
+          <div class="flex text-gray-600 space-x-4 md:space-x-4 lg:space-x-4 md:pt-1 lg:pt-1.5">
             <span class="mt-1.5 md:mt-1">
               <A
                 href="/archive"
-                class="hover:bg-cyan-50 border-2 border-black rounded-lg py-1 px-2 md:p-2"
+                class="bg-cyan-50 hover:bg-white border-2 border-black rounded-lg py-1.5 px-2"
               >
                 Lessons
               </A>
             </span>
-            <A href="/search" class="-mt-0 md:-mt-1">
+            <A href="/search" class="-mt-0 md:-mt-0.5">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="size-9 cursor-pointer border-2 border-black p-1.5 rounded-full hover:bg-cyan-50"
+                class="size-9 cursor-pointer border-2 border-black p-1.5 rounded-full bg-cyan-50 hover:bg-white"
               >
                 <path
                   stroke-linecap="round"
@@ -47,14 +47,14 @@ function Header() {
               </svg>
             </A>
             <Show when={JSON.parse(localStorage.getItem("UNI201User"))}>
-              <A href="/likes" class="-mt-0 md:-mt-1">
+              <A href="/likes" class="-mt-0 md:-mt-0.5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="size-9 cursor-pointer border-2 border-black p-1.5 rounded-full hover:bg-cyan-50"
+                  class="size-9 cursor-pointer border-2 border-black p-1.5 rounded-full bg-cyan-50 hover:bg-white"
                 >
                   <path
                     stroke-linecap="round"
