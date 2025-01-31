@@ -25,19 +25,19 @@ function Header() {
             <span class="mt-1.5 md:mt-1">
               <A
                 href="/archive"
-                class="hover:bg-cyan-50 border-2 border-black rounded-lg py-1.5 px-2 md:p-2"
+                class="hover:bg-cyan-50 border-2 border-black rounded-lg py-1 px-2 md:p-2"
               >
                 Lessons
               </A>
             </span>
-            <A href="/search" class="-mt-0.5 md:-mt-1">
+            <A href="/search" class="-mt-0 md:-mt-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="size-10 cursor-pointer border-2 border-black p-1.5 rounded-full hover:bg-cyan-50"
+                class="size-9 cursor-pointer border-2 border-black p-1.5 rounded-full hover:bg-cyan-50"
               >
                 <path
                   stroke-linecap="round"
@@ -47,14 +47,14 @@ function Header() {
               </svg>
             </A>
             <Show when={JSON.parse(localStorage.getItem("UNI201User"))}>
-              <A href="/likes" class="-mt-0.5 md:-mt-1">
+              <A href="/likes" class="-mt-0 md:-mt-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="size-10 cursor-pointer border-2 border-black p-1.5 rounded-full hover:bg-cyan-50"
+                  class="size-9 cursor-pointer border-2 border-black p-1.5 rounded-full hover:bg-cyan-50"
                 >
                   <path
                     stroke-linecap="round"

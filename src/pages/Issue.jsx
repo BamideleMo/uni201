@@ -409,7 +409,7 @@ function Issue() {
                       ></div>
                     </div>
                     <div class="mb-12 m-2 md:m-6 py-2 text-xs md:text-base lg:text-lg">
-                      <div class="shares w-full md:w-full mx-auto flex justify-between space-x-2 lg:space-x-2">
+                      <div class="shares w-full md:w-full mx-auto flex space-x-2 lg:space-x-12">
                         <Show
                           when={liking()}
                           fallback={
@@ -420,7 +420,7 @@ function Issue() {
                                   onClick={() => {
                                     doLike(resource().issue.issue_number);
                                   }}
-                                  class="flex justify-between items-center space-x-1 bg-gray-100 border border-gray-400 cursor-pointer hover:opacity-60 text-black px-2 rounded"
+                                  class="flex-1 flex justify-between items-center space-x-1 bg-gray-100 border border-gray-400 cursor-pointer hover:opacity-60 text-black px-2 rounded"
                                 >
                                   <span class="pt-0.5">Like this</span>
                                   <svg
@@ -440,7 +440,7 @@ function Issue() {
                                 </span>
                               }
                             >
-                              <span class="flex justify-between items-center space-x-1 bg-gray-100 border border-gray-400 cursor-not-allowed text-black px-2 rounded">
+                              <span class="flex-1 flex justify-between items-center space-x-1 bg-gray-100 border border-gray-400 cursor-not-allowed text-black px-2 rounded">
                                 <span class="pt-0.5">Liked</span>
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
@@ -484,7 +484,7 @@ function Issue() {
                                 resource().issue.slug
                             )
                           }
-                          class="flex justify-between items-center space-x-1 bg-gray-100 border border-gray-400 hover:opacity-60 text-black px-2 rounded"
+                          class="flex-1 flex justify-between items-center space-x-1 bg-gray-100 border border-gray-400 hover:opacity-60 text-black px-2 rounded"
                         >
                           <div class="">Share on</div>
                           <div class="-ml-1">
@@ -507,7 +507,7 @@ function Issue() {
                                 resource().issue.slug
                             )
                           }
-                          class="flex justify-between items-center space-x-2 bg-gray-100 border border-gray-400 hover:opacity-60 text-black px-2 rounded"
+                          class="flex-1 flex justify-between items-center space-x-2 bg-gray-100 border border-gray-400 hover:opacity-60 text-black px-2 rounded"
                         >
                           <div class="">Share on</div>
                           <div class="">

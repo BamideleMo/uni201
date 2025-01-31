@@ -54,8 +54,8 @@ function About() {
                     <a href="https://uni201.com.ng">www.uni201.com.ng</a>).
                   </p>
                   <p>
-                    If you're a student in a Nigerian university, you're in the
-                    right place.
+                    If you're a student in a Nigerian university, this website
+                    is for you.
                   </p>
                   <p>
                     <b>UNI201</b> is focused on helping students in Nigerian
@@ -64,20 +64,25 @@ function About() {
                   </p>
                   <p>
                     Because, one <b>SURE WAY</b> to avoid unemployment after you
-                    graduate is to embrace student entrepreneurship.
+                    graduate is to embrace student entrepreneurship now.
                   </p>
                   <p>So...</p>
                   <p>
-                    <b>Every Tuesday & Thursday morning</b>, I post educative
-                    and impactful ideas & tips that will help you embrace
-                    student entrepreneurship, learn how to become a successful
-                    student entrepreneur, become employable, and avoid
-                    unemployment after you graduate.
+                    Every <b>Tuesday</b> & <b>Thursday</b> morning I post
+                    educative and impactful lessons that will help you to:
                   </p>
+                  <ul class="list-decimal mx-4 md:mx-6">
+                    <li>Embrace student entrepreneurship,</li>
+                    <li>
+                      Learn how to become a successful student entrepreneur,
+                    </li>
+                    <li>Become employable,</li>
+                    <li>and avoid unemployment after you graduate</li>
+                  </ul>
                   <p>
                     <b>And this isn’t just about theory</b>—it's about real-life
                     experiences & case studies of students who took the leap. No
-                    fluff, & no jargon—just relatable experiences with lessons
+                    fluff, & no jargon—just straight to the point & relatable experiences with lessons
                     you can use to start your own journey and empower your
                     future.
                   </p>
