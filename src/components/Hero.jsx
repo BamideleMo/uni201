@@ -27,27 +27,27 @@ function Hero(props) {
           ref2={props.ref1}
         />
       </Show>
-      <div class="text-center md:text-left w-fit mx-2 md:w-11/12 2xl:w-9/12 md:mx-auto pt-4">
+      <div class="text-left md:text-left w-fit mx-2 md:w-11/12 2xl:w-9/12 md:mx-auto pt-4">
         <div
           class="w-full md:mx-auto grid grid-cols-1 
           md:grid-cols-3 lg:grid-cols-3 lg:py-0"
         >
           <div class="md:col-span-2 lg:col-span-2 md:pt-0 lg:pt-6  xl:pt-20">
-            <div class="text-gray-400 text-sm md:text-2xl capitalize">
+            <div class="text-gray-800 text-lg md:text-2xl capitalize">
               Dear Nigerian Uni Student:
             </div>
             <h1
-              class="mt-2 text-2xl md:text-4xl lg:text-4xl xl:text-5xl 
+              class="mt-2 text-4xl md:text-4xl lg:text-4xl xl:text-5xl 
                font-bold text-black uppercase leading-none"
             >
               Want to Avoid Unemployment After Graduation?
             </h1>
-            <h1 class="leading-none mt-1 md:mt-3 capitalize text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-semibold text-cyan-700">
+            <h1 class="leading-none mt-2 md:mt-3 capitalize text-3xl md:text-3xl lg:text-3xl xl:text-4xl font-semibold text-cyan-700">
               Embrace Student Entrepreneurship!
             </h1>
             <div class="w-fit md:mx-0 bg-cyan-100 border border-cyan-300 rounded-lg p-2 mt-4">
-              <div class="mt-0 mb-0 px-1 md:px-0 lg:px-0 text-lg lg:text-xl leading-tight">
-                Get 1 Lesson Every Saturday Morning To Learn How:
+              <div class="mt-0 mb-0 px-1 md:px-0 lg:px-0 text-xl lg:text-xl leading-tight">
+                Get 1 Lesson Every Tuesday & Thursday Morning To Learn How:
               </div>
               <div class="md:mt-0 flex flex-col lg:flex-row lg:space-x-3">
                 <div class="space-x-3 mt-6 mb-4">

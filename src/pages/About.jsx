@@ -59,21 +59,20 @@ function About() {
                   </p>
                   <p>
                     <b>UNI201</b> is focused on helping students in Nigerian
-                    universities embrace and pursue entrepreneurship before
-                    graduation.
+                    universities embrace and pursue student entrepreneurship
+                    before graduation.
                   </p>
                   <p>
-                    Because, <b>one SURE WAY</b> to avoid unemployment and
-                    unemployability bedeviling too many fresh university
-                    graduates in Nigeria is to embrace student entrepreneurship.
+                    Because, one <b>SURE WAY</b> to avoid unemployment after you
+                    graduate is to embrace student entrepreneurship.
                   </p>
                   <p>So...</p>
                   <p>
-                    <b>Every Saturday morning</b>, I post educative and
-                    impactful ideas & tips that will help you embrace student
-                    entrepreneurship, learn how to become a successful student
-                    entrepreneur, become employable, and avoid unemployment
-                    after you graduate.
+                    <b>Every Tuesday & Thursday morning</b>, I post educative
+                    and impactful ideas & tips that will help you embrace
+                    student entrepreneurship, learn how to become a successful
+                    student entrepreneur, become employable, and avoid
+                    unemployment after you graduate.
                   </p>
                   <p>
                     <b>And this isn’t just about theory</b>—it's about real-life
@@ -83,7 +82,7 @@ function About() {
                     future.
                   </p>
                   <p>
-                    Regards,
+                    Cheers to a brighter future!
                     <br />
                     <span
                       onClick={() => setShowAuthor(true)}

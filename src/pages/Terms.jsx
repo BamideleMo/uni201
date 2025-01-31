@@ -32,11 +32,13 @@ function Terms() {
                     <b class="underline font-normal">1. Acceptance of Terms</b>
                     <br />
                     By using this website, you agree to these terms, as well as
-                    our Privacy Policy. If you do not agree, please refrain from
-                    using the site.
+                    our <A href="/privacy">Privacy Policy</A>. If you do not
+                    agree, please refrain from using the site.
                   </p>
                   <p>
-                    <b class="underline font-normal">2. Purpose of the Website</b>
+                    <b class="underline font-normal">
+                      2. Purpose of the Website
+                    </b>
                     <br />
                     UNI201 is designed to provide information, tips, and
                     resources on student entrepreneurship for Nigerian
@@ -60,7 +62,9 @@ function Terms() {
                     </li>
                   </ul>
                   <p>
-                    <b class="underline font-normal">4. Intellectual Property</b>
+                    <b class="underline font-normal">
+                      4. Intellectual Property
+                    </b>
                     <br />
                     All content on UNI201, including text, graphics, and design,
                     is owned by UNI201 or its content providers. You may not
@@ -68,14 +72,18 @@ function Terms() {
                     explicit permission.
                   </p>
                   <p>
-                    <b class="underline font-normal">5. Disclaimer of Warranties</b>
+                    <b class="underline font-normal">
+                      5. Disclaimer of Warranties
+                    </b>
                     <br />
                     UNI201 is provided "as is" without any warranties. While we
                     strive for accuracy, we do not guarantee the completeness,
                     reliability, or suitability of the content.
                   </p>
                   <p>
-                    <b class="underline font-normal">6. Limitation of Liability</b>
+                    <b class="underline font-normal">
+                      6. Limitation of Liability
+                    </b>
                     <br />
                     UNI201 is not responsible for any losses or damages arising
                     from your use of the website. Use the site at your own risk.
