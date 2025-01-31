@@ -66,7 +66,7 @@ function Search() {
             <div class="content md:w-10/12 lg:w-7/12 2xl:w-6/12 mx-auto space-y-3">
               <div class="bg-white p-2 md:p-6">
                 <h4 class="text-lg md:text-xl border-b-2 border-black pb-2">
-                  <span class="bg-blue-300 p-1">Search UNI201</span>
+                  <span class="bg-blue-300 p-1">Search</span>
                 </h4>
 
                 <div class="my-4 space-y-6 text-base">
@@ -78,7 +78,7 @@ function Search() {
                     <div class="flex space-x-2">
                       <div class="grow">
                         <TextInput
-                          label="Search:"
+                          label="Search for a keyword or phrase:"
                           name="search"
                           required={true}
                           type="text"
