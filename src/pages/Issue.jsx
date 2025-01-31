@@ -782,7 +782,7 @@ function Issue() {
                                 <div class="rounded-lg p-2 border border-gray-200 bg-gray-100 pb-4">
                                   <div class="text-slate-600 uppercase mb-1 flex">
                                     <span class="mt-0.5 text-sm">
-                                      User{comment.id}
+                                      User{comment.user}
                                     </span>
                                   </div>
                                   <div innerHTML={comment.comment}></div>
