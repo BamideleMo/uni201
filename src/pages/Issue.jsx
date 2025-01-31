@@ -251,6 +251,35 @@ function Issue() {
     window.location.replace("/");
   };
 
+  const submit = async (event) => {
+    event.preventDefault();
+    setIsProcessing(true);
+
+    try {
+      const response = await fetch(VITE_API_URL + "/api/create-comment", {
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify({
+          user: JSON.parse(localStorage.getItem("UNI201User")).id,
+          comment: formData().comment,
+          lesson: params.issueNumber,
+        }),
+      });
+      const result = await response.json();
+      if (result.success) {
+        setIsProcessing(false);
+      } else {
+        console.log(result);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   const [resource] = createResource(issueDetails);
   return (
     <MetaProvider>
@@ -634,7 +663,7 @@ function Issue() {
                         <span class="bg-cyan-200 p-1">Comments</span>
                       </h4>
                       <div class="text-sm my-2 border border-gray-400 rounded-lg p-4">
-                        <form>
+                        <form autocomplete="off" onSubmit={submit}>
                           <div class="">
                             <TextArea
                               label={
@@ -686,15 +715,15 @@ function Issue() {
                           </div>
                         </form>
                       </div>
-                      <div class="text-xs my-12 space-y-5">
+                      <div class="text-base my-12 space-y-5">
                         <div class="border-b border-gray-100 pb-4">
-                          <div class="text-slate-600 uppercase mb-2 flex">
+                          <div class="text-slate-600 uppercase mb-0 flex">
                             <span class="mt-0.5">User376</span>
                           </div>
                           <div>The comment by the user goes here.</div>
                         </div>
                         <div class="border-b border-gray-100 pb-4">
-                          <div class="text-slate-600 uppercase mb-2 flex">
+                          <div class="text-slate-600 uppercase mb-0 flex">
                             <span class="mt-0.5">User3</span>
                           </div>
                           <div>Wow. Thank you so much for this.</div>
