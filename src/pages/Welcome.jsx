@@ -5,7 +5,6 @@ import Footer from "../components/Footer";
 import CodeVerificationForm from "../components/CodeVerificationForm";
 import { createSignal, createEffect } from "solid-js";
 import { A, useNavigate } from "@solidjs/router";
-import ShareButton from "../components/ShareButton";
 
 const VITE_API_URL = import.meta.env["VITE_API_URL"];
 
@@ -28,9 +27,7 @@ function Welcome() {
     if (result.success) {
       navigate(
         "/lesson/" +
-          result.response[0].issue_number +
-          "/" +
-          result.response[0].slug,
+          result.response[0].issue_number,
         {
           replace: true,
         }
@@ -78,7 +75,7 @@ function Welcome() {
                   </p>
                   <ul class="mx-4 space-y-4">
                     <li>
-                      <u>Inspiring Weekly Insights:</u> Every Saturday morning,
+                      <u>Inspiring Lessons:</u> Every Tuesday and Thursday morning,
                       you’ll get practical tips and strategies tailored to help
                       you start and grow your own business while balancing life
                       as a student.
@@ -95,14 +92,12 @@ function Welcome() {
                   <ul class="mx-4 space-y-4">
                     <li>
                       <u>Make up your mind:</u> to always come to this website{" "}
-                      <b>every Saturday morning</b> to get fresh post.
+                      <b>every Tuesday and Thursday morning</b> to get fresh lessons.
                     </li>
                     <li>
                       <u>Tell your Friends:</u> Great things are better when
                       shared! Tell your friends to join UNI201 and build a
                       circle of like-minded student entrepreneurs.
-                      <br />
-                      <ShareButton />
                     </li>
                     <li>
                       <u>Read the Latest Post:</u>{" "}

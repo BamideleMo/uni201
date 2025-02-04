@@ -2,9 +2,6 @@ import { A } from "@solidjs/router";
 import { MetaProvider, Title, Link, Meta } from "@solidjs/meta";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import whatsappShare from "../../src/assets/whatsapp.png";
-import twitterShare from "../../src/assets/x.png";
-import ShareButton from "../components/ShareButton";
 import { createSignal } from "solid-js";
 import Bamidele from "../components/Bamidele";
 

@@ -8,8 +8,6 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Skeleton from "../components/Skeleton";
 import Popup from "../components/Popup";
-import ShareButton from "../components/ShareButton";
-import Bamidele from "../components/Bamidele";
 import TextArea from "./TextArea";
 import { useFormHandler } from "solid-form-handler";
 import { zodSchema } from "solid-form-handler/zod";
@@ -339,7 +337,7 @@ function Issue() {
                           onClick={() => {
                             setLikedNow(false);
                           }}
-                          class="uppercase text-red-800 hover:opacity-60 cursor-pointer"
+                          class="text-cyan-700 cursor-pointer hover:opacity-60"
                         >
                           Close
                         </span>
@@ -371,7 +369,7 @@ function Issue() {
                           onClick={() => {
                             setCopiedRefLink(false);
                           }}
-                          class="uppercase text-red-800 hover:opacity-60 cursor-pointer"
+                          class="text-cyan-700 cursor-pointer hover:opacity-60"
                         >
                           Close
                         </span>
@@ -397,13 +395,13 @@ function Issue() {
                 <div class="z-40 bg-black w-screen h-screen bg-opacity-95 fixed flex items-center top-0 bottom-0 left-0 right-0">
                   <div class="rounded w-11/12 md:w-96 mx-auto text-sm bg-white p-4 border-b-8 border-cyan-600">
                     <h4 class="flex justify-between pb-2 mb-4 border-b-2 border-cyan-600 text-base">
-                      <div>Refer friends to UNI201</div>
+                      <div>Share Your Referral Link</div>
                       <div>
                         <span
                           onClick={() => {
                             setShowRefLink(false);
                           }}
-                          class="uppercase text-red-800 hover:opacity-60 cursor-pointer"
+                          class="text-cyan-700 cursor-pointer hover:opacity-60"
                         >
                           Close
                         </span>
@@ -416,27 +414,15 @@ function Issue() {
                       </p>
                       <p>
                         Refer other students to join UNI201 by clicking the
-                        button below to share your referral link to your
-                        WhatsApp, X & Facebook:
-                      </p>
-                      <p>
-                        <ShareButton
-                          CId={
-                            JSON.parse(localStorage.getItem("UNI201User"))
-                              .custom_id
-                          }
-                        />
-                      </p>
-                      <p>
-                        Or click on your referral link below to copy & paste to
-                        others:
+                        button below to copy your referral link and share on
+                        your WhatsApp status, X or Facebook:
                       </p>
                       <div class="flex text-sm space-x-2">
                         <input
                           type="text"
                           id="myRefLink"
                           disabled
-                          class="outline-none w-72 text-slate-600 border border-gray-300 p-1"
+                          class="outline-none w-60 text-slate-600 border border-gray-300 p-1"
                           value={
                             "www.uni201.com.ng?ref=" +
                             JSON.parse(localStorage.getItem("UNI201User"))
@@ -449,7 +435,7 @@ function Issue() {
                           }}
                           class="w-fit p-1 text-cyan-700 hover:opacity-60 cursor-pointer"
                         >
-                          Copy
+                          👋🏾 Copy
                         </span>
                       </div>
                     </div>
@@ -466,7 +452,7 @@ function Issue() {
                           onClick={() => {
                             setMadeComment(false);
                           }}
-                          class="uppercase text-red-800 hover:opacity-60 cursor-pointer"
+                          class="text-cyan-700 cursor-pointer hover:opacity-60"
                         >
                           Close
                         </span>
@@ -537,116 +523,144 @@ function Issue() {
                         innerHTML={resource().issue.conversation_text}
                       ></div>
                     </div>
-                    <div class="mb-12 m-2 md:m-6 py-2 text-xs md:text-base lg:text-lg">
-                      <div class="shares w-full md:w-full mx-auto flex space-x-2 lg:space-x-12">
-                        <Show
-                          when={liking()}
-                          fallback={
-                            <Show
-                              when={likedThis()}
-                              fallback={
-                                <span
-                                  onClick={() => {
-                                    doLike(resource().issue.issue_number);
-                                  }}
-                                  class="flex-1 flex justify-between items-center space-x-1 bg-gray-100 border border-gray-400 cursor-pointer hover:opacity-60 text-black px-2 rounded"
-                                >
-                                  <span class="pt-0.5">Like this</span>
-                                  <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="1.5"
-                                    stroke="currentColor"
-                                    class="size-8 text-red-600"
-                                  >
-                                    <path
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
-                                    />
-                                  </svg>
-                                </span>
-                              }
-                            >
-                              <span class="flex-1 flex justify-between items-center space-x-1 bg-gray-100 border border-gray-400 cursor-not-allowed text-black px-2 rounded">
-                                <span class="pt-0.5">Liked this</span>
+                    <div class="mb-12 m-2 md:m-6 py-2 text-sm text-black grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <Show
+                        when={liking()}
+                        fallback={
+                          <Show
+                            when={likedThis()}
+                            fallback={
+                              <span
+                                onClick={() => {
+                                  doLike(resource().issue.issue_number);
+                                }}
+                                class="border-2 border-black h-14 px-3 rounded-lg flex items-center justify-between cursor-pointer hover:opacity-60 text-black"
+                              >
+                                <span>Like this Lesson</span>
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
                                   viewBox="0 0 24 24"
-                                  fill="currentColor"
+                                  stroke-width="1.5"
+                                  stroke="currentColor"
                                   class="size-8 text-red-600"
                                 >
-                                  <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                                  />
                                 </svg>
                               </span>
-                            </Show>
-                          }
-                        >
-                          <span class="flex justify-between items-center space-x-1 bg-gray-100 border border-gray-400 cursor-not-allowed opacity-60 text-black px-2 rounded">
-                            <span class="pt-0.5">Liking.. .</span>
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke-width="1.5"
-                              stroke="currentColor"
-                              class="size-8"
+                            }
+                          >
+                            <span
+                              onClick={() => {
+                                doLike(resource().issue.issue_number);
+                              }}
+                              class="border-2 border-black h-14 px-3 rounded-lg flex items-center justify-between cursor-not-allowed text-black"
                             >
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
-                              />
-                            </svg>
-                          </span>
-                        </Show>
-                        <a
-                          target="_blank"
-                          href={
-                            "https://twitter.com/intent/tweet?text=" +
-                            encodeURI(
-                              resource().issue.shareable +
-                                " 🤖 https://uni201.com.ng/lesson/" +
-                                resource().issue.issue_number +
-                                "/" +
-                                resource().issue.slug
-                            )
-                          }
-                          class="flex-1 flex justify-between items-center space-x-1 bg-gray-100 border border-gray-400 hover:opacity-60 text-black px-2 rounded"
+                              <span>Already Liked this Lesson</span>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                class="size-8 text-red-600"
+                              >
+                                <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
+                              </svg>
+                            </span>
+                          </Show>
+                        }
+                      >
+                        <span
+                          onClick={() => {
+                            doLike(resource().issue.issue_number);
+                          }}
+                          class="border-2 border-black h-14 px-3 rounded-lg flex items-center justify-between cursor-not-allowed text-black"
                         >
-                          <div class="">Share on</div>
-                          <div class="-ml-1">
-                            <img
-                              src={twitterShare}
-                              alt="share on twitter"
-                              class="w-8 py-1.5"
+                          <span>Liking lesson.. .</span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="size-8"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
                             />
-                          </div>
-                        </a>
-                        <a
-                          target="_blank"
-                          href={
-                            "https://wa.me/?text=" +
-                            encodeURI(
-                              resource().issue.shareable +
-                                " 🤖 https://uni201.com.ng/lesson/" +
-                                resource().issue.issue_number +
-                                "/" +
-                                resource().issue.slug
-                            )
-                          }
-                          class="flex-1 flex justify-between items-center space-x-2 bg-gray-100 border border-gray-400 hover:opacity-60 text-black px-2 rounded"
+                          </svg>
+                        </span>
+                      </Show>
+                      <a
+                        target="_blank"
+                        href={
+                          "https://twitter.com/intent/tweet?text=" +
+                          encodeURI(
+                            resource().issue.shareable +
+                              " 🤖 https://uni201.com.ng/lesson/" +
+                              resource().issue.issue_number +
+                              "/" +
+                              resource().issue.slug
+                          )
+                        }
+                        class="border-2 border-black h-14 px-3 rounded-lg flex items-center justify-between cursor-pointer hover:opacity-60"
+                      >
+                        <div class="">Share Lesson to X</div>
+                        <div class="-ml-1">
+                          <img
+                            src={twitterShare}
+                            alt="share on twitter"
+                            class="w-8"
+                          />
+                        </div>
+                      </a>
+                      <a
+                        target="_blank"
+                        href={
+                          "https://wa.me/?text=" +
+                          encodeURI(
+                            resource().issue.shareable +
+                              " 🤖 https://uni201.com.ng/lesson/" +
+                              resource().issue.issue_number +
+                              "/" +
+                              resource().issue.slug
+                          )
+                        }
+                        class="border-2 border-black h-14 px-3 rounded-lg flex items-center justify-between cursor-pointer hover:opacity-60"
+                      >
+                        <div class="">Share Lesson on WhatsApp</div>
+                        <div class="">
+                          <img
+                            src={whatsappShare}
+                            alt="share on WhatsApp"
+                            class="w-8 py-1.5"
+                          />
+                        </div>
+                      </a>
+                      <div
+                        onClick={() => setShowRefLink(true)}
+                        class="border-2 border-black h-14 px-3 rounded-lg flex items-center justify-between cursor-pointer hover:opacity-60"
+                      >
+                        <span class="">Ask friends to join UNI201</span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="size-8"
                         >
-                          <div class="">Share on</div>
-                          <div class="">
-                            <img
-                              src={whatsappShare}
-                              alt="share on WhatsApp"
-                              class="w-7 py-1.5"
-                            />
-                          </div>
-                        </a>
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"
+                          />
+                        </svg>
                       </div>
                     </div>
 
@@ -703,15 +717,6 @@ function Issue() {
                           </svg>
                         </span>
                       </Show>
-                    </div>
-                    <div class="my-12 mx-2 md:mx-6 border-2 border-black p-2 rounded-lg flex items-center justify-between">
-                      <span class="">Invite friends to join UNI201</span>
-                      <span
-                        onClick={() => setShowRefLink(true)}
-                        class="bg-black text-white text-sm p-2 rounded-xl hover:opacity-60 cursor-pointer"
-                      >
-                        Click here
-                      </span>
                     </div>
 
                     <div class="my-12 mx-2 md:mx-6 bg-white">
