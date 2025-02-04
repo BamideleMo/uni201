@@ -26,7 +26,13 @@ function Footer() {
         </A>
       </div>
       <div>
-        &copy; UNI201 Media <br class="lg:hidden" /> 2024. All rights reserved.
+        &copy;{" "}
+        <a
+          target="_blank"
+          class="text-cyan-700 hover:opacity-60"
+          href="https://x.com/bami_mo"
+        ></a>
+        Bamidele M.O. <br class="lg:hidden" /> 2024. All rights reserved.
       </div>
       <Show when={JSON.parse(localStorage.getItem("UNI201User"))}>
         <div class="py-0 text-center">
