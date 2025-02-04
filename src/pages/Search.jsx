@@ -138,7 +138,7 @@ function Search() {
                           </span>
                           <A
                             href={
-                              "/lesson/" + post.issue_number + "/" + post.slug
+                              "/lesson/" + post.issue_number
                             }
                             class="hover:border-b border-black"
                           >

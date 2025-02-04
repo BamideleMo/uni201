@@ -39,9 +39,7 @@ function App() {
       if (result.success) {
         navigate(
           "/lesson/" +
-            result.response[0].issue_number +
-            "/" +
-            result.response[0].slug,
+            result.response[0].issue_number,
           {
             replace: true,
           }

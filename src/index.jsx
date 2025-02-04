@@ -5,7 +5,6 @@ import { Router, Route } from "@solidjs/router";
 import "./index.css";
 import App from "./App";
 import About from "./pages/About";
-import Login from "./pages/admin/Login";
 import Post from "./pages/admin/Post";
 import Issue from "./pages/Issue";
 import PostMetaImage from "./pages/admin/PostMetaImage";
@@ -39,9 +38,8 @@ render(
       <Route path="/likes" component={Likes} />
       <Route path="/search" component={Search} />
       <Route path="/ask-me-anything" component={Ama} />
-      <Route path="/lesson/:issueNumber/:slug" component={Issue} />
+      <Route path="/lesson/:issueNumber" component={Issue} />
       <Route path="/confirm-email" component={ConfirmEmail} />
-      <Route path="/a/login" component={Login} />
       <Route path="/a/post" component={Post} />
       <Route path="/a/post-image" component={PostMetaImage} />
       <Route path="*" component={NotFound} />

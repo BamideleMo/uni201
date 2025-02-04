@@ -66,12 +66,7 @@ function Archive() {
                                     {new Date(post.created_at).toDateString()}
                                   </span>
                                   <A
-                                    href={
-                                      "/lesson/" +
-                                      post.issue_number +
-                                      "/" +
-                                      post.slug
-                                    }
+                                    href={"/lesson/" + post.issue_number}
                                     class="hover:border-b border-black"
                                   >
                                     {post.post_topic}

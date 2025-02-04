@@ -1,6 +1,6 @@
 import { A, useParams, useNavigate } from "@solidjs/router";
 import { MetaProvider, Title, Meta } from "@solidjs/meta";
-import { createSignal, createResource } from "solid-js";
+import { createSignal, createResource, Show } from "solid-js";
 import { createStore } from "solid-js/store";
 import whatsappShare from "../assets/whatsapp.png";
 import twitterShare from "../assets/x.png";
@@ -43,6 +43,7 @@ function Issue() {
   const [isProcessing, setIsProcessing] = createSignal(false);
   const [madeComment, setMadeComment] = createSignal(false);
   const [comments, setComments] = createStore([]);
+  const [showRefLink, setShowRefLink] = createSignal(false);
 
   const issueDetails = async () => {
     if (JSON.parse(localStorage.getItem("UNI201User"))) {
@@ -328,30 +329,10 @@ function Issue() {
         <div class="pt-24 md:pt-28">
           <div class="w-full md:w-11/12 2xl:w-9/12 mx-auto pt-0 md:px-12 lg:px-12">
             <div class="content md:w-10/12 lg:w-7/12 2xl:w-6/12 mx-auto">
-              <Show when={showAuthor()}>
-                <div class="z-50 bg-black w-screen h-screen bg-opacity-95 fixed flex items-center top-0 bottom-0 left-0 right-0">
-                  <div class="rounded w-11/12 md:w-96 mx-auto text-sm bg-white p-4 border-b-8 border-cyan-600">
-                    <h5 class="flex justify-between pb-2 mb-4 border-b-2 border-cyan-600">
-                      <div>Why Trust Me?</div>
-                      <div>
-                        <span
-                          onClick={() => {
-                            setShowAuthor(false);
-                          }}
-                          class="uppercase text-red-800 hover:opacity-60 cursor-pointer"
-                        >
-                          Close
-                        </span>
-                      </div>
-                    </h5>
-                    <Bamidele />
-                  </div>
-                </div>
-              </Show>
               <Show when={likedNow()}>
                 <div class="z-50 bg-black w-screen h-screen bg-opacity-95 fixed flex items-center top-0 bottom-0 left-0 right-0">
                   <div class="rounded w-11/12 md:w-96 mx-auto text-sm bg-white p-4 border-b-8 border-cyan-600">
-                    <h4 class="flex justify-between pb-2 mb-4 border-b-2 border-cyan-600">
+                    <h4 class="flex justify-between pb-2 mb-4 border-b-2 border-cyan-600 text-base">
                       <div>Liked!</div>
                       <div>
                         <span
@@ -383,7 +364,7 @@ function Issue() {
               <Show when={copiedRefLink()}>
                 <div class="z-50 bg-black w-screen h-screen bg-opacity-95 fixed flex items-center top-0 bottom-0 left-0 right-0">
                   <div class="rounded w-11/12 md:w-96 mx-auto text-sm bg-white p-4 border-b-8 border-cyan-600">
-                    <h4 class="flex justify-between pb-2 mb-4 border-b-2 border-cyan-600">
+                    <h4 class="flex justify-between pb-2 mb-4 border-b-2 border-cyan-600 text-base">
                       <div>Copied!</div>
                       <div>
                         <span
@@ -412,10 +393,73 @@ function Issue() {
                   </div>
                 </div>
               </Show>
+              <Show when={showRefLink()}>
+                <div class="z-40 bg-black w-screen h-screen bg-opacity-95 fixed flex items-center top-0 bottom-0 left-0 right-0">
+                  <div class="rounded w-11/12 md:w-96 mx-auto text-sm bg-white p-4 border-b-8 border-cyan-600">
+                    <h4 class="flex justify-between pb-2 mb-4 border-b-2 border-cyan-600 text-base">
+                      <div>Refer friends to UNI201</div>
+                      <div>
+                        <span
+                          onClick={() => {
+                            setShowRefLink(false);
+                          }}
+                          class="uppercase text-red-800 hover:opacity-60 cursor-pointer"
+                        >
+                          Close
+                        </span>
+                      </div>
+                    </h4>
+                    <div class="space-y-6 text-base my-2">
+                      <p>
+                        You currently have <b>{referrals()}</b> referral
+                        {referrals() > 1 ? "s" : ""}.
+                      </p>
+                      <p>
+                        Refer other students to join UNI201 by clicking the
+                        button below to share your referral link to your
+                        WhatsApp, X & Facebook:
+                      </p>
+                      <p>
+                        <ShareButton
+                          CId={
+                            JSON.parse(localStorage.getItem("UNI201User"))
+                              .custom_id
+                          }
+                        />
+                      </p>
+                      <p>
+                        Or click on your referral link below to copy & paste to
+                        others:
+                      </p>
+                      <div class="flex text-sm space-x-2">
+                        <input
+                          type="text"
+                          id="myRefLink"
+                          disabled
+                          class="outline-none w-72 text-slate-600 border border-gray-300 p-1"
+                          value={
+                            "www.uni201.com.ng?ref=" +
+                            JSON.parse(localStorage.getItem("UNI201User"))
+                              .custom_id
+                          }
+                        />
+                        <span
+                          onClick={() => {
+                            copyRefLink();
+                          }}
+                          class="w-fit p-1 text-cyan-700 hover:opacity-60 cursor-pointer"
+                        >
+                          Copy
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Show>
               <Show when={madeComment()}>
                 <div class="z-50 bg-black w-screen h-screen bg-opacity-95 fixed flex items-center top-0 bottom-0 left-0 right-0">
                   <div class="rounded w-11/12 md:w-96 mx-auto text-sm bg-white p-4 border-b-8 border-cyan-600">
-                    <h4 class="flex justify-between pb-2 mb-4 border-b-2 border-cyan-600">
+                    <h4 class="flex justify-between pb-2 mb-4 border-b-2 border-cyan-600 text-base">
                       <div>Comment Posted</div>
                       <div>
                         <span
@@ -606,15 +650,12 @@ function Issue() {
                       </div>
                     </div>
 
-                    <div class="m-2 md:m-6 pt-12 text-red-600 flex justify-between border-t-2 border-black">
+                    <div class="font-semibold m-2 md:m-6 pt-12 text-red-600 flex justify-between border-t-2 border-black">
                       <Show when={prevIssue()} fallback={<div>.</div>}>
                         <span
                           onClick={() => {
                             window.location.replace(
-                              "/lesson/" +
-                                (parseInt(params.issueNumber) - 1) +
-                                "/" +
-                                prevSlug()
+                              "/lesson/" + (parseInt(params.issueNumber) - 1)
                             );
                           }}
                           class="flex space-x-1 cursor-pointer hover:text-cyan-600"
@@ -623,14 +664,14 @@ function Issue() {
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
-                            strokeWidth={1.5}
+                            stroke-width="1.5"
                             stroke="currentColor"
-                            className="size-6"
+                            class="size-6 -mt-0.5"
                           >
                             <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
                             />
                           </svg>
                           <span>PREVIOUS LESSON</span>
@@ -640,10 +681,7 @@ function Issue() {
                         <span
                           onClick={() => {
                             window.location.replace(
-                              "/lesson/" +
-                                (parseInt(params.issueNumber) + 1) +
-                                "/" +
-                                nextSlug()
+                              "/lesson/" + (parseInt(params.issueNumber) + 1)
                             );
                           }}
                           class="flex space-x-1 cursor-pointer hover:text-cyan-600"
@@ -653,70 +691,30 @@ function Issue() {
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
-                            strokeWidth={1.5}
+                            stroke-width="1.5"
                             stroke="currentColor"
-                            className="size-6"
+                            class="size-6 -mt-0.5"
                           >
                             <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
                             />
                           </svg>
                         </span>
                       </Show>
                     </div>
-
-                    <div class="my-12 bg-white p-2 md:p-6">
-                      <h4 class="text-base md:text-xl border-b-2 border-black pb-2">
-                        <span class="bg-green-300 p-1">
-                          Refer friends to UNI201
-                        </span>
-                      </h4>
-                      <div class="space-y-6 text-base my-2">
-                        <p>
-                          You currently have <b>{referrals()}</b> referral
-                          {referrals() > 1 ? "s" : ""}.
-                        </p>
-                        <p>
-                          Refer other students to join UNI201 by clicking the
-                          button below to share your referral link to your
-                          WhatsApp, X & Facebook:
-                        </p>
-                        <p>
-                          <ShareButton
-                            CId={
-                              JSON.parse(localStorage.getItem("UNI201User"))
-                                .custom_id
-                            }
-                          />
-                        </p>
-                        <p>Or copy & paste your referral link to others:</p>
-                        <div class="flex">
-                          <input
-                            type="text"
-                            id="myRefLink"
-                            disabled
-                            class="outline-none w-72 text-slate-600 border border-gray-300 p-1"
-                            value={
-                              "www.uni201.com.ng?ref=" +
-                              JSON.parse(localStorage.getItem("UNI201User"))
-                                .custom_id
-                            }
-                          />
-                          <span
-                            onClick={() => {
-                              copyRefLink();
-                            }}
-                            class="w-fit p-1 border border-l-0 border-gray-50 hover:opacity-60 cursor-pointer"
-                          >
-                            Copy
-                          </span>
-                        </div>
-                      </div>
+                    <div class="my-12 mx-2 md:mx-6 border-2 border-black p-2 rounded-lg flex items-center justify-between">
+                      <span class="">Invite friends to join UNI201</span>
+                      <span
+                        onClick={() => setShowRefLink(true)}
+                        class="bg-black text-white text-sm p-2 rounded-xl hover:opacity-60 cursor-pointer"
+                      >
+                        Click here
+                      </span>
                     </div>
 
-                    <div class="my-12 bg-white p-2 md:p-4">
+                    <div class="my-12 mx-2 md:mx-6 bg-white">
                       <h4 class="text-base md:text-xl border-b-2 border-black pb-2">
                         <span class="bg-cyan-200 p-1">Comments</span>
                       </h4>
