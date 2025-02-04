@@ -25,13 +25,9 @@ function Welcome() {
     });
     const result = await response.json();
     if (result.success) {
-      navigate(
-        "/lesson/" +
-          result.response[0].issue_number,
-        {
-          replace: true,
-        }
-      );
+      navigate("/lesson/" + result.response[0].issue_number, {
+        replace: true,
+      });
     }
   };
 
@@ -75,10 +71,10 @@ function Welcome() {
                   </p>
                   <ul class="mx-4 space-y-4">
                     <li>
-                      <u>Inspiring Lessons:</u> Every Tuesday and Thursday morning,
-                      you’ll get practical tips and strategies tailored to help
-                      you start and grow your own business while balancing life
-                      as a student.
+                      <u>Inspiring Lessons:</u> Every Tuesday and Thursday
+                      morning, you’ll get practical tips and strategies tailored
+                      to help you embrace student entrepreneurship so that you
+                      can easily avoid unemployment after you graduate.
                     </li>
                     <li>
                       <u>Exclusive Stories:</u> You'll learn from real-life case
@@ -92,7 +88,8 @@ function Welcome() {
                   <ul class="mx-4 space-y-4">
                     <li>
                       <u>Make up your mind:</u> to always come to this website{" "}
-                      <b>every Tuesday and Thursday morning</b> to get fresh lessons.
+                      <b>every Tuesday and Thursday morning</b> to get fresh
+                      lessons.
                     </li>
                     <li>
                       <u>Tell your Friends:</u> Great things are better when
@@ -100,15 +97,16 @@ function Welcome() {
                       circle of like-minded student entrepreneurs.
                     </li>
                     <li>
-                      <u>Read the Latest Post:</u>{" "}
-                      <span
-                        onClick={() => {
-                          getLatest();
-                        }}
-                        class="text-red-600 hover:opacity-60 cursor-pointer"
+                      <u>Start from Lesson #1:</u> Start reading from lesson #1
+                      up until the latest lesson. You will learn so much I
+                      promise you.
+                      <br />
+                      <A
+                        href="https://uni201.com.ng/lesson/1"
+                        class="text-cyan-700 hover:opacity-60"
                       >
-                        Click here to read it
-                      </span>
+                        Click here to start
+                      </A>
                       .
                     </li>
                   </ul>
