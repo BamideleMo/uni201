@@ -716,7 +716,7 @@ function Issue() {
 
                     <div class="my-12 mx-2 md:mx-6 bg-white">
                       <h4 class="text-base md:text-xl border-b-2 border-black pb-2">
-                        <span class="bg-red-400 p-1">Comments</span>
+                        <span class="bg-blue-300 p-1">Comments</span>
                       </h4>
                       <div class="text-sm my-2 border border-black p-4">
                         <form autocomplete="off" onSubmit={submit}>
