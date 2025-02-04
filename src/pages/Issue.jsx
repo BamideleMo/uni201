@@ -523,7 +523,7 @@ function Issue() {
                         innerHTML={resource().issue.conversation_text}
                       ></div>
                     </div>
-                    <div class="mb-12 m-2 md:m-6 py-2 text-sm text-black grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="mb-12 m-2 md:m-6 py-2 text-sm text-black grid grid-cols-2 md:grid-cols-2 gap-4">
                       <Show
                         when={liking()}
                         fallback={
@@ -536,7 +536,12 @@ function Issue() {
                                 }}
                                 class="border-2 border-black h-14 px-3 rounded-lg flex items-center justify-between cursor-pointer hover:opacity-60 text-black"
                               >
-                                <span>Like this Lesson</span>
+                                <span>
+                                  <span lg:hidden>Like this</span>
+                                  <span hidden lg:block>
+                                    Like this Lesson
+                                  </span>
+                                </span>
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
                                   fill="none"
@@ -560,7 +565,12 @@ function Issue() {
                               }}
                               class="border-2 border-black h-14 px-3 rounded-lg flex items-center justify-between cursor-not-allowed text-black"
                             >
-                              <span>Already Liked this Lesson</span>
+                              <span>
+                                <span class="lg:hidden">Liked this</span>
+                                <span class="hidden lg:block">
+                                  Already Liked this Lesson
+                                </span>
+                              </span>
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
@@ -579,7 +589,12 @@ function Issue() {
                           }}
                           class="border-2 border-black h-14 px-3 rounded-lg flex items-center justify-between cursor-not-allowed text-black"
                         >
-                          <span>Liking lesson.. .</span>
+                          <span>
+                            <span class="lg:hidden">Liking.. .</span>
+                            <span class="hidden lg:block">
+                              Liking lesson.. .
+                            </span>
+                          </span>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -610,7 +625,10 @@ function Issue() {
                         }
                         class="border-2 border-black h-14 px-3 rounded-lg flex items-center justify-between cursor-pointer hover:opacity-60"
                       >
-                        <div class="">Share Lesson to X</div>
+                        <div class="">
+                          <span class="lg:hidden">Share to X</span>
+                          <span class="hidden lg:block">Share Lesson to X</span>
+                        </div>
                         <div class="-ml-1">
                           <img
                             src={twitterShare}
@@ -633,7 +651,12 @@ function Issue() {
                         }
                         class="border-2 border-black h-14 px-3 rounded-lg flex items-center justify-between cursor-pointer hover:opacity-60"
                       >
-                        <div class="">Share Lesson on WhatsApp</div>
+                        <div class="">
+                          <span class="lg:hidden">WhatsApp it</span>
+                          <span class="hidden lg:block">
+                            Share Lesson on WhatsApp
+                          </span>
+                        </div>
                         <div class="">
                           <img
                             src={whatsappShare}
@@ -646,7 +669,12 @@ function Issue() {
                         onClick={() => setShowRefLink(true)}
                         class="border-2 border-black h-14 px-3 rounded-lg flex items-center justify-between cursor-pointer hover:opacity-60"
                       >
-                        <span class="">Ask friends to join UNI201</span>
+                        <span class="">
+                          <span class="lg:hidden">Invite friends</span>
+                          <span class="hidden lg:block">
+                            Invite friends to join UNI201
+                          </span>
+                        </span>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
