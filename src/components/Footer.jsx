@@ -25,15 +25,7 @@ function Footer() {
           Privacy
         </A>
       </div>
-      <div>
-        &copy;{" "}
-        <a
-          target="_blank"
-          class="text-cyan-700 hover:opacity-60"
-          href="https://x.com/bami_mo"
-        ></a>
-        Bamidele M.O. <br class="lg:hidden" /> 2024. All rights reserved.
-      </div>
+      <div>Copyright &copy; 2025. All rights reserved.</div>
       <Show when={JSON.parse(localStorage.getItem("UNI201User"))}>
         <div class="py-0 text-center">
           <span
