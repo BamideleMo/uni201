@@ -94,7 +94,7 @@ function Issue() {
   };
 
   const [nextIssue, setNextIssue] = createSignal(false);
-  const [nextSlug, setNextSlug] = createSignal(false);
+  const [nextSlug, setNextSlug] = createSignal("");
   const getNextIssue = async () => {
     var v = parseInt(params.issueNumber) + 1;
     const response = await fetch(VITE_API_URL + "/api/post/" + v, {
@@ -111,12 +111,12 @@ function Issue() {
     const result = await response.json();
     if (result.response) {
       setNextIssue(true);
-      setNextSlug(result.response.slug);
+      setNextSlug(result.response.post_topic);
     }
   };
 
   const [prevIssue, setPrevIssue] = createSignal(false);
-  const [prevSlug, setPrevSlug] = createSignal(false);
+  const [prevSlug, setPrevSlug] = createSignal("");
   const getPrevIssue = async () => {
     var v = parseInt(params.issueNumber) - 1;
     const response = await fetch(VITE_API_URL + "/api/post/" + v, {
@@ -133,7 +133,7 @@ function Issue() {
     const result = await response.json();
     if (result.response) {
       setPrevIssue(true);
-      setPrevSlug(result.response.slug);
+      setPrevSlug(result.response.post_topic);
     }
   };
 
@@ -682,59 +682,71 @@ function Issue() {
                       </div>
                     </div>
 
-                    <div class="font-semibold m-2 md:m-6 pt-12 text-red-600 flex justify-between border-t-2 border-black">
-                      <Show when={prevIssue()} fallback={<div>.</div>}>
-                        <span
-                          onClick={() => {
-                            window.location.replace(
-                              "/lesson/" + (parseInt(params.issueNumber) - 1)
-                            );
-                          }}
-                          class="flex space-x-1 cursor-pointer hover:text-cyan-600"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke-width="1.5"
-                            stroke="currentColor"
-                            class="size-6 -mt-0.5"
-                          >
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
-                            />
-                          </svg>
-                          <span>PREVIOUS LESSON</span>
-                        </span>
-                      </Show>
-                      <Show when={nextIssue()} fallback={<div>.</div>}>
-                        <span
-                          onClick={() => {
-                            window.location.replace(
-                              "/lesson/" + (parseInt(params.issueNumber) + 1)
-                            );
-                          }}
-                          class="flex space-x-1 cursor-pointer hover:text-cyan-600"
-                        >
-                          <span>NEXT LESSON</span>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke-width="1.5"
-                            stroke="currentColor"
-                            class="size-6 -mt-0.5"
-                          >
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                            />
-                          </svg>
-                        </span>
-                      </Show>
+                    <div class="m-2 text-sm md:text-base md:m-6 pt-12 flex space-x-4 md:justify-between border-t-2 border-black">
+                      <div class="flex-1">
+                        <Show when={prevIssue()} fallback={<div>.</div>}>
+                          <div>
+                            <span
+                              onClick={() => {
+                                window.location.replace(
+                                  "/lesson/" +
+                                    (parseInt(params.issueNumber) - 1)
+                                );
+                              }}
+                              class="flex space-x-1 cursor-pointer text-red-600 hover:text-cyan-600"
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5"
+                                stroke="currentColor"
+                                class="size-6 -mt-0.5"
+                              >
+                                <path
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+                                />
+                              </svg>
+                              <span>PREVIOUS LESSON</span>
+                            </span>
+                          </div>
+                          <div class="mt-1">{prevSlug()}</div>
+                        </Show>
+                      </div>
+                      <div class="flex-1">
+                        <Show when={nextIssue()} fallback={<div>.</div>}>
+                          <div>
+                            <span
+                              onClick={() => {
+                                window.location.replace(
+                                  "/lesson/" +
+                                    (parseInt(params.issueNumber) + 1)
+                                );
+                              }}
+                              class="flex space-x-1 cursor-pointer hover:text-cyan-600"
+                            >
+                              <span>NEXT LESSON</span>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5"
+                                stroke="currentColor"
+                                class="size-6 -mt-0.5"
+                              >
+                                <path
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                          <div class="mt-1">{nextSlug()}</div>
+                        </Show>
+                      </div>
                     </div>
 
                     <div class="my-12 mx-2 md:mx-6 bg-white">
