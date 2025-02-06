@@ -134,3 +134,7 @@ blockquote p i {
 .ck-content {
   height: 396px !important;
 }
+
+.ck-editor__editable p{
+  margin: 15px 0;
+}
