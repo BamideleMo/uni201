@@ -537,8 +537,8 @@ function Issue() {
                                 class="border-2 border-black h-14 px-3 rounded-lg flex items-center justify-between cursor-pointer hover:opacity-60 text-black"
                               >
                                 <span>
-                                  <span lg:hidden>Like this</span>
-                                  <span hidden lg:block>
+                                  <span class="lg:hidden">Like this</span>
+                                  <span class="hidden lg:block">
                                     Like this Lesson
                                   </span>
                                 </span>
