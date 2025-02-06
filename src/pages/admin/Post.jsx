@@ -201,7 +201,7 @@ function Post() {
                     onClick={() => {
                       window.location.reload();
                     }}
-                    class="bg-blue-950 text-white p-2 rounded-lg hover:opacity-60"
+                    class="bg-blue-950 text-white p-2 rounded-lg cursor-pointer hover:opacity-60"
                   >
                     Okay
                   </span>
