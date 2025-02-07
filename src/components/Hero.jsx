@@ -48,7 +48,8 @@ function Hero(props) {
             </h1>
             <div class="w-fit md:mx-0 bg-cyan-100 border border-cyan-300 rounded-lg p-2 mt-6">
               <div class="mt-0 mb-0 px-1 md:px-0 lg:px-0 text-lg lg:text-xl leading-tight">
-                Get 1 Lesson Every Tuesday & Thursday Morning To Learn How:
+                Get 1 Lesson Every Tuesday & Thursday Morning To{" "}
+                <b>Learn How</b>:
               </div>
               <div class="md:mt-0 flex flex-col lg:flex-row lg:space-x-3">
                 <div class="space-x-3 mt-6 mb-4">
