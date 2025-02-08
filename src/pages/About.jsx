@@ -60,12 +60,12 @@ function About() {
                     before graduation.
                   </p>
                   <p>
-                    Because, one <b>SURE WAY</b> to avoid unemployment after you
+                    Because one <b>SURE WAY</b> to avoid unemployment after you
                     graduate is to embrace student entrepreneurship now.
                   </p>
                   <p>So...</p>
                   <p>
-                    Every <b>Tuesday</b> & <b>Thursday</b> morning I post
+                    Every <b>Tuesday</b> & <b>Thursday</b> morning you'll get
                     educative and impactful lessons that will help you to:
                   </p>
                   <ul class="list-decimal mx-4 md:mx-6">
@@ -79,9 +79,9 @@ function About() {
                   <p>
                     <b>And this isn’t just about theory</b>—it's about real-life
                     experiences & case studies of students who took the leap. No
-                    fluff, & no jargon—just straight to the point & relatable experiences with lessons
-                    you can use to start your own journey and empower your
-                    future.
+                    fluff, & no jargon—just straight to the point & relatable
+                    experiences with lessons you can use to start your journey
+                    and empower your future.
                   </p>
                   <p>
                     Cheers to a brighter future!
