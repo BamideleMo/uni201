@@ -55,9 +55,8 @@ function About() {
                     is for you.
                   </p>
                   <p>
-                    <b>UNI201</b> is focused on helping students in Nigerian
-                    universities embrace and pursue student entrepreneurship
-                    before graduation.
+                    <b>UNI201</b> is a membership website focused on helping students in Nigerian
+                    universities embrace and pursue student entrepreneurship.
                   </p>
                   <p>
                     Because one <b>SURE WAY</b> to avoid unemployment after you
@@ -74,7 +73,7 @@ function About() {
                       Learn how to become a successful student entrepreneur,
                     </li>
                     <li>Become employable,</li>
-                    <li>and avoid unemployment after you graduate</li>
+                    <li>and avoid unemployment after you graduate.</li>
                   </ul>
                   <p>
                     <b>And this isn’t just about theory</b>—it's about real-life
@@ -85,13 +84,13 @@ function About() {
                   </p>
                   <p>
                     Cheers to a brighter future!
-                    <br />
+                    {/* <br />
                     <span
                       onClick={() => setShowAuthor(true)}
                       class="text-cyan-700 hover:opacity-60 cursor-pointer"
                     >
                       Bamidele M. O
-                    </span>
+                    </span> */}
                   </p>
                 </div>
               </div>

@@ -4,8 +4,6 @@ import { createSignal, createEffect, Show } from "solid-js";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
-import Why from "./components/Why";
-import Cta from "./components/Cta";
 import Skeleton from "./components/Skeleton";
 
 const VITE_API_URL = import.meta.env["VITE_API_URL"];
@@ -80,8 +78,6 @@ function App() {
           fallback={
             <>
               <Hero ref1={searchParams.ref} />
-              {/* <Why /> */}
-              {/* <Cta /> */}
             </>
           }
         >
