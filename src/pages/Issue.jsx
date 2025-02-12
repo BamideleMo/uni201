@@ -682,32 +682,7 @@ function Issue() {
                       </div>
                     </div>
 
-                    <div class="m-2 text-sm md:text-base md:m-6 pt-12 flex flex-col space-y-4 border-t-2 border-black">
-                      <div class="border-l-4 pl-2">
-                        <Show when={prevIssue()} fallback={<div></div>}>
-                          <div class="w-fit">
-                            <div>
-                              <span class="flex space-x-1">
-                                <span class="text-gray-400">Previous:</span>
-                                <span class="text-red-600">
-                                  LESSON #{parseInt(params.issueNumber) - 1}
-                                </span>
-                              </span>
-                            </div>
-                            <div
-                              onClick={() => {
-                                window.location.replace(
-                                  "/lesson/" +
-                                    (parseInt(params.issueNumber) - 1)
-                                );
-                              }}
-                              class="cursor-pointer hover:opacity-60"
-                            >
-                              {prevSlug()}
-                            </div>
-                          </div>
-                        </Show>
-                      </div>
+                    <div class="m-2 text-sm md:text-base md:m-6 pt-12 flex flex-col space-y-8 border-t-2 border-black">
                       <div class="border-l-4 pl-2">
                         <Show when={nextIssue()} fallback={<div></div>}>
                           <div class="w-fit">
@@ -729,6 +704,31 @@ function Issue() {
                               class="cursor-pointer hover:opacity-60"
                             >
                               {nextSlug()}
+                            </div>
+                          </div>
+                        </Show>
+                      </div>
+                      <div class="border-l-4 pl-2">
+                        <Show when={prevIssue()} fallback={<div></div>}>
+                          <div class="w-fit">
+                            <div>
+                              <span class="flex space-x-1">
+                                <span class="text-gray-400">Previous:</span>
+                                <span class="text-red-600">
+                                  LESSON #{parseInt(params.issueNumber) - 1}
+                                </span>
+                              </span>
+                            </div>
+                            <div
+                              onClick={() => {
+                                window.location.replace(
+                                  "/lesson/" +
+                                    (parseInt(params.issueNumber) - 1)
+                                );
+                              }}
+                              class="cursor-pointer hover:opacity-60"
+                            >
+                              {prevSlug()}
                             </div>
                           </div>
                         </Show>
