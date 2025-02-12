@@ -682,74 +682,54 @@ function Issue() {
                       </div>
                     </div>
 
-                    <div class="m-2 text-sm md:text-base md:m-6 pt-12 flex space-x-4 md:justify-between border-t-2 border-black">
-                      <div class="flex-1">
-                        <Show when={prevIssue()} fallback={<div>.</div>}>
-                          <div
-                            class="w-fit cursor-pointer hover:opacity-60"
-                            onClick={() => {
-                              window.location.replace(
-                                "/lesson/" + (parseInt(params.issueNumber) - 1)
-                              );
-                            }}
-                          >
+                    <div class="m-2 text-sm md:text-base md:m-6 pt-12 flex flex-col space-y-4 border-t-2 border-black">
+                      <div class="border-l-4 pl-2">
+                        <Show when={prevIssue()} fallback={<div></div>}>
+                          <div class="w-fit">
                             <div>
-                              <span class="flex space-x-1 text-red-600">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  fill="none"
-                                  viewBox="0 0 24 24"
-                                  stroke-width="1.5"
-                                  stroke="currentColor"
-                                  class="size-6 -mt-0.5"
-                                >
-                                  <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
-                                  />
-                                </svg>
-                                <span>
+                              <span class="flex space-x-1">
+                                <span class="text-gray-400">Previous:</span>
+                                <span class="text-red-600">
                                   LESSON #{parseInt(params.issueNumber) - 1}
                                 </span>
                               </span>
                             </div>
-                            <div class="mt-1">{prevSlug()}</div>
+                            <div
+                              onClick={() => {
+                                window.location.replace(
+                                  "/lesson/" +
+                                    (parseInt(params.issueNumber) - 1)
+                                );
+                              }}
+                              class="cursor-pointer hover:opacity-60"
+                            >
+                              {prevSlug()}
+                            </div>
                           </div>
                         </Show>
                       </div>
-                      <div class="flex-1">
-                        <Show when={nextIssue()} fallback={<div>.</div>}>
-                          <div
-                            class="w-fit cursor-pointer hover:opacity-60"
-                            onClick={() => {
-                              window.location.replace(
-                                "/lesson/" + (parseInt(params.issueNumber) + 1)
-                              );
-                            }}
-                          >
+                      <div class="border-l-4 pl-2">
+                        <Show when={nextIssue()} fallback={<div></div>}>
+                          <div class="w-fit">
                             <div>
-                              <span class="flex space-x-1 text-red-600">
-                                <span>
+                              <span class="flex space-x-1">
+                                <span class="text-gray-400">Next:</span>
+                                <span class=" text-red-600">
                                   LESSON #{parseInt(params.issueNumber) + 1}
                                 </span>
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  fill="none"
-                                  viewBox="0 0 24 24"
-                                  stroke-width="1.5"
-                                  stroke="currentColor"
-                                  class="size-6 -mt-0.5"
-                                >
-                                  <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                                  />
-                                </svg>
                               </span>
                             </div>
-                            <div class="mt-1">{nextSlug()}</div>
+                            <div
+                              onClick={() => {
+                                window.location.replace(
+                                  "/lesson/" +
+                                    (parseInt(params.issueNumber) + 1)
+                                );
+                              }}
+                              class="cursor-pointer hover:opacity-60"
+                            >
+                              {nextSlug()}
+                            </div>
                           </div>
                         </Show>
                       </div>
