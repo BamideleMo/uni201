@@ -682,7 +682,7 @@ function Issue() {
                       </div>
                     </div>
 
-                    <div class="m-2 text-sm md:text-base md:m-6 pt-12 flex flex-col space-y-8 border-t-2 border-black">
+                    <div class="m-2 text-base md:text-base md:m-6 pt-12 flex flex-col space-y-8 border-t-2 border-black">
                       <div class="border-l-4 pl-2">
                         <Show when={nextIssue()} fallback={<div></div>}>
                           <div class="w-fit">
