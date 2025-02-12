@@ -62,7 +62,7 @@ function Archive() {
                             <div class="">
                               <div>
                                 <p>
-                                  <span class="block text-black text-xs border-t pt-4">
+                                  <span class="block text-black border-t pt-4">
                                     Lesson #{post.issue_number}
                                   </span>
                                   <A
