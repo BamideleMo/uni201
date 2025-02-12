@@ -326,7 +326,7 @@ function Issue() {
 
         <div class="pt-24 md:pt-28">
           <div class="w-full md:w-11/12 2xl:w-9/12 mx-auto pt-0 md:px-12 lg:px-12">
-            <div class="content md:w-10/12 lg:w-7/12 2xl:w-6/12 mx-auto">
+            <div class="content md:w-10/12 lg:w-6/12 2xl:w-6/12 mx-auto">
               <Show when={likedNow()}>
                 <div class="z-50 bg-black w-screen h-screen bg-opacity-95 fixed flex items-center top-0 bottom-0 left-0 right-0">
                   <div class="rounded w-11/12 md:w-96 mx-auto text-sm bg-white p-4 border-b-8 border-cyan-600">
