@@ -310,7 +310,7 @@ function Issue() {
     <MetaProvider>
       <Title>
         {params.issueNumber && topic() !== ""
-          ? "Post #" +
+          ? "Lesson #" +
             params.issueNumber +
             " - " +
             topic() +
@@ -344,7 +344,7 @@ function Issue() {
                       </div>
                     </h4>
                     <div class="text-center">
-                      <p>You've liked this post.</p>
+                      <p>You've liked this lesson.</p>
                       <div class="py-6">
                         <span
                           onClick={() => {
