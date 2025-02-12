@@ -52,17 +52,17 @@ function Archive() {
                   <>
                     <div class="bg-white p-2 md:p-6">
                       <h4 class="text-lg md:text-xl border-b-2 border-black pb-2">
-                        <span class="bg-green-300 p-1">Lessons</span>
+                        <span class="bg-green-300 p-1">Archive of Lessons</span>
                       </h4>
                       <div class="my-4 space-y-6 text-base">
-                        <p>Archive of Lessons:</p>
+                        {/* <p>Archive of Lessons:</p> */}
 
                         <For each={posts}>
                           {(post, i) => (
                             <div class="">
                               <div>
                                 <p>
-                                  <span class="block text-black border-t pt-4">
+                                  <span class="block text-black border-b pt-4">
                                     Lesson #{post.issue_number}
                                   </span>
                                   <A
