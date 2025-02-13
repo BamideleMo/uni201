@@ -60,19 +60,17 @@ function Archive() {
                         <For each={posts}>
                           {(post, i) => (
                             <div class="">
-                              <div>
-                                <p>
-                                  <span class="block text-black border-b pt-4">
-                                    Lesson #{post.issue_number}
-                                  </span>
-                                  <A
-                                    href={"/lesson/" + post.issue_number}
-                                    class="hover:border-b border-black"
-                                  >
-                                    {post.post_topic}
-                                  </A>
-                                </p>
-                              </div>
+                              <p>
+                                <span class="block text-black pt-4">
+                                  Lesson #{post.issue_number}
+                                </span>
+                                <A
+                                  href={"/lesson/" + post.issue_number}
+                                  class="hover:border-b border-black"
+                                >
+                                  {post.post_topic}
+                                </A>
+                              </p>
                             </div>
                           )}
                         </For>
