@@ -643,9 +643,7 @@ function Issue() {
                       >
                         <div class="">
                           <span class="lg:hidden">WhatsApp it</span>
-                          <span class="hidden lg:block">
-                            Share Lesson on WhatsApp
-                          </span>
+                          <span class="hidden lg:block">Share on WhatsApp</span>
                         </div>
                         <div class="">
                           <img
@@ -660,9 +658,9 @@ function Issue() {
                         class="border-2 border-black h-14 px-3 rounded-lg flex items-center justify-between cursor-pointer hover:opacity-60"
                       >
                         <span class="">
-                          <span class="lg:hidden">Invite friends</span>
+                          <span class="lg:hidden">Refer friends</span>
                           <span class="hidden lg:block">
-                            Invite friends to join UNI201
+                            Refer friends to UNI201
                           </span>
                         </span>
                         <svg
@@ -745,11 +743,14 @@ function Issue() {
                         <form autocomplete="off" onSubmit={submit}>
                           <div class="">
                             <TextArea
-                              label={
-                                "USER" +
+                              label={(
                                 JSON.parse(localStorage.getItem("UNI201User"))
-                                  .id
-                              }
+                                  .email.charAt(0)
+                                  .toUpperCase() +
+                                JSON.parse(
+                                  localStorage.getItem("UNI201User")
+                                ).email.slice(1)
+                              ).slice(0, 3)}
                               name="comment"
                               required={true}
                               type="text"

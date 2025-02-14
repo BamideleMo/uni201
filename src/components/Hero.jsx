@@ -28,30 +28,30 @@ function Hero(props) {
           ref2={props.ref1}
         />
       </Show>
-      <div class="text-left md:text-left w-fit mx-2 md:w-11/12 2xl:w-9/12 md:mx-auto pt-2">
+      <div class="text-center w-fit mx-2 md:w-11/12 2xl:w-9/12 md:mx-auto pt-2">
         <div
-          class="w-full md:mx-auto grid grid-cols-1 
-          md:grid-cols-3 lg:grid-cols-3 lg:py-0"
+          class="w-full sm:w-11/12 md:w-10/12 lg:w-3/5 sm:mx-auto grid grid-cols-1 
+          "
         >
-          <div class="md:col-span-2 lg:col-span-2 md:pt-0 lg:pt-6  xl:pt-20">
+          <div class="md:pt-0 lg:pt-6">
             <div class="text-gray-800 text-lg md:text-2xl capitalize">
               Dear Nigerian Uni Student:
             </div>
             <h1
-              class="mt-2 text-3xl md:text-4xl lg:text-4xl xl:text-5xl 
+              class="mt-2 text-2xl md:text-3xl lg:text-3xl xl:text-4xl 
                font-bold text-black uppercase leading-none"
             >
               Want to Avoid Unemployment After Graduation?
             </h1>
-            <h1 class="leading-none mt-2 md:mt-3 capitalize text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-semibold text-cyan-700">
+            <h1 class="leading-none mt-2 md:mt-3 capitalize text-xl md:text-2xl lg:text-2xl xl:text-3xl font-semibold text-cyan-700">
               Embrace Student Entrepreneurship!
             </h1>
-            <div class="w-fit md:mx-0 bg-cyan-100 border border-cyan-300 rounded-lg p-2 mt-6">
+            <div class="w-fit mx-auto bg-cyan-100 border border-cyan-300 rounded-lg p-2 mt-6">
               <div class="mt-0 mb-0 px-1 md:px-0 lg:px-0 text-lg lg:text-xl leading-tight">
                 Get 1 Lesson Every Tuesday & Thursday Morning To{" "}
                 <b>Learn How</b>:
               </div>
-              <div class="md:mt-0 flex flex-col lg:flex-row lg:space-x-3">
+              <div class="md:mt-0 flex flex-col">
                 <div class="space-x-3 mt-6 mb-4">
                   <span
                     onClick={() => {
@@ -74,12 +74,12 @@ function Hero(props) {
               </div>
             </div>
           </div>
-          <div class="max-h-72 md:max-h-full mt-8 md:mt-0 lg:mt-8 overflow-hidden">
-            <div class="ht overflow-hidden w-72 mx-auto md:w-96 px-2 lg:float-right">
+          <div class="max-h-72 md:max-h-80 mt-8 md:mt-0 lg:mt-8 overflow-hidden">
+            <div class="ht overflow-hidden w-72 mx-auto md:w-80 px-2">
               <img
                 src={screen}
                 alt="uni201 mobile display"
-                class="w-fit mx-auto lg:float-right"
+                class="w-fit mx-auto"
               />
             </div>
           </div>
