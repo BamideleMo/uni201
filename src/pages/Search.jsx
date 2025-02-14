@@ -61,7 +61,7 @@ function Search() {
       <Meta name="description" content="Search UNI201." />
       <div>
         <Header />
-        <div class="pt-24 md:pt-28">
+        <div class="pt-20 md:pt-24">
           <div class="w-full md:w-11/12 2xl:w-9/12 mx-auto md:px-12 lg:px-12">
             <div class="content md:w-10/12 lg:w-6/12 2xl:w-6/12 mx-auto space-y-3">
               <div class="bg-white p-2 md:p-6">
@@ -133,13 +133,11 @@ function Search() {
                     <For each={posts}>
                       {(post, i) => (
                         <p>
-                          <span class="block text-gray-500 text-xs border-t pt-4">
-                            {new Date(post.created_at).toDateString()}
+                           <span class="block text-black pt-4">
+                            Lesson #{post.issue_number}
                           </span>
                           <A
-                            href={
-                              "/lesson/" + post.issue_number
-                            }
+                            href={"/lesson/" + post.issue_number}
                             class="hover:border-b border-black"
                           >
                             {post.post_topic}

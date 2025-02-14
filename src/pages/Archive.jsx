@@ -43,9 +43,9 @@ function Archive() {
       <Meta name="description" content="All Lessons on UNI201." />
       <div>
         <Header />
-        <div class="pt-24 md:pt-28">
+        <div class="pt-20 md:pt-24">
           <div class="w-full md:w-11/12 2xl:w-9/12 mx-auto md:px-12 lg:px-12">
-            <div class="content md:w-10/12 lg:w-7/12 2xl:w-6/12 mx-auto space-y-3">
+            <div class="content md:w-10/12 lg:w-6/12 2xl:w-6/12 mx-auto space-y-3">
               <Show
                 when={fetching()}
                 fallback={

@@ -15,7 +15,7 @@ function NotFound() {
       />
       <div>
         <Header />
-        <div class="pt-24 md:pt-28">
+        <div class="pt-20 md:pt-24">
           <div class="w-full md:w-11/12 2xl:w-9/12 mx-auto md:p-12 lg:p-12">
             <div class="content md:w-10/12 lg:w-6/12 2xl:w-6/12 mx-auto space-y-3">
               <div class="bg-white p-2 md:p-6">

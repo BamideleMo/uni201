@@ -66,8 +66,8 @@ function CodeVerificationForm(props) {
     }
   };
   return (
-    <form autocomplete="off" onSubmit={submit} class="my-4 w-80 flex space-x-2">
-      <div class="space-y-2 grow">
+    <form autocomplete="off" onSubmit={submit} class="my-4 w-72 flex space-x-2">
+      <div class="space-y-2 w-60">
         <div class="">
           <TextInput
             label="Confirmation Code:"
@@ -90,7 +90,7 @@ function CodeVerificationForm(props) {
           </div>
         </Show>
       </div>
-      <div class="w-fit pt-5 text-white">
+      <div class="w-11 pt-5 text-white">
         <Show
           when={formHandler.isFormInvalid()}
           fallback={
@@ -102,7 +102,7 @@ function CodeVerificationForm(props) {
                     type="submit"
                     class="bg-red-600 rounded-lg w-full py-3 px-2 text-center hover:opacity-60"
                   >
-                    Confirm
+                    Go
                   </button>
                 }
               >
@@ -110,7 +110,7 @@ function CodeVerificationForm(props) {
                   disabled
                   class="bg-gray-600 rounded-lg cursor-none w-full py-3 px-2 text-center animate-pulse"
                 >
-                  .. .
+                  . .
                 </button>
               </Show>
             </>
@@ -120,7 +120,7 @@ function CodeVerificationForm(props) {
             disabled
             class="bg-gray-400 rounded-lg w-full p-3 text-center cursor-not-allowed"
           >
-            Confirm
+            Go
           </button>
         </Show>
       </div>

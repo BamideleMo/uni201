@@ -45,7 +45,7 @@ function Welcome() {
       <Meta name="description" content="Welcome to UNI201" />
       <div>
         <Header />
-        <div class="pt-24 md:pt-28">
+        <div class="pt-20 md:pt-24">
           <div class="w-full md:w-11/12 2xl:w-9/12 mx-auto md:px-12 lg:px-12">
             <div class="content md:w-10/12 lg:w-6/12 2xl:w-6/12 mx-auto space-y-3">
               <div class="bg-white p-2 md:p-6">
@@ -100,6 +100,7 @@ function Welcome() {
                       <u>Start from Lesson #1:</u> Start reading from lesson #1
                       up until the latest lesson. You will learn so much I
                       promise you.
+                      <br />
                       <br />
                       <A
                         href="https://uni201.com.ng/lesson/1"

@@ -81,7 +81,7 @@ function Likes() {
       <div>
         <Header />
 
-        <div class="pt-24 md:pt-28">
+        <div class="pt-20 md:pt-24">
           <Show
             when={fetching()}
             fallback={
@@ -107,13 +107,11 @@ function Likes() {
                         <For each={posts}>
                           {(post, i) => (
                             <p>
-                              <span class="block text-gray-500 text-xs border-t pt-4">
-                                {new Date(post.date).toDateString()}
+                              <span class="block text-black pt-4">
+                                Lesson #{post.issue_no}
                               </span>
                               <A
-                                href={
-                                  "/lesson/" + post.issue_no + "/" + post.slug
-                                }
+                                href={"/lesson/" + post.issue_no}
                                 class="hover:border-b border-black"
                               >
                                 {post.topic}
