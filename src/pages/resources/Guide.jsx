@@ -57,9 +57,9 @@ function Guide() {
                       <b>What You'll Get:</b>
                     </p>
                     <p>
-                      You’ll get only in-depth lessons on how to find and start
-                      a business on campus in 4 days drawing from real-life
-                      experiences.
+                      You’ll get only in-depth lessons that will help you find
+                      and start a business on campus in 4 days drawing from
+                      real-life experiences.
                     </p>
                     <p>
                       <b>✅ Day #1:</b>
