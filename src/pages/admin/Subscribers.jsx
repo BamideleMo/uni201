@@ -71,8 +71,8 @@ function Subscribers() {
                           <tr
                             class={
                               sub.status === "confirmed"
-                                ? "bg-green-100 border-b border-black"
-                                : "bg-white border-b border-black"
+                                ? "bg-green-100 border-t border-black"
+                                : "bg-white border-t border-black"
                             }
                           >
                             <td class="p-1">{i() + 1}.</td>
