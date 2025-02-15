@@ -10,7 +10,7 @@ function About() {
   return (
     <MetaProvider>
       <Title>About UNI201 | www.uni201.com.ng</Title>
-      <Link rel="canonical" href="https://techinjos.com.ng/" />
+      <Link rel="canonical" href="https://uni201.com.ng/" />
       <Meta
         name="description"
         content="Empower Your Future: Become a Successful Student Entrepreneur in a Nigerian University!"

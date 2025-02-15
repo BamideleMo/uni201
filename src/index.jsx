@@ -17,6 +17,7 @@ import Privacy from "./pages/Privacy";
 import Likes from "./pages/Likes";
 import Search from "./pages/Search";
 import Ama from "./pages/Ama";
+import Guide from "./pages/resources/Guide";
 
 const root = document.getElementById("root");
 
@@ -39,6 +40,7 @@ render(
       <Route path="/search" component={Search} />
       <Route path="/ask-me-anything" component={Ama} />
       <Route path="/lesson/:issueNumber" component={Issue} />
+      <Route path="/guide/finding-and-starting-a-business-on-campus-in-4-days" component={Guide} />
       <Route path="/confirm-email" component={ConfirmEmail} />
       <Route path="/a/post" component={Post} />
       <Route path="/a/post-image" component={PostMetaImage} />

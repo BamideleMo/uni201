@@ -38,7 +38,7 @@ function Archive() {
   return (
     <MetaProvider>
       <Title>All Lessons | www.uni201.com.ng</Title>
-      <Link rel="canonical" href="https://techinjos.com.ng/" />
+      <Link rel="canonical" href="https://uni201.com.ng/" />
       <Meta name="description" content="All Lessons on UNI201." />
       <div>
         <Header />

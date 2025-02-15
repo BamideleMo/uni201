@@ -76,7 +76,7 @@ function Likes() {
   return (
     <MetaProvider>
       <Title>Liked Lessons | www.uni201.com.ng</Title>
-      <Link rel="canonical" href="https://techinjos.com.ng/" />
+      <Link rel="canonical" href="https://uni201.com.ng/" />
       <Meta name="description" content="All Lessons I have liked on UNI201." />
       <div>
         <Header />

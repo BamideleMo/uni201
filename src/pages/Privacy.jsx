@@ -7,7 +7,7 @@ function Privacy() {
   return (
     <MetaProvider>
       <Title>Privacy Policy | www.uni201.com.ng</Title>
-      <Link rel="canonical" href="https://techinjos.com.ng/" />
+      <Link rel="canonical" href="https://uni201.com.ng/" />
       <Meta name="description" content="Privacy Policy" />
       <div>
         <Header />

@@ -7,11 +7,11 @@ import notFound from "../assets/404.jpg";
 function NotFound() {
   return (
     <MetaProvider>
-      <Title>Not Found | www.techinjos.com.ng</Title>
-      <Link rel="canonical" href="https://techinjos.com.ng/" />
+      <Title>Not Found | www.uni201.com.ng</Title>
+      <Link rel="canonical" href="https://uni201.com.ng/" />
       <Meta
         name="description"
-        content="Your #1 Weekly Newsletter focused on the Tech Ecosystem in Jos, Plateau state!"
+        content="If you're a student in a Nigerian university, this website is for you."
       />
       <div>
         <Header />
@@ -32,7 +32,7 @@ function NotFound() {
                   </p>
                   <p>
                     <A href="/">
-                      <img src={notFound} alt="Page not found on techINJos" />
+                      <img src={notFound} alt="Page not found on uni201" />
                     </A>
                   </p>
                 </div>

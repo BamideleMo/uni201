@@ -7,7 +7,7 @@ function Terms() {
   return (
     <MetaProvider>
       <Title>Terms | www.uni201.com.ng</Title>
-      <Link rel="canonical" href="https://techinjos.com.ng/" />
+      <Link rel="canonical" href="https://uni201.com.ng/" />
       <Meta name="description" content="Terms of use" />
       <div>
         <Header />
