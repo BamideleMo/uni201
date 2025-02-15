@@ -105,10 +105,8 @@ function Ama() {
                     I'll post my answer on this website ASAP. I'll notify you
                     too (if you include your email address in your question).
                   </p>
-                  <p>
-                    Please use the form below to ask your question:
-                  </p>
-                  <p>
+                  <p>Please use the form below to ask your question:</p>
+                  {/* <p>
                     <a
                       target="_blank"
                       href="https://wa.me/2348124802798?text=I%20have%20a%20question."
@@ -117,10 +115,54 @@ function Ama() {
                       Click here to ask
                     </a>
                     .
-                  </p>
-                  {/* <form>
-                    x
-                  </form> */}
+                  </p> */}
+                  <form autocomplete="off" onSubmit={submit}>
+                    <div class="border border-black p-3">
+                      <TextArea
+                        label="Ask Anything:"
+                        name="question"
+                        required={true}
+                        type="text"
+                        max="600"
+                        formHandler={formHandler}
+                        placeholder="Type question here..."
+                      />
+                    </div>
+                    <div class="text-white text-right mt-2">
+                      <Show
+                        when={formHandler.isFormInvalid()}
+                        fallback={
+                          <>
+                            <Show
+                              when={isProcessing()}
+                              fallback={
+                                <button
+                                  type="submit"
+                                  class="bg-cyan-600 rounded-lg w-fit p-4 text-center hover:opacity-60"
+                                >
+                                  Send Question
+                                </button>
+                              }
+                            >
+                              <button
+                                disabled
+                                class="bg-gray-600 rounded-lg cursor-none w-fit p-4 text-center animate-pulse"
+                              >
+                                Sending.. .
+                              </button>
+                            </Show>
+                          </>
+                        }
+                      >
+                        <button
+                          disabled
+                          class="bg-gray-400 rounded-lg w-fit p-4 text-center cursor-not-allowed"
+                        >
+                          Send Question
+                        </button>
+                      </Show>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
