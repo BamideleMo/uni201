@@ -118,8 +118,7 @@ function Guide() {
                     <li>
                       <u>Step 1:</u>
                       <br />
-                      Pay 1,500 naira only to this Opay account:{" "}
-                      <b>7036935026</b>
+                      Pay ₦1,500 only to this Opay account: <b>7036935026</b>
                     </li>
                     <li>
                       <u>Step 2:</u>
