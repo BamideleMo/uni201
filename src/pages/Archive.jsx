@@ -23,7 +23,6 @@ function Archive() {
         method: "GET",
       });
       const result = await response.json();
-      console.log(result.response);
 
       setPosts(result.response);
       setFetching(false);
@@ -45,7 +44,7 @@ function Archive() {
         <Header />
         <div class="pt-20 md:pt-24">
           <div class="w-full md:w-11/12 2xl:w-9/12 mx-auto md:px-12 lg:px-12">
-            <div class="content md:w-10/12 lg:w-6/12 2xl:w-6/12 mx-auto space-y-3">
+            <div class="content sm:w-8/12 md:w-10/12 lg:w-6/12 2xl:w-6/12 mx-auto space-y-3">
               <Show
                 when={fetching()}
                 fallback={

@@ -1,15 +1,9 @@
-import { A } from "@solidjs/router";
-import Logo from "./Logo";
-import TextInput from "./TextInput";
-import PasswordInput from "./PasswordInput";
-
 import { createSignal, createEffect } from "solid-js";
-
 import { useFormHandler } from "solid-form-handler";
 import { zodSchema } from "solid-form-handler/zod";
 import { z } from "zod";
-import ChevronRight from "./icons/ChevronRight";
 import LoginForm from "./LoginForm";
+import { A, useParams, useNavigate } from "@solidjs/router";
 
 const schema = z.object({
   username: z.string().email("*Invalid"),
@@ -18,6 +12,8 @@ const schema = z.object({
 const VITE_API_URL = import.meta.env["VITE_API_URL"];
 
 function Popup(props) {
+  const params = useParams();
+
   const formHandler = useFormHandler(zodSchema(schema));
   const { formData } = formHandler;
 
@@ -45,7 +41,7 @@ function Popup(props) {
             UNI201 is free, but you must a working email to proceed.
           </p>
         </Show>
-        <LoginForm ref3={props.ref2} />
+        <LoginForm ref3={props.ref2} whichIssue={params.issueNumber} />
       </div>
     </div>
   );

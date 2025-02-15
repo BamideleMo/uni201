@@ -67,28 +67,34 @@ function LoginForm(props) {
             "/confirm-email?e=" +
               uname +
               "&i=" +
+              props.whichIssue +
+              "q=" +
               "qwertymnbvcxa1234560987asdfg",
             {
               replace: true,
             }
           );
         } else {
-          const response = await fetch(VITE_API_URL + "/api/latest-post", {
-            mode: "cors",
-            headers: {
-              Authorization: `Bearer ${
-                JSON.parse(localStorage.getItem("UNI201User")).token
-              }`,
-              "Content-Type": "application/json",
-              Accept: "application/json",
-            },
-            method: "GET",
-          });
-          const result = await response.json();
-          if (result.success) {
-            window.location.replace(
-              "/lesson/" + result.response[0].issue_number
-            );
+          if (props.whichIssue && props.whichIssue !== "") {
+            window.location.replace("/lesson/" + props.whichIssue);
+          } else {
+            const response = await fetch(VITE_API_URL + "/api/latest-post", {
+              mode: "cors",
+              headers: {
+                Authorization: `Bearer ${
+                  JSON.parse(localStorage.getItem("UNI201User")).token
+                }`,
+                "Content-Type": "application/json",
+                Accept: "application/json",
+              },
+              method: "GET",
+            });
+            const result = await response.json();
+            if (result.success) {
+              window.location.replace(
+                "/lesson/" + result.response[0].issue_number
+              );
+            }
           }
         }
       }

@@ -56,7 +56,9 @@ function CodeVerificationForm(props) {
           }
         );
         const result = await response.json();
-        window.location.replace("/welcome");
+        window.location.replace(
+          "/welcome?i=" + props.whichIssue + "&q=qwertymnbvcxa1234560987asdfg"
+        );
       } catch (error) {
         console.error(error);
       }

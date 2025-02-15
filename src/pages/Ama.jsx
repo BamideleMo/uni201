@@ -88,7 +88,7 @@ function Ama() {
         <Header />
         <div class="pt-20 md:pt-24">
           <div class="w-full md:w-11/12 2xl:w-9/12 mx-auto md:px-12 lg:px-12">
-            <div class="content md:w-10/12 lg:w-6/12 2xl:w-6/12 mx-auto space-y-3">
+            <div class="content sm:w-8/12 md:w-10/12 lg:w-6/12 2xl:w-6/12 mx-auto space-y-3">
               <div class="bg-white p-2 md:p-6">
                 <h4 class="text-lg md:text-xl border-b-2 border-black pb-2">
                   <span class="bg-violet-300 p-1">Question?</span>
@@ -102,11 +102,13 @@ function Ama() {
                     (anything at all) & I'll answer to the best of my ability.
                   </p>
                   <p>
-                    I'll post my answer on this website and notify you ASAP.
-                    Please click the link below to ask your question via
-                    WhatsApp:
+                    I'll post my answer on this website ASAP. I'll notify you
+                    too (if you include your email address in your question).
                   </p>
                   <p>
+                    Please use the form below to ask your question:
+                  </p>
+                  {/* <p>
                     <a
                       target="_blank"
                       href="https://wa.me/2348124802798?text=I%20have%20a%20question."
@@ -115,7 +117,10 @@ function Ama() {
                       Click here to ask
                     </a>
                     .
-                  </p>
+                  </p> */}
+                  <form>
+                    x
+                  </form>
                 </div>
               </div>
             </div>
