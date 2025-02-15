@@ -48,6 +48,12 @@ function Guide() {
                     found and did profitable businesses as uni students.
                   </p>
                   <p>
+                    The wisdom you get from those who've already "been there,
+                    done that" can be way more powerful than other forms of
+                    learning. Technically, lessons learned from real-life
+                    experiences have incredible value.
+                  </p>
+                  <p>
                     At the end of this mini-course, you’ll have practical
                     know-how and will be very able to start a profitable
                     business ASAP!

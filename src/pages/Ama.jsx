@@ -116,7 +116,11 @@ function Ama() {
                     </a>
                     .
                   </p> */}
-                  <form autocomplete="off" onSubmit={submit}  class="border border-black p-3">
+                  <form
+                    autocomplete="off"
+                    onSubmit={submit}
+                    class="border border-black p-3"
+                  >
                     <div>
                       <TextArea
                         label="Ask Anything:"
