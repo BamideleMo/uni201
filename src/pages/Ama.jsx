@@ -108,7 +108,7 @@ function Ama() {
                   <p>
                     Please use the form below to ask your question:
                   </p>
-                  {/* <p>
+                  <p>
                     <a
                       target="_blank"
                       href="https://wa.me/2348124802798?text=I%20have%20a%20question."
@@ -117,10 +117,10 @@ function Ama() {
                       Click here to ask
                     </a>
                     .
-                  </p> */}
-                  <form>
+                  </p>
+                  {/* <form>
                     x
-                  </form>
+                  </form> */}
                 </div>
               </div>
             </div>
