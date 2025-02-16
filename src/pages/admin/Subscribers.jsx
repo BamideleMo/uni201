@@ -55,7 +55,7 @@ function Subscribers() {
                 <h4 class="text-lg md:text-xl border-b-2 border-black pb-2">
                   <span class="bg-pink-300 p-1">Subscribers</span>
                 </h4>
-                <div class="space-y-6 text-sm w-full overflow-x-auto">
+                <div class="space-y-6 text-xs lg:text-sm w-full overflow-x-auto">
                   <table cellpadding="0" cellspacing="0" class="w-full">
                     <thead>
                       <tr class="bg-gray-200">
