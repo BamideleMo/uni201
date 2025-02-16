@@ -61,7 +61,6 @@ function Subscribers() {
                       <tr class="bg-gray-200">
                         <td class="p-1">Sn.</td>
                         <td class="p-1">Email</td>
-                        <td class="p-1">Status</td>
                         <td class="p-1">Subscribed</td>
                       </tr>
                     </thead>
@@ -77,7 +76,6 @@ function Subscribers() {
                           >
                             <td class="p-1">{i() + 1}.</td>
                             <td class="p-1">{sub.username}</td>
-                            <td class="p-1">{sub.status}</td>
                             <td class="p-1">{sub.created_at.slice(0, 10)}</td>
                           </tr>
                         )}
