@@ -60,7 +60,7 @@ function Subscribers() {
                     <thead>
                       <tr class="bg-gray-200">
                         <td class="p-1">Sn.</td>
-                        <td class="p-1 border-x">Email</td>
+                        <td class="p-1 border-x border-black">Email</td>
                         <td class="p-1">Subscribed</td>
                       </tr>
                     </thead>
@@ -75,7 +75,9 @@ function Subscribers() {
                             }
                           >
                             <td class="p-1">{i() + 1}.</td>
-                            <td class="p-1 border-x">{sub.username}</td>
+                            <td class="p-1 border-x border-black">
+                              {sub.username}
+                            </td>
                             <td class="p-1">{sub.created_at.slice(0, 10)}</td>
                           </tr>
                         )}
