@@ -42,6 +42,7 @@ function Issue() {
   const [madeComment, setMadeComment] = createSignal(false);
   const [comments, setComments] = createStore([]);
   const [showRefLink, setShowRefLink] = createSignal(false);
+  const [pubDay, setPubDay] = createSignal();
 
   const issueDetails = async () => {
     if (JSON.parse(localStorage.getItem("UNI201User"))) {
@@ -81,6 +82,19 @@ function Issue() {
           setLikedThis(true);
         }
       }
+      console.log(result.response.created_at);
+      const day = new Date(result.response.created_at.slice(0, 10));
+      const daysOfWeek = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
+      const dayOfWeek = daysOfWeek[day.getDay()];
+      setPubDay(dayOfWeek + ", " + result.response.created_at.slice(0, 10));
       setIssue(result.response);
       setMetaDesc(result.response.shareable);
     }
@@ -482,10 +496,11 @@ function Issue() {
                 fallback={
                   <>
                     <div class="bg-white p-2 md:p-6">
-                      <h4 class="text-base md:text-xl border-b-2 border-black pb-2">
+                      <h4 class="text-base md:text-xl border-b-2 border-black pb-2 flex justify-between">
                         <span class={resource().issue.post_bg + " " + "p-1"}>
                           {resource().issue.post_highlight}
                         </span>
+                        <span class="pt-1">{pubDay()}</span>
                       </h4>
                       <h1 class="drop-shadow-lg my-4 text-2xl md:text-3xl !leading-tight font-semibold">
                         {resource().issue.post_topic}

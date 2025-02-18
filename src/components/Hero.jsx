@@ -74,7 +74,7 @@ function Hero(props) {
               </div>
             </div>
           </div>
-          <div class="max-h-72 md:max-h-80 mt-8 md:mt-0 lg:mt-8 overflow-hidden">
+          <div class="max-h-72 md:max-h-80 mt-8 overflow-hidden">
             <div class="ht overflow-hidden w-72 mx-auto md:w-80 px-2">
               <img
                 src={screen}
